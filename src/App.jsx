@@ -31,7 +31,7 @@ function App() {
     <meta property="og:title" content="My Awesome App" />
         <meta property="og:description" content="This is an awesome React app hosted on Netlify" />
         <meta property="og:image" content="https://www.example.com/path/to/your/image.jpg" />
-        <meta property="og:url" content={`${process.env.PUBLIC_URL}/images/my-image.jpg`}/>
+        <meta property="og:url" content={`${process.env.PUBLIC_URL}/images/kerslythumb.png`}/>
         <meta property="og:type" content="website" />
     </Helmet>
     <ScrollToTop />
