@@ -2,7 +2,6 @@
 import Footer from '../components/footer/Footer.jsx';
 import Nav from '../components/nav/Nav.jsx';
 import './moreworks.css';
-import Tiger from "../assets/images/moreworks/tiger.jpeg";
 import { WORKS } from './works.js';
 import { motion } from 'framer-motion';
 import { bounceUp } from "../components/animation.js";
