@@ -1,4 +1,4 @@
-import tiger from "../assets/images/moreworks/Tiger.jpeg";
+import tiger from "../assets/images/moreworks/pinktiger.jpeg";
 import adhu from "../assets/images/moreworks/adhu.jpg";
 import RadPro from "../assets/images/moreworks/radpro.jpg";
 import Naavya from "../assets/images/moreworks/naavya.jpg";
