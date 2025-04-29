@@ -62,7 +62,7 @@ export const PROJECT = [
 
 
  {
-    id: 7,
+    id: 6,
     title: 'Poktfund Wallet',
     image: poktfundwallet_preview,
     description:
@@ -73,7 +73,7 @@ export const PROJECT = [
 
 
   {
-    id: 8,
+    id: 7,
     title: 'Poktfund Random Avatar',
     image: avatar_preview,
     description:
@@ -83,7 +83,7 @@ export const PROJECT = [
 
 
   {
-    id: 9,
+    id: 8,
     title: 'Hippomathics',
     image: hippomathics_preview,
     description:

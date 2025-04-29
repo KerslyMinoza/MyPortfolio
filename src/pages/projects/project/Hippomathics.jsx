@@ -15,6 +15,8 @@ function Hippomathics(){
     const location = useLocation();
     const projectId = location.state?.projectId;
 
+
+
     return (
         <>
             <Backbutton/>
