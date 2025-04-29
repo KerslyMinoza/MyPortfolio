@@ -90,9 +90,9 @@ function Nodies(){
                     </div> 
 
                     <div className="image_holder"><img src={Penguin} style={{ width: '300px' }}></img></div>
-  
+             <NextPrevious project_id={projectId}/>    
             </div>
-        <NextPrevious project_id={projectId}/>      
+  
         </div>
 
     <Footer/>
