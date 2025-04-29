@@ -8,6 +8,8 @@ import poktfundwallet_preview from "../../assets/images/poktfund_thumbnail.png";
 import avatar_preview from "../../assets/images/avatar_thumbnail.gif";
 import hippomathics_preview from "../../assets/images/hippomathics_thumbnail.png";
 import nodies_preview from "../../assets/images/nodies_thumbnail.png";
+import zipcode_preview from "../../assets/images/zipcode_thumbnail.png";
+import axis_preview from "../../assets/images/axis_thumbnail.png";
 
 export const PROJECT = [
   {
@@ -96,6 +98,24 @@ export const PROJECT = [
     description:
       'A platform for building Web3 apps with fast APIs, real-time tracking, and powerful analytics. Designed to simplify and accelerate blockchain development.',
     path: '/nodies'
+  },
+
+  {
+    id: 10,
+    title: 'Zipcode Team Hover Illustrations',
+    image: zipcode_preview,
+    description:
+      'Illustration project for a hover effect on the team section of Zipcode Creative Website.',
+    path: '/zipcode'
+  },
+
+  {
+    id: 11,
+    title: 'AXIS Martial Arts',
+    image: axis_preview,
+    description:
+      'Illustration project for a hover effect on the team section of Zipcode Creative Website.',
+    path: '/axis'
   },
 ]
 

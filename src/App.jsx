@@ -11,11 +11,13 @@ import Trux from './pages/projects/project/Trux.jsx';
 import Poktfund from './pages/projects/project/Poktfund.jsx';
 import Avatar from './pages/projects/project/Avatar.jsx';
 import Nodies from './pages/projects/project/Nodies.jsx';
+import Zipcode from './pages/projects/project/Zipcode.jsx';
 import Aboutme from './pages/projects/project/Aboutme.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import Contact from "./pages/Contact.jsx";
 import Moreworks from "./pages/Moreworks.jsx";
 import Hippomathics from "./pages/projects/project/Hippomathics.jsx";
+import Axis from "./pages/projects/project/Axis.jsx";
 
 
 
@@ -36,6 +38,8 @@ function App() {
       <Route path="hippomathics" element={<Hippomathics />} />
       <Route path="avatar" element={<Avatar />} />
       <Route path="nodies" element={<Nodies />} />
+      <Route path="zipcode" element={<Zipcode />} />
+      <Route path="axis" element={<Axis />} />
       <Route path="aboutme" element={<Aboutme />} />
       <Route path="contact" element={<Contact />} />
       <Route path="moreworks" element={<Moreworks />} />
