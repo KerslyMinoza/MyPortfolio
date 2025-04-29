@@ -7,6 +7,7 @@ import trux_preview from "../../assets/images/trux_thumbnail.png";
 import poktfundwallet_preview from "../../assets/images/poktfund_thumbnail.png";
 import avatar_preview from "../../assets/images/avatar_thumbnail.gif";
 import hippomathics_preview from "../../assets/images/hippomathics_thumbnail.png";
+import nodies_preview from "../../assets/images/nodies_thumbnail.png";
 
 export const PROJECT = [
   {
@@ -70,8 +71,6 @@ export const PROJECT = [
     path: '/poktfund'
   },
 
-
-
   {
     id: 7,
     title: 'Poktfund Random Avatar',
@@ -81,7 +80,6 @@ export const PROJECT = [
     path: '/avatar'
   },
 
-
   {
     id: 8,
     title: 'Hippomathics',
@@ -89,6 +87,15 @@ export const PROJECT = [
     description:
       'A fun Unity 3D project I created for kids, featuring simple and customizable math operations.',
     path: '/hippomathics'
-  }
+  },
+
+  {
+    id: 9,
+    title: 'Nodies',
+    image: nodies_preview,
+    description:
+      'A platform for building Web3 apps with fast APIs, real-time tracking, and powerful analytics. Designed to simplify and accelerate blockchain development.',
+    path: '/nodies'
+  },
 ]
 

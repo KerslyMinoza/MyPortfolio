@@ -1,10 +1,29 @@
 import './project.css';
 
-import Design from "../../../assets/images/valhalla/valhalla.png";
+import Design1 from "../../../assets/images/nodies/dashboard.png";
+import Design2 from "../../../assets/images/nodies/stat.png";
+import Design3 from "../../../assets/images/nodies/billing_and_payment.png";
+import Design4 from "../../../assets/images/nodies/api_page.png";
+import Design5 from "../../../assets/images/nodies/add_money_modal.png";
+import Design6 from "../../../assets/images/nodies/enterprise.png";
+import Wireframe1 from "../../../assets/images/nodies/wireframe1.png";
+import Wireframe2 from "../../../assets/images/nodies/wireframe2.png";
+
+import Penguin from "../../../assets/images/nodies/penguin.png";
+import Branding from "../../../assets/images/nodies/branding.png";
+
 import Backbutton from '../../../components/ui_components/Backbutton';
 import Footer from '../../../components/footer/Footer';
 
+import NextPrevious from '../../../components/ui_components/NextPrevious';
+import { useLocation } from 'react-router-dom';
+
+
+
 function Nodies(){
+
+    const location = useLocation();
+    const projectId = location.state?.projectId;
 
     return (
         <>
@@ -17,11 +36,11 @@ function Nodies(){
                     <div className="section_title"> Project Overview</div>
 
                     <div className="project_content">
-                    <a href="https://nodies.app" target="_blank" rel="noopener noreferrer"> www.vist nodies.app </a>
+                    <a href="https://nodies.app" target="_blank" rel="noopener noreferrer">vist www.nodies.app </a>
                     </div>
 
                     <div className="project_content">
-                     Valhalla is a landing page design project for a company that connects you with top talent from the Philippines. They aim for a clean, branded website that aligns with their guidelines and logo. The design focuses on simplicity and clarity, especially on the case study page. 
+                    This developer-focused platform helps users easily build Web3 applications using fast APIs, real-time tracking, and detailed analytics. The design prioritizes clarity, ease of use, and efficiency, making it simple for developers to get started, track progress, and scale their apps quickly.
                     </div>
 
                     <div className="section_title"> Role</div>
@@ -29,40 +48,51 @@ function Nodies(){
                     <div className="project_content">
                     <ul className="less_padding">
                         <li>UI UX Designer</li>
-                        <li>UI UX Designer</li>
+                        <li>Branding</li>
                     </ul>
-                    </div>
-
-                    <div className="section_title"> The Problem</div>
-
-                    <div className="project_content">
-                    This project was a web design refresh for Valhalla, who already had an existing website that looked a bit outdated. The client wanted a more modern and minimal look while still staying true to their brand colors. Their main goal was to make the site clean, user-friendly, and easy to navigate—so visitors immediately understand what Valhalla offers. They also wanted to put the spotlight on their services, keeping everything else minimal and secondary. The turnaround time for the design was quick—just three days—so it was a fast-paced project that needed to be delivered right away.
                     </div>
 
 
                     <div className="section_title"> Research</div>
 
                     <div className="project_content">
-                    There wasn’t any formal research involved for this project since it was based on a quick call between the client, myself, and a few team members. With a fast turnaround time—roughly 12 hours—I had to jump straight into the design phase. The goal was to finalize everything quickly and hand it off to the development team. I used the existing website as a reference, simplifying the content and layout to fit the new, modern design approach.
+                    At the time of this project, I was still gaining a deeper understanding of blockchain. While I grasped the basics, the technical aspects were challenging, so I worked closely with the client for guidance. Due to a tight deadline, I conducted competitor research to gather inspiration and ensure the app aligned with industry standards. Although our target audience is technically inclined, I aimed to create a UI that felt approachable and easy to navigate. Exploring similar platforms helped me gain confidence and quickly adapt to the design requirements, even under time pressure.
                     </div>
 
+                    <div className="section_title"> Branding</div>
+                    <div className="project_content">
+                    I created the logo and branding.
+                    </div>
 
-                    <div className="section_title center_text">Design Sheet</div>       
+                    <div className="image_holder"><img src={Branding}></img></div>
+
+                    <div className="section_title"> Wireframe</div>
+                    <div className="project_content">
+                    At the time of this project, I was still gaining a deeper understanding of blockchain. While I grasped the basics, the technical aspects were challenging, so I worked closely with the client for guidance. Due to a tight deadline, I conducted competitor research to gather inspiration and ensure the app aligned with industry standards. Although our target audience is technically inclined, I aimed to create a UI that felt approachable and easy to navigate. Exploring similar platforms helped me gain confidence and quickly adapt to the design requirements, even under time pressure.
+                    </div>
+
+                    <div className="image_holder"><img src={Wireframe1}></img></div>
+                    <div className="image_holder"><img src={Wireframe2}></img></div>
+
+                    <div className="section_title center_text">Design</div>       
  
-                    <div className="image_holder"><img src={Design}></img></div>
-
-
+                    <div className="image_holder"><img src={Design1}></img></div>
+                    <div className="image_holder"><img src={Design2}></img></div>
+                    <div className="image_holder"><img src={Design3}></img></div>
+                    <div className="image_holder"><img src={Design4}></img></div>
+                    <div className="image_holder"><img src={Design5}></img></div>
+                    <div className="image_holder"><img src={Design6}></img></div>
 
 
                      <div className="section_title center_text">Reflection</div> 
                      <div className="project_content">
-                     I'm really glad the client was satisfied with the outcome, especially considering the short turnaround time. Designing two pages was a bit of a challenge, mainly because the old website had so much content. Condensing that information and making it more concise and clear was a tricky process. I focused on including only the most essential and relevant details to highlight their services effectively.
+                     I created the full page-by-page flow for this project, though I’m only showing a few screens here due to client confidentiality. If given the chance, I’d like to revamp the entire design. While it functions well and users haven’t raised concerns, I now see it as too playful and not aligned with my current design style. This project was a stretch for me—especially since I’m still learning the technical side of blockchain—but it was a valuable experience. The client was particular, which challenged me under pressure, but it helped me grow and better understand how to work within unfamiliar spaces.
                     </div> 
 
-                    <div className="project_content">
-                    My goal was to create a cleaner, more straightforward design so users could immediately understand what the website and company are all about. I genuinely enjoyed working on this project. If there’s one thing I’d change next time, it would be to minimize the use of boxes for the services section and maybe use color instead to make it feel lighter. But overall, I’m happy with how everything turned out.
-                    </div>    
+                    <div className="image_holder"><img src={Penguin} style={{ width: '300px' }}></img></div>
+  
             </div>
+        <NextPrevious project_id={projectId}/>      
         </div>
 
     <Footer/>
