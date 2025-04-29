@@ -1,0 +1,236 @@
+.about_me {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section_wrapper {
+    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 24px;
+    margin-bottom: 50px;
+    
+    
+}
+.photo_holder{
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+
+}
+ 
+.photo_holder img {
+    width: 500px;
+    margin-left: 0;
+}
+
+.txt_aboutme {
+    width: 50%;
+    align-items: center;
+    height: auto;
+    margin-left: 0;
+}
+
+
+
+.section {
+    font-family: "Instrument Serif", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 80px;
+    margin-top: 50px;
+    text-decoration: italic;   
+    
+    
+}
+
+.service_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 0;
+    gap: 30px;
+}
+
+
+.service_box {
+    width: 50%;
+    height: 280px;
+    padding: 10px;
+    margin-right: 50px;
+}
+.service_box h2 {
+    padding-bottom: 0px;
+    font-size: 32px;
+    margin-bottom: 8px;
+    letter-spacing: -1px;
+    color: #313131;
+    font-weight: 400;
+    padding: 0;
+
+}
+
+
+.service_box p {
+    margin: 0;
+    padding: 0px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #656565;
+    padding-left: 0;
+    padding-bottom: 6px;
+
+}
+
+
+.section_name {
+    margin-top: 0;
+    width: 100%;
+    margin-bottom: 30px;
+    font-family: "Instrument Serif", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 60px;
+    text-align: left;
+    text-decoration: italic;
+    border-bottom: 8px solid yellow;
+}
+
+.intro {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 300;
+    color: #313131;
+    line-height: 140%;
+}
+
+.masonry {
+    column-count: 2;
+    column-gap: 2rem;
+}
+/* Testimonial Box */
+
+
+
+
+/*for responsive*/
+
+@media only screen and (min-device-width: 1000px) and (max-device-width: 1600px) {
+
+    .about_me {
+        width: 100%;
+    }
+
+    .photo_holder {
+        width: auto;
+    }
+
+    .photo_holder img {
+        width: 500px;
+        margin-left: 0;
+    }
+
+    .text_aboutme {
+        width: auto;
+    }
+
+}
+
+
+  /* for mobile */
+
+  @media only screen and (max-device-width: 1001px)  {
+
+    .about_me {
+        width: 100%;
+        padding: 0;
+    }
+
+    .section_wrapper {
+        width: 100%;
+        display: flex;
+        flex-wrap:wrap;
+        padding: 0;
+        border-radius: 24px;
+        margin-bottom: 50px;
+    }
+
+    .photo_holder{
+        width: 100%;
+    }
+
+    .photo_holder img {
+        width: 100%;
+    }
+
+    .txt_aboutme {
+        width: 100%;
+        align-items: center;
+        height: auto;
+        padding: 8px;
+        margin-left: 0;
+
+    }
+
+    .txt_aboutme p{
+        width: 100%;
+        align-items: center;
+        height: auto;
+        margin-left: 0;
+    }
+
+    .intro {
+        font-size: 16px;
+    }
+
+    .section {
+        font-family: "Instrument Serif", serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 40px;
+        margin-top: 0px;
+        line-height: 90%;
+        text-decoration: italic;   
+
+    }
+
+    .section_name {
+        width: 100%;
+        font-size: 40px;
+        text-align: left;
+        margin-bottom: 30px;
+        color: #313131;
+    }
+
+    .service_wrapper {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+    }
+
+    .service_box {
+        width: 70%;
+        align-self:center; 
+        padding: 0;
+        margin-left: 10px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .service_box h2 {
+        font-size: 28px;
+    }
+
+    .masonry {
+        margin-top: -20px;
+        column-count: 1;
+        column-gap: 2rem;
+    }
+
+  }

@@ -1,0 +1,57 @@
+
+.thumbnail{
+ 
+    margin-top: 30px;
+    width: 578px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-duration: 300ms;
+}
+
+
+.thumbnail img{
+    border: none;
+    width: 100%;
+    height: auto;
+    background-color: #F3F3F3;
+    border-radius: 18px;
+}
+
+.thumbnail img:hover {
+    animation: scaleup;
+    animation-duration: 500ms;
+}
+
+.thumbnail .title {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #313131;
+}
+
+.thumbnail .description {
+    width: auto;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 250;
+    color: #656565;
+}
+
+.thumbnail .category {
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #B6B6B6;
+}
+
+@media only screen and (max-device-width: 1001px)  {
+    
+    .thumbnail {
+        width: 90%;
+        padding: 20px;
+    }
+  }
+  

@@ -1,0 +1,94 @@
+
+.backbutton
+{
+    position: fixed;
+    float: left;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #FAFAFA;;
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center;
+    border-radius: 30px;
+}
+
+.backbutton:hover {
+    background-color: #fdf752;
+}
+
+.backbutton:active {
+    background-color: #EAE439;
+}
+
+
+.backbutton img {
+    display: block;
+    margin: 0 auto;
+}
+
+.nextPrevious_container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    border-top: 2px solid #fdf752;
+    padding-top: 20px;
+
+}
+
+.nextButton a  {
+    margin-right: 0;
+    font-family: "Instrument Serif", serif;
+    font-size: 28px;
+    font-style: italic;
+    color: #313131;
+    border-style: solid;
+    border-color: #313131;
+    border-width: 1px;
+    padding: 4px 20px 4px 20px;
+    border-radius: 40px;
+
+}
+
+
+
+.nextButton a:hover  {
+    background-color: #fdf752;
+
+}
+
+.nextButton a:active  {
+    background-color: #EAE439;
+}
+
+.nextButton a:visited {
+    color: #313131;
+}
+
+
+
+.invisiblePlaceholder {
+    visibility:hidden;
+}
+
+
+  /* for mobile */
+
+  @media only screen and (max-device-width: 1001px)  { 
+  
+  
+    .nav_mobile{
+      display: flex;
+      animation: fadein-from-top 1000ms;
+
+    }
+
+    .nav_desktop {
+      display: none;
+    }
+  
+  
+  }
+
