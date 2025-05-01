@@ -32,6 +32,16 @@ import rhcpunlimited from "../assets/images/moreworks/rhcp.jpeg";
 import beagles from "../assets/images/moreworks/beagles.jpg";
 import riseabovefest from "../assets/images/moreworks/riseabove.jpg";
 import mishka from "../assets/images/moreworks/green.jpg";
+import snake from "../assets/images/moreworks/snake.png";
+import india_vector from "../assets/images/moreworks/india_vector.png";
+import creativchimp from "../assets/images/moreworks/creativchimp.png";
+import diagold from "../assets/images/moreworks/diagold.png";
+import johns from "../assets/images/moreworks/johns.png";
+import dymo from "../assets/images/moreworks/dymo.png";
+import pitchdeck from "../assets/images/moreworks/pitchdeck.png";
+import raga from "../assets/images/moreworks/raga.png";
+import starfly from "../assets/images/moreworks/starfly.png";
+import august_grind from "../assets/images/moreworks/august_grind.jpg";
 
 export const WORKS = [
     {
@@ -237,6 +247,19 @@ export const WORKS = [
       image: mybabies,
     },
 
+    {
+      id: 1,
+      name: 'Snake',
+      type: 'Illustration',
+      image: snake,
+    },
+
+    {
+      id: 1,
+      name: 'Badian Wellness',
+      type: 'Acrylic Paiting',
+      image: badianwellness,
+    },
 
     {
       id: 1,
@@ -252,11 +275,13 @@ export const WORKS = [
       image: orcaa,
     },
 
+  
+
     {
       id: 1,
-      name: 'Badian Wellness',
-      type: 'Acrylic Paiting',
-      image: badianwellness,
+      name: 'creativchimp',
+      type: 'logo',
+      image: creativchimp,
     },
 
 
@@ -269,7 +294,6 @@ export const WORKS = [
 
 
 
-  
     {
       id: 1,
       name: 'Beagles',
@@ -279,6 +303,7 @@ export const WORKS = [
 
 
 
+  
     {
       id: 1,
       name: 'Rise Above Fest',
@@ -292,6 +317,54 @@ export const WORKS = [
       type: 'Acrylic Painting',
       image: mishka,
     },
+
+
+ 
+
+    {
+      id: 1,
+      name: 'diagold',
+      type: 'logo',
+      image: diagold,
+    },
+
+    {
+      id: 1,
+      name: 'johns',
+      type: 'logo',
+      image: johns,
+    },
+
+    {
+      id: 1,
+      name: 'dymo',
+      type: 'logo',
+      image: dymo,
+    },
+
+    {
+      id: 1,
+      name: 'raga',
+      type: 'logo',
+      image: raga,
+    },
+
+    {
+      id: 1,
+      name: 'starfly',
+      type: 'logo',
+      image: starfly,
+    },
+
+    {
+      id: 1,
+      name: 'Taj Majal',
+      type: 'Illustration',
+      image: india_vector,
+    },
+
+
+
 
 
 
