@@ -18,10 +18,7 @@ function Aboutme(){
             <Nav/>
             <div className="about_me">
 
-                <div 
-      
-                className="section_wrapper ">
-                    
+                <div className="section_wrapper">
                     <div className="photo_holder">
                         <img 
                             src={AboutmeGif}

@@ -18,6 +18,7 @@
     
 }
 .photo_holder{
+    width: 40%;
     height: auto;
     display: flex;
     justify-content: flex-start;
@@ -25,7 +26,9 @@
 }
  
 .photo_holder img {
-    width: 500px;
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
     margin-left: 0;
 }
 
@@ -34,6 +37,7 @@
     align-items: center;
     height: auto;
     margin-left: 0;
+    
 }
 
 
@@ -120,23 +124,34 @@
 
 /*for responsive*/
 
-@media only screen and (min-device-width: 1000px) and (max-device-width: 1600px) {
+@media only screen and (min-device-width: 901px) and (max-device-width: 1600px) {
+
+    .section_wrapper {
+        border: solid blue;
+        width: 100%;
+    }
+
 
     .about_me {
         width: 100%;
     }
 
     .photo_holder {
-        width: auto;
+        width: 40%;
     }
 
     .photo_holder img {
-        width: 500px;
+        width: 90%;
+        height: 100%;
+        object-fit: cover;
         margin-left: 0;
+        
     }
 
-    .text_aboutme {
-        width: auto;
+    .txt_aboutme {
+        width: 40%;
+       font-size: 14px;
+       border: solid blue;
     }
 
 }
@@ -144,7 +159,7 @@
 
   /* for mobile */
 
-  @media only screen and (max-device-width: 1001px)  {
+  @media only screen and (max-device-width: 900px)  {
 
     .about_me {
         width: 100%;

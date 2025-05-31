@@ -129,7 +129,7 @@
   }
 
   /*macbooks*/
-  @media only screen and (min-device-width: 1000px) and (max-device-width: 1600px) {
+  @media only screen and (min-device-width: 1279px) and (max-device-width: 1440px) {
   
     .footer_wrapper {
         margin-left: 0;
@@ -144,4 +144,16 @@
         justify-content: flex-start;
     }
 
+    .message{
+        font-size: 130px;
+    }
+
+}
+
+  /*responsive*/
+  @media only screen and (min-device-width: 1002px) and (max-device-width: 1278px) {
+  
+    .message {
+        font-size: 150px;
+    }
 }
