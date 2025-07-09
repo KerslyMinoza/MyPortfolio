@@ -127,13 +127,13 @@
 @media only screen and (min-device-width: 901px) and (max-device-width: 1600px) {
 
     .section_wrapper {
-        border: solid blue;
         width: 100%;
     }
 
 
     .about_me {
         width: 100%;
+        
     }
 
     .photo_holder {
@@ -149,10 +149,15 @@
     }
 
     .txt_aboutme {
-        width: 40%;
+        width: 50%;
        font-size: 14px;
-       border: solid blue;
     }
+
+    .txt_aboutme p {
+        font-size: 20px;
+    }
+
+   
 
 }
 
