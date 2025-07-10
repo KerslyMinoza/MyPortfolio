@@ -14,7 +14,6 @@
 .hero_container {
     margin-top: 20px;
     width: 100%;
-    background-color: gray;
     height: 300px;
     border-radius: 16px;
 
@@ -33,7 +32,7 @@
     margin-top: 30px;
     font-size: 80px;
     font-weight: 500;
-    color: #313131;
+    color: var(--basic6);
     display: flex;
     justify-content: center;
 
@@ -41,7 +40,7 @@
 
 .project .section_title {
     margin-top: 50px;
-    border-bottom: 0.4px solid #DFDFDF;
+    border-bottom: 0.4px solid var(--basic2);
     font-size: 32px;
     font-weight: 400;
     color: #313131;
@@ -54,7 +53,7 @@
 
 .project .section_feature{
     margin-top: 50px;
-    border-bottom: 0.4px solid #DFDFDF;
+    border-bottom: 0.4px solid var(--basic2);
     font-size: 24px;
     font-weight: 300;
     color: #313131;
@@ -66,7 +65,7 @@
 .project_content {
     padding-top: 20px;
     font-size: 16px;
-    color: #656565;
+    color: var(--basic5);
     font-weight: 300;
     letter-spacing: -1%;
     line-height: 24px;
@@ -75,12 +74,6 @@
     animation-duration: 500ms;
 }
 
-
-/* #orcaa {
-    background-color: #F1FAFD;
-    border: solid #CAE0E8;
-    border-width: 0.5px;
-}*/
 
 .less_padding {
     padding-left: 14px;

@@ -33,7 +33,7 @@
     width: 100%;
     margin-top: 50px;
     display: flex;
-    border-top: 2px solid #fdf752;
+    border-top: 2px solid var(--basic5);; 
     padding-top: 20px;
 
 }
@@ -43,9 +43,9 @@
     font-family: "Instrument Serif", serif;
     font-size: 28px;
     font-style: italic;
-    color: #313131;
+    color: var(--basic-color2); 
     border-style: solid;
-    border-color: #313131;
+    border-color: var(--basic5); 
     border-width: 1px;
     padding: 4px 20px 4px 20px;
     border-radius: 40px;
@@ -55,18 +55,13 @@
 
 
 .nextButton a:hover  {
-    background-color: #fdf752;
+    background-color: var(--primary1); 
 
 }
 
 .nextButton a:active  {
-    background-color: #EAE439;
+    background-color: var(--primary2); 
 }
-
-.nextButton a:visited {
-    color: #313131;
-}
-
 
 
 .invisiblePlaceholder {
@@ -89,6 +84,6 @@
       display: none;
     }
   
-  
+
   }
 

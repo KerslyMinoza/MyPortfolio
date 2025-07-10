@@ -7,7 +7,7 @@
 
 
   button {
-    background-color: white;
+    background-color: var(--basic1);
     border-radius: 8%;
     padding: 6px;
   }
@@ -29,7 +29,7 @@
   .nav_desktop a {
     font-size: 20px;
     font-weight: 300;
-    color: #656565;
+    color: var(--basic4);
     text-decoration: none;
     border-radius: 8px;
 
@@ -39,7 +39,7 @@
     color: black;
     text-decoration: italic;
     font-weight: 300;
-    background-color: #fdf752;
+    background-color: var(--primary1);
   }
 
   .nav_desktop a:active {
@@ -56,12 +56,12 @@
 
   .nav_mobile  a:active{
     font-style: italic;
-    background-color: #fdf752;
+    background-color: var(--primary1);
   }
 
   .activenav {
-    background-color: #fdf752;
     color: black  !important;
+    font-weight: 400;
   }
 
 
@@ -95,7 +95,7 @@
   }
 
   .hamburger button:active {
-    background-color: #fdf752;
+    background-color: var(--primary1);
   }
 
   .hamburger img {
@@ -112,7 +112,7 @@
   }
 
   .close button:active {
-    background-color: #fdf752;
+    background-color: var(--primary1);
   }
 
   .close img {
@@ -130,7 +130,7 @@
   .close a{
     text-align: center;
     font-size: 32px;
-    color: #313131;
+    color: var(--basic6);
   }
 
 

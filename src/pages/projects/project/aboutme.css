@@ -73,7 +73,7 @@
     font-size: 32px;
     margin-bottom: 8px;
     letter-spacing: -1px;
-    color: #313131;
+    color: var(--basic6);
     font-weight: 400;
     padding: 0;
 
@@ -85,7 +85,7 @@
     padding: 0px;
     font-size: 16px;
     font-weight: 300;
-    color: #656565;
+    color: var(--basic4);
     padding-left: 0;
     padding-bottom: 6px;
 
@@ -102,14 +102,14 @@
     font-size: 60px;
     text-align: left;
     text-decoration: italic;
-    border-bottom: 8px solid yellow;
+    border-bottom: 8px solid var(--primary1)
 }
 
 .intro {
     width: 100%;
     font-size: 24px;
     font-weight: 300;
-    color: #313131;
+    color: var(--basic5);
     line-height: 140%;
 }
 
@@ -130,7 +130,6 @@
         width: 100%;
     }
 
-
     .about_me {
         width: 100%;
         
@@ -144,8 +143,7 @@
         width: 90%;
         height: 100%;
         object-fit: cover;
-        margin-left: 0;
-        
+        margin-left: 0;   
     }
 
     .txt_aboutme {
@@ -156,9 +154,6 @@
     .txt_aboutme p {
         font-size: 20px;
     }
-
-   
-
 }
 
 
@@ -224,7 +219,7 @@
         font-size: 40px;
         text-align: left;
         margin-bottom: 30px;
-        color: #313131;
+        color: var(--basic6)
     }
 
     .service_wrapper {

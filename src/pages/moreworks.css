@@ -20,14 +20,14 @@
 
 .image_title {
     font-size: 16px;
-    font-weight: 500;
-    color: #353535;    
+    font-weight: 450;
+    color: var(--basic5); 
 }
 
 .image_type {
     font-size: 14px;
     font-weight: 300;
-    color: #616161;
+    color: var(--basic4);
 }
 
 @media only screen and (max-device-width: 1001px)  {

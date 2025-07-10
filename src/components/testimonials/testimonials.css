@@ -4,7 +4,7 @@
     height: auto;
     padding: 40px;
     border-radius: 30px;
-    background-color: #F7F7F7;
+    background-color: var(--basic2);
     margin-bottom: 2rem;
     break-inside: avoid;
 }
@@ -28,7 +28,7 @@
     margin-top: 10px;
     font-size: 20px;
     font-weight: 400;
-    color: #313131;
+    color: var(--basic6);
 }
 
 .client_comment {
@@ -37,13 +37,13 @@
     font-weight: 200;
     line-height: 150%;
    
-    color: #656565;
+    color: var(--basic5);
     letter-spacing: -0.3px;
 }
 
 .client_company {
     font-size: 14px;
-    color: #787878;
+    color: var(--basic4);
 }
 
 @media only screen and (max-device-width: 1001px)  {

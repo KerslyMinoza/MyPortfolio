@@ -7,6 +7,18 @@ body,
     padding: 0;
     /* Prevents overflow on the x-axis */
     overflow-x: hidden;
+    --primary1: #FAFF00;
+    --primary2: #EAE439;
+    --basic1: white;
+    --basic2: #FAFAFA;
+    --basic3: #F7F7F7;
+    --basic4: #787878;  
+    --basic5: #353535; 
+    --basic6: #222222; 
+    --basic10: #060606;
+
+
+    --button-radius: 0.5rem;
 }
 
 a {
