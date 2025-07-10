@@ -14,7 +14,7 @@
 
 .footer_wrapper a{
     
-    color: var(--basic6);
+    color: #313131;
 }
 
 .message {
@@ -63,15 +63,55 @@
     border-radius: 50px;
 }
 
-.button_holder:hover {
+/*.button_holder:hover {
     background-color: var(--primary1);
     color:  var(--basic10); 
 }
 
 .button_holder:active {
     background-color: var(--primary2);
+}*/
+.button_holder {
+  position: relative;       /* So the fill stays inside */
+  overflow: hidden;         /* Clip to border-radius */
+  margin-top: 30px;
+  width: 150px;
+  text-align: center;
+  font-size: 20px;
+  border: solid var(--basic6);
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border-radius: 50px;
+  cursor: pointer;
 }
 
+.button-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;                /* Start empty */
+  background-color: var(--primary1); /* Fill color */       /* Match button shape */
+  z-index: 0;
+  transition: width 0.4s ease-in-out;
+}
+
+.button-text {
+  position: relative;
+  z-index: 1;                /* Keep text above fill */
+  color: var(--basic6);
+}
+
+.button_holder:hover .button-fill{
+    width: 100%;
+    border-radius: 50px;
+    color:  var(--basic10);
+    transition: width 0.3s ease-in-out;
+}
+
+.button_holder:active .button-fill{
+    background-color: var(--primary2);
+}
 
   /* for mobile */
 

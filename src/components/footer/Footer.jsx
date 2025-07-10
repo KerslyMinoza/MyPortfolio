@@ -37,7 +37,10 @@ function Footer(){
                         <a
                          href="mailto:kerslyminoza@gmail.com">
 
-                            <div className="button_holder">Email Me</div>
+                            <div className="button_holder">
+                                <span className="button-fill"></span>
+                                <span className="button-text">Email Me</span>
+                            </div>
 
                         </a>
                     </div>
@@ -53,7 +56,10 @@ function Footer(){
                             target="_blank" 
                             rel="noopener noreferrer">
                             
-                            <div className="button_holder">Connect</div>
+                            <div className="button_holder">
+                                <span className="button-fill"></span>
+                                <span className="button-text">Connect</span>
+                            </div>
 
                         </a>
                     </div>

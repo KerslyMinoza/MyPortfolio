@@ -6,7 +6,7 @@
     margin: 10px;
     width: 50px;
     height: 50px;
-    background-color: #FAFAFA;;
+    background-color: var(--basic1);
     display: flex;
     justify-content: center; /* horizontal */
     align-items: center;
@@ -14,11 +14,13 @@
 }
 
 .backbutton:hover {
-    background-color: #fdf752;
+    background-color: var(--primary1);
+    border: solid var(--basic1);
 }
 
 .backbutton:active {
-    background-color: #EAE439;
+    background-color: var(--primary2);
+
 }
 
 
@@ -49,7 +51,6 @@
     border-width: 1px;
     padding: 4px 20px 4px 20px;
     border-radius: 40px;
-
 }
 
 
