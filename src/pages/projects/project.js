@@ -17,7 +17,8 @@ export const PROJECT = [
     title: 'ORCAA',
     image: orcaa_preview,
     description: 'A streamlined app for personalized care management, fostering community engagement and tailored support.',
-    path: '/orcaa'
+    path: '/orcaa',
+    type: ['Mobile App Design','Branding']
    
   },
   {
@@ -26,7 +27,8 @@ export const PROJECT = [
     image: ironwit_preview,
     description:
       'Strength-focused fitness app for advanced gym users, combining workout and diet tracking to deliver more accurate, personalized results.',
-    path: '/ironwit'
+    path: '/ironwit',
+    type: ['Mobile App Design','Branding']
   },
   {
     id: 2,
@@ -34,7 +36,8 @@ export const PROJECT = [
     image: waggle_preview,
     description:
       'All-in-one pet care app that lets you track vaccinations, locate your pet, discover nearby clinics and grooming services, and connect with fellow pet owners.',
-    path: '/waggle'
+    path: '/waggle',
+    type: ['Mobile App Design', 'Branding']
   },
 
   {
@@ -43,7 +46,8 @@ export const PROJECT = [
     image: mednotes_preview,
     description:
       'AI transcription app for doctors that records consultations and instantly generates patient notes or letters.',
-    path: '/mednotes'
+    path: '/mednotes',
+    type: ['Web App Design']
   },
   {
     id: 4,
@@ -51,7 +55,8 @@ export const PROJECT = [
     image: valhalla_preview,
     description:
       'Landing page design for a company connecting with top software engineers and IT professionals, featuring a clean, simple, branded look.',
-    path: '/valhalla'
+    path: '/valhalla',
+    type: ['Landing Page Design']
   },
 
   {
@@ -60,7 +65,8 @@ export const PROJECT = [
     image: trux_preview,
     description:
       'A trading and logistics company specializing in container delivery seeks an in-house system for real-time truck tracking and easy access to transportation history.',
-    path: '/trux'
+    path: '/trux',
+    type: ['Web App Design']
   },
 
 
@@ -70,7 +76,8 @@ export const PROJECT = [
     image: poktfundwallet_preview,
     description:
       'A community-driven mobile wallet for seamless, user-friendly access to your POKT and on-chain data—POKT in your pocket, anytime.',
-    path: '/poktfund'
+    path: '/poktfund',
+    type: ['Mobile App Design']
   },
 
   {
@@ -79,7 +86,8 @@ export const PROJECT = [
     image: avatar_preview,
     description:
       'A randomly generated NFT avatar for the POKT wallet.',
-    path: '/avatar'
+    path: '/avatar',
+    type: ['Illustration']
   },
 
   {
@@ -88,7 +96,8 @@ export const PROJECT = [
     image: hippomathics_preview,
     description:
       'A fun Unity 3D project I created for kids, featuring simple and customizable math operations.',
-    path: '/hippomathics'
+    path: '/hippomathics',
+    type: ['Mobile App Development']
   },
 
   {
@@ -97,7 +106,8 @@ export const PROJECT = [
     image: nodies_preview,
     description:
       'A platform for building Web3 apps with fast APIs, real-time tracking, and powerful analytics. Designed to simplify and accelerate blockchain development.',
-    path: '/nodies'
+    path: '/nodies',
+    type: ['Web App Design','Branding']
   },
 
   {
@@ -106,7 +116,8 @@ export const PROJECT = [
     image: zipcode_preview,
     description:
       'Illustration project for a hover effect on the team section of Zipcode Creative Website.',
-    path: '/zipcode'
+    path: '/zipcode',
+    type: ['Illustration']
   },
 
   {
@@ -115,7 +126,8 @@ export const PROJECT = [
     image: axis_preview,
     description:
       'Illustration project for a hover effect on the team section of Zipcode Creative Website.',
-    path: '/axis'
+    path: '/axis',
+    type: ['Web App Design']
   },
 ]
 

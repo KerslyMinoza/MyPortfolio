@@ -25,6 +25,11 @@ function Thumbnail(project){
 
             <div className = "title">{proj.title}</div>
             <div className = "description">{proj.description}</div>
+            <div className="type-wrapper">
+                {proj.type?.map((t, i) => (
+                    <span className="type" key={i}>{t}</span>
+                ))}
+            </div>
             
         </Link>
     );

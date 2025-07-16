@@ -47,6 +47,21 @@
     color: #B6B6B6;
 }
 
+.thumbnail .type {
+    display: inline-block; 
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 300;
+    color: #656565;
+    background-color: #f5f5f5;
+     padding: 4px 8px;         /* 🟡 Add this for spacing inside */
+    border-radius: 6px; 
+    width: auto!important;
+    max-width: fit-content;
+    margin-right: 4px;
+   
+}
+
 @media only screen and (max-device-width: 1001px)  {
     
     .thumbnail {

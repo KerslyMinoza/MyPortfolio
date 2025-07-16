@@ -69,6 +69,56 @@
     visibility:hidden;
 }
 
+.filter-container {
+  display: flex;
+  justify-content: center;   /* ✅ centers items horizontally */
+  align-items: center;       /* ✅ optional: centers vertically if container has height */
+  flex-wrap: wrap;           /* ✅ optional: allows multiple filters to wrap */
+  gap: 6px;                  /* ✅ spacing between filters */
+  padding: 10px;  
+}
+.filter {
+
+    display: inline-block; 
+    margin-top: 10px;
+    font-size: 16px;
+    letter-spacing: -1%;
+    font-weight: 300;
+    color: var(--basic4);
+     padding: 4px 10px;         /* 🟡 Add this for spacing inside */
+    border-radius: 6px; 
+    border: solid 1px var(--basic1);
+    width: auto!important;
+    max-width: fit-content;
+    margin-right: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.3s ease; /* ✨ smooth in & out */
+}
+
+.filter-active {
+    background-color: #FFFFEE;
+    display: inline-block; 
+    margin-top: 10px;
+    font-size: 16px;
+    letter-spacing: -1%;
+    font-weight: 300;
+    color: #979303;
+    padding: 4px 10px; 
+    border: solid 1px #E0DB3A;        /* 🟡 Add this for spacing inside */
+    border-radius: 6px; 
+    width: auto!important;
+    max-width: fit-content;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+
+.filter:hover {
+        background-color: var(--basic3); 
+        color: var(--basic4);
+        border: solid 1px #d4d4d4;  
+}
+
 
   /* for mobile */
 
