@@ -12,15 +12,18 @@ import zipcode_preview from "../../assets/images/zipcode_thumbnail.png";
 import axis_preview from "../../assets/images/axis_thumbnail.png";
 
 export const PROJECT = [
+
   {
-    id: 0,
-    title: 'ORCAA',
-    image: orcaa_preview,
-    description: 'A streamlined app for personalized care management, fostering community engagement and tailored support.',
-    path: '/orcaa',
-    type: ['Mobile App Design','Branding']
-   
+    id: 9,
+    title: 'Nodies',
+    image: nodies_preview,
+    description:
+      'A platform for building Web3 apps with fast APIs, real-time tracking, and powerful analytics. Designed to simplify and accelerate blockchain development.',
+    path: '/nodies',
+    type: ['Web App Design','Branding']
   },
+
+
   {
     id: 1,
     title: 'Ironwit',
@@ -38,6 +41,16 @@ export const PROJECT = [
       'All-in-one pet care app that lets you track vaccinations, locate your pet, discover nearby clinics and grooming services, and connect with fellow pet owners.',
     path: '/waggle',
     type: ['Mobile App Design', 'Branding']
+  },
+
+    {
+    id: 0,
+    title: 'ORCAA',
+    image: orcaa_preview,
+    description: 'A streamlined app for personalized care management, fostering community engagement and tailored support.',
+    path: '/orcaa',
+    type: ['Mobile App Design','Branding']
+   
   },
 
   {
@@ -100,15 +113,7 @@ export const PROJECT = [
     type: ['Mobile App Development']
   },
 
-  {
-    id: 9,
-    title: 'Nodies',
-    image: nodies_preview,
-    description:
-      'A platform for building Web3 apps with fast APIs, real-time tracking, and powerful analytics. Designed to simplify and accelerate blockchain development.',
-    path: '/nodies',
-    type: ['Web App Design','Branding']
-  },
+
 
   {
     id: 10,
