@@ -1,6 +1,5 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion'
 import Home from './pages/Home.jsx';
 import Blog from './pages/Blogs/Blogs.jsx';
