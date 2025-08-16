@@ -52,7 +52,7 @@
     color: var(--basic6);
     display: flex;
     justify-content: center;
-        line-height:60px;
+    line-height:80px;
 
 
 }
@@ -264,6 +264,7 @@ li {
         margin-top: 35px;
         margin-bottom: -30px !important;
         font-size: 60px;
+        line-height: 60px;
     }
 
     .margin-s {
