@@ -40,7 +40,7 @@
 }
 
 .blog .section_title {
-    margin-top: 70px;
+    margin-top: 50px;
     border-bottom: 0.4px solid var(--basic2);
     font-size: 32px;
     font-weight: 500;
@@ -151,6 +151,10 @@ li {
         padding: 20px;
     }
 
+    .blog .section_feature{
+        margin-top: 30px;
+        font-size:10px;
+    }
     .masonry_images {
         column-count: 2;
     }
