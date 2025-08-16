@@ -14,14 +14,14 @@ function Blogs(){
             <div className="blog_wrapper margin-s">
             
                 <div className="blog_title"> Something Worth Sharing</div>
-                    <div className="blog_works">
+
                         <div
-                            className="featured_works">
+                            className="blog_works">
                             {BLOG.map((blog) => (
                             <ThumbnailBlog blog={blog}/>      
                             ))}
                         </div>
-                    </div>
+
             </div>
         </div>
     );

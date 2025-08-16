@@ -11,6 +11,8 @@
     
 }
 
+
+
 .blog_works {
     display: flex;
     flex-wrap: wrap;
@@ -131,6 +133,78 @@ li {
 
 
 
+.thumbnailblog{
+ 
+    margin-top: 30px;
+    width: 578px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-duration: 300ms;
+}
+
+
+.thumbnailblog img{
+    border: none;
+    width: 100%;
+    height: auto;
+    background-color: #F3F3F3;
+    border-radius: 18px;
+}
+
+.thumbnailblog img:hover {
+    animation: scaleup;
+    animation-duration: 500ms;
+}
+
+.thumbnailblog .title {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #313131;
+    line-height: 24px;
+}
+
+.thumbnailblog .description {
+    width: auto;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 250;
+    color: #656565;
+}
+
+.thumbnailblog .category {
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #B6B6B6;
+}
+
+.thumbnailblog .type {
+    display: inline-block; 
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 300;
+    color: #656565;
+    background-color: #f5f5f5;
+     padding: 4px 8px;         /* 🟡 Add this for spacing inside */
+    border-radius: 6px; 
+    width: auto!important;
+    max-width: fit-content;
+    margin-right: 4px;
+   
+}
+
+@media only screen and (max-device-width: 1001px)  {
+    
+    .thumbnailblog {
+        width: 90%;
+    }
+  }
+  
+
 
 #hippomathics img {
     margin-right: 10px;
@@ -164,7 +238,6 @@ li {
     
     .blog {
         width: 90%;
-        padding: 20px;
     }
 
     .blog_title {
@@ -194,7 +267,7 @@ li {
     }
 
     .margin-s {
-        margin: 20px;
+        margin-top: 20px;
     }
 }
   

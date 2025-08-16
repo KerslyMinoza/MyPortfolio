@@ -1,4 +1,4 @@
-
+import './blogs.css';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -13,7 +13,7 @@ function ThumbnailBlog(blog){
         <Link 
         to={my_blog.path} 
         state={{ blogId: blog.id }}
-        className="thumbnail">
+        className="thumbnailblog">
             <motion.img 
             src={my_blog.image} 
             alt="Tilted Image"
