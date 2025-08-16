@@ -11,10 +11,10 @@ function Blogs(){
     return (
         <div>
             <Nav/>
-            <div className="featured_wrapper margin-m">
+            <div className="blog_wrapper margin-s">
             
-                <div className="featured_title"> Something Worth Sharing</div>
-                    <div className="featured_works">
+                <div className="blog_title"> Something Worth Sharing</div>
+                    <div className="blog_works">
                         <div
                             className="featured_works">
                             {BLOG.map((blog) => (

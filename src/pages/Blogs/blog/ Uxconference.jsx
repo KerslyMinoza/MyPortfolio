@@ -30,11 +30,11 @@ function Uxconference(){
 
     return (
         <>
-            <Backbutton page ="home"/>
+            <Backbutton page ="blog"/>
             <div className="blog" id="pokfund">
                 <div className="blog_name"> UX+ Conference 2024 Manila </div>
                 
-
+                 <div className="margin-s"></div>
                 <div className="content">
                     <div className="section_title">From Cebu to Manila! ✈️</div>
 

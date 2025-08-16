@@ -61,8 +61,9 @@ function MalaysiaNodies(){
         <>
             <Backbutton page="blog"/>
             <div className="blog" id="pokfund">
-                <div className="blog_name"> Exploring Malaysia with Nodies Team 2025! </div>
                 
+                <div className="blog_name"> Exploring Malaysia with Nodies Team 2025! </div>
+                <div className="margin-s"></div>
 
                 <div className="content">
                     <div className="section_title">Team Gathering in Malaysia ✈️</div>

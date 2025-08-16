@@ -54,7 +54,7 @@ function DevconBangkok(){
             <div className="blog" id="pokfund">
                 <div className="blog_name"> Devcon + Team Building in Bangkok </div>
                 
-
+                 <div className="margin-s"></div>
                 <div className="content">
                     <div className="section_title">A Week to Remember. Sawadeeka! ✈️</div>
 
