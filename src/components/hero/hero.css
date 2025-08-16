@@ -1,21 +1,16 @@
-.container {
-
+.hero-container {
   margin-top: 100px;
-   display: flex;
+  display: flex;
   justify-content: center;
-   height: auto;
-   padding-left: 10px;
-
-   
+  height: auto;
+  padding-left: 10px;
 }
 
 .hero {
-
     display: flex;
     width: auto;
     justify-content: center;
     align-items: center ;
-    /*animation: fadein-from-right 2300ms ease 400ms;*/
 }
 
 .img-gif {
@@ -27,7 +22,6 @@
 }
 
 .hero-text {
-
     height: auto;
     width: 60%;
     padding: 0;
@@ -37,17 +31,10 @@
 }
 
 
-.myname {
-  font-family: "Instrument Serif", serif;
+.my_name {
   margin-left: 20px;
-  font-style: italic;
-  font-size: 40px;
-  font-weight: 200;
-  color: var(--basic6);
   margin-bottom: 20px;
-  /*animation: fadein-from-top 500ms ease 400ms;*/
 }
-
 
 .myexperience span {
   display: inline-block;
@@ -96,118 +83,106 @@
 
 h1 {
 
-    font-family: "DM Sans", sans-serif;
-    font-size: 150px;
-    font-weight: 300;
-    color:  var(--basic6);
-    text-decoration: none;
-    letter-spacing:-5px;
-    line-height: 80%;
-    margin-top: 0;
+  font-family: var(--font-primary);
+  font-size: 150px;
+  font-weight: var(--weight-light);
+  color:  var(--basic6);
+  text-decoration: none;
+  letter-spacing:-5px;
+  line-height: 80%;
+  margin-top: 0;
+}
+
+@keyframes wave {
+  0% {
+      opacity: 0;
+      color: var(--primary1);
+      transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    color: black;
+    transform: translateX(0px);
+    }
+}
+
+@keyframes wave-no-fade {
+  0% {
+      color: var(--primary1);
+      transform: translateX(-3px);
+  }
+  100% {
+    color: black;
+    transform: translateX(0px);
+    }
+}
+
+
+/* Macbooks */
+
+@media only screen and (min-device-width: 1000px) and (max-device-width: 1600px) {
+
+  .hero-container  {
+    margin-top: 10%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
   }
 
-
-  @keyframes wave {
-    0% {
-        opacity: 0;
-        color: var(--primary1);
-        transform: translateX(-30px);
-    }
-    100% {
-      opacity: 1;
-      color: black;
-      transform: translateX(0px);
-     }
+  .hero-text {
+    width: 65%;
   }
 
-
-  @keyframes wave-no-fade {
-    0% {
-        color: var(--primary1);
-        transform: translateX(-3px);
-    }
-    100% {
-      color: black;
-      transform: translateX(0px);
-     }
+  .myexperience h1 {
+    font-size: 110px;
+    letter-spacing: -3px;
   }
 
-/*macbooks*/
-  @media only screen and (min-device-width: 1000px) and (max-device-width: 1600px) {
-
-    .container {
-      margin-top: 10%;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-text {
-      width: 65%;
-    }
-  
-    .myexperience h1 {
-      font-size: 110px;
-      letter-spacing: -3px;
-
-    }
-
-    .hero {
-      width: 30%;
-    }
-  
+  .hero {
+    width: 30%;
   }
 
-  /* for mobile */
+}
 
-  @media only screen and (max-device-width: 1001px)  {
+/* Mobile */
 
-    .container {
-      width: 100%;
-      padding: 10px;
+@media only screen and (max-device-width: 1001px)  {
 
-      margin: auto;
-      margin-top: 5%;
-
-      display: flex;
-      flex-direction: column-reverse;
-      justify-content: center;
-      gap: 30px
-    }
-
-    .myname {
-      margin-left: 0;
-    }
-
-    .myexperience h1 {
-
-      font-weight: 400;
-      letter-spacing: -2px !important;
-
-    }
-
-    .hero {
-      width: 50%;
-      margin-left: auto;
-      margin-right: 20px;
-    }
-
-    .hero-text {
-      width: 90%;
-
-    }
-    .myexperience h1 {
-
-      font-size: 69px;
-      letter-spacing: 0;
-
-    }
-
-    .img-gif {
-      margin-right: 0px;
-      width: 150px;
-      height: 150px;;
-      border-radius: 10%;
-    }
+  .hero-container  {
+    width: 100%;
+    padding: 10px;
+    margin: auto;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 30px
   }
+
+  .my_name {
+    margin-left: 0;
+  }
+
+  .hero {
+    width: 50%;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  .hero-text {
+    width: 90%;
+  }
+
+  .myexperience h1 {
+    font-size: 69px;
+    letter-spacing: 0;
+  }
+
+  .img-gif {
+    margin-right: 0px;
+    width: 150px;
+    height: 150px;;
+    border-radius: 10%;
+  }
+}
   

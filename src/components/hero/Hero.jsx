@@ -14,9 +14,9 @@ function Hero(){
         animate="visible"
         transition={transition}
         viewport={{ once: true, amount: 0.2 }}
-        className="container">
+        className="hero-container">
             <div className="hero-text">
-                <div className="myname">Kersly Miñoza</div>
+                <div className="section_title my_name">Kersly Miñoza</div>
                 <div
 
                 className="myexperience">

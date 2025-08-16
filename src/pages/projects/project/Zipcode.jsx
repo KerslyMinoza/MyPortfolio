@@ -26,7 +26,7 @@ function Zipcode(){
 
     return (
         <>
-            <Backbutton/>
+            <Backbutton page="home"/>
             <div className="project" id="pokfund">
                 <div className="project_name"> Zipcode Team </div>
                 

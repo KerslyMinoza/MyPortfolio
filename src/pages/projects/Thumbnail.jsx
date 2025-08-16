@@ -1,6 +1,4 @@
 import './thumbnail.css';
-import { PROJECT } from './project.js';
-import Orcaa from "../../assets/images/orcaa_thumbnail.png";
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 

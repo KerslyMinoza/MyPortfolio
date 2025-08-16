@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion'
 import Home from './pages/Home.jsx';
+import Blog from './pages/Blogs/Blogs.jsx';
 import Orcaa from './pages/projects/project/Orcaa.jsx';
 import Ironwit from './pages/projects/project/Ironwit.jsx';
 import Waggle from './pages/projects/project/Waggle.jsx';
@@ -19,6 +20,11 @@ import Contact from "./pages/Contact.jsx";
 import Moreworks from "./pages/Moreworks.jsx";
 import Hippomathics from "./pages/projects/project/Hippomathics.jsx";
 import Axis from "./pages/projects/project/Axis.jsx";
+import Uxconference from "./pages/Blogs/blog/ Uxconference.jsx";
+import DevconBangkok from "./pages/Blogs/blog/DevconBangkok.jsx";
+import MalaysiaNodies from "./pages/Blogs/blog/MalaysiaNodies.jsx";
+
+
 
 
 
@@ -30,6 +36,9 @@ function App() {
     <ScrollToTop />
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="uxplusconference" element={<Uxconference />} />
+      <Route path="devcon_bangkok" element={<DevconBangkok />} />
+      <Route path="malaysia_nodies" element={<MalaysiaNodies />} />
       <Route path="orcaa" element={<Orcaa />} />
       <Route path="ironwit" element={<Ironwit />} />
       <Route path="waggle" element={<Waggle />} />
@@ -45,10 +54,13 @@ function App() {
       <Route path="aboutme" element={<Aboutme />} />
       <Route path="contact" element={<Contact />} />
       <Route path="moreworks" element={<Moreworks />} />
+      <Route path="blog" element={<Blog />} />
     </Routes>
   </BrowserRouter>
   )
 
 }
+
+
 
 export default App

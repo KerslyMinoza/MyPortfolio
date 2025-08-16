@@ -1,6 +1,6 @@
 
 
-.featuredworks {
+.featured_works {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -8,15 +8,15 @@
 }
 
 .featured_title {
-    font-family: "Instrument Serif", serif;
+    font-family: var(--font-secondary);
     text-align: center;
     font-style: italic;
     font-size: 60px;
     font-weight: 200;
-    color: #313131;
+    color:  var(--basic5);
 }
 
-/*macbooks*/
+/* Macbooks */
 @media only screen and (min-device-width: 1000px) and (max-device-width: 1600px) {
 
     .featured_title {
@@ -25,10 +25,10 @@
 }
 
 
-  /* for mobile */
+/* For mobile */
 
-  @media only screen and (max-device-width: 1001px)  { 
-  
+@media only screen and (max-device-width: 1001px)  { 
+
     .featured_title {
         font-size: 30px;
     }

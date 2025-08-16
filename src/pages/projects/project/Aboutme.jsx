@@ -1,8 +1,8 @@
 import './aboutme.css';
-import Nav from '../../../components/nav/Nav';
+import Nav from '../../../components/nav/Nav.jsx';
 import { motion } from 'framer-motion';
 import AboutmeGif from "../../../assets/images/aboutme/aboutme.gif";
-import Testimonials from '../../../components/testimonials/Testimonials';
+import Testimonials from '../../../components/testimonials/Testimonials.jsx';
 import { CLIENTS } from '../../../components/testimonials/clients.js';
 import { bounceUp } from "../../../components/animation.js";
 import Footer from '../../../components/footer/Footer.jsx';

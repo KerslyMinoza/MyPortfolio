@@ -1,164 +1,151 @@
 
-
-
 .nav_desktop {
+    animation: fadein-from-top 1000ms;
+}
+
+.nav_desktop ul {
+  justify-content: center;
+  display:flex;
+}
+
+.nav_desktop li {
+  display: inline;
+  padding: 20px;
+}
+
+.nav_desktop a {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-light);
+  color: var(--basic4);
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.nav_desktop a:hover {
+  color: var(--basic10);
+  text-decoration: italic;
+  font-weight: var(--weight-light);
+  background-color: var(--primary1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.nav_desktop a:active {
+  font-style: italic;
+}
+
+/* --------- Nav Mobile  --------- */
+
+button {
+  background-color: var(--basic1);
+  border-radius: 8%;
+  padding: 6px;
+}
+
+.nav_mobile {
+  display:none;
+}
+
+.nav_mobile a {
+  letter-spacing: -1px;
+}
+
+.nav_mobile  a:active{
+  font-style: italic;
+  background-color: var(--primary1);
+}
+
+.activenav {
+  color: var(--basic110)  !important;
+  font-weight: var(--weight-regulars);
+}
+
+.close button {
+  border: none;
+  width: 50px;
+  height: 50px;
+}
+
+.close {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.hambuger {
+  display: hidden;
+}
+
+.hamburger button {
+  border: none;
+  width: 50px;
+  height: 50px;
+  left: 4px;
+  top: 4px;
+  border-radius: 32px;
+}
+
+.hamburger button:active {
+  background-color: var(--primary1);
+}
+
+.hamburger img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.close button {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  border-radius: 32px;
+}
+
+.close button:active {
+  background-color: var(--primary1);
+}
+
+.close img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.close ul {
+  width: 100%;
+  padding: 0;
+  margin-top: 50px;
+}
+
+.close a{
+  text-align: center;
+  font-size: 32px;
+  color: var(--basic6);
+}
+
+.close li {
+  width: 100%;
+  text-align: center;
+  list-style-type: none;
+  padding-left: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+/* for mobile */
+
+@media only screen and (max-device-width: 1001px)  { 
+
+  .nav_mobile{
+    display: flex;
     animation: fadein-from-top 1000ms;
   }
 
-
-  button {
-    background-color: var(--basic1);
-    border-radius: 8%;
-    padding: 6px;
-  }
-  .icon-menu {
-    width: 40px;
-    height: auto;
+  .nav_desktop {
+    display: none;
   }
 
-  .nav_desktop ul {
-    justify-content: center;
-    display:flex;
-  }
-  
-  .nav_desktop li {
-    display: inline;
-    padding: 20px;
-  }
-  
-  .nav_desktop a {
-    font-size: 20px;
-    font-weight: 300;
-    color: var(--basic4);
-    text-decoration: none;
-    border-radius: 8px;
-
-  }
-  
-  .nav_desktop a:hover {
-    color: black;
-    text-decoration: italic;
-    font-weight: 300;
-    background-color: var(--primary1);
-    transition: background-color 0.3s ease-in-out;
-  }
-
-  .nav_desktop a:active {
-    font-style: italic;
-  }
-
-  .nav_mobile {
-    display:none;
-  }
-
-  .nav_mobile a {
-    letter-spacing: -1px;
-  }
-
-  .nav_mobile  a:active{
-    font-style: italic;
-    background-color: var(--primary1);
-  }
-
-  .activenav {
-    color: black  !important;
-    font-weight: 400;
-  }
-
-
-  .close button {
-    border: none;
-    width: 50px;
-    height: 50px;
-  }
-
-  .close {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-   
-  }
-
-  .hambuger {
-    display: hidden;
-    
-  }
-
-  .hamburger button {
-    border: none;
-    width: 50px;
-    height: 50px;
-    left: 4px;
-    top: 4px;
-    border-radius: 32px;
-  }
-
-  .hamburger button:active {
-    background-color: var(--primary1);
-  }
-
-  .hamburger img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-
-  .close button {
-    position: absolute;
-    left: 4px;
-    top: 4px;
-    border-radius: 32px;
-  }
-
-  .close button:active {
-    background-color: var(--primary1);
-  }
-
-  .close img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-
-  .close ul {
-    width: 100%;
-    padding: 0;
-    margin-top: 50px;
-  }
-
-  .close a{
-    text-align: center;
-    font-size: 32px;
-    color: var(--basic6);
-  }
-
-
-  .close li {
-    width: 100%;
-    text-align: center;
-    list-style-type: none;
-    padding-left: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-
-
-  /* for mobile */
-
-  @media only screen and (max-device-width: 1001px)  { 
-  
-  
-    .nav_mobile{
-      display: flex;
-      animation: fadein-from-top 1000ms;
-
-    }
-
-    .nav_desktop {
-      display: none;
-    }
-  
-  
-  }
+}

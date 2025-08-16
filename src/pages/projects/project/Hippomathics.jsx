@@ -19,7 +19,7 @@ function Hippomathics(){
 
     return (
         <>
-            <Backbutton/>
+            <Backbutton page="home"/>
             <div className="project" id="pokfund">
                 <div className="project_name"> Hippomathics </div>
                 

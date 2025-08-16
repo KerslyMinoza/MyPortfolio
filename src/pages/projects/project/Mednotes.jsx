@@ -16,7 +16,7 @@ const projectId = location.state?.projectId;
 
     return (
         <>
-            <Backbutton/>
+           <Backbutton page="home"/>
             <div className="project" id="orcaa">
                 <div className="project_name"> Mednotes </div>
                 

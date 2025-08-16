@@ -14,7 +14,7 @@ function Valhalla(){
 
     return (
         <>
-            <Backbutton/>
+            <Backbutton page="home"/>
             <div className="project" id="orcaa">
                 <div className="project_name"> Valhalla </div>
                 
