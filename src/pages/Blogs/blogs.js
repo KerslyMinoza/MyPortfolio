@@ -31,7 +31,7 @@ export const BLOG = [
         title: 'UX+ Conference Manila Experience',
         image: ux_conference_preview,
         description:
-            'A fulfilling journey held in Manila connecting with UI/UX professionals and finding my path in design.',
+            'From Kuala Lumpur to Johor’s Network School, our Malaysia trip was unforgettable thanks to Nodies’ support.',
         path: '/uxplusconference',
     },
 
