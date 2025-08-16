@@ -9,7 +9,7 @@ export const BLOG = [
         title: 'Exploring Malaysia with Nodies Team',
         image: malaysia_thumbnail,
         description:
-            'From Kuala Lumpur’s Blockchain Week afterparty to Johor’s Network School, our Malaysia trip was unforgettable—thanks to Nodies’ support.',
+            'From Kuala Lumpur  to Johor’s Network School, our Malaysia trip was unforgettable—thanks to Nodies’ support.',
         path: '/malaysia_nodies',
     },
 
