@@ -9,7 +9,7 @@ export const BLOG = [
         title: 'Exploring Malaysia with Nodies Team',
         image: malaysia_thumbnail,
         description:
-            'A week in Bangkok filled with learning at Devcon SEA, team bonding, and unforgettable adventures with the team.',
+            'From Kuala Lumpur’s Blockchain Week afterparty to Johor’s Network School, our Malaysia trip was unforgettable—thanks to Nodies’ support.',
         path: '/malaysia_nodies',
     },
 
@@ -31,7 +31,7 @@ export const BLOG = [
         title: 'UX+ Conference Manila Experience',
         image: ux_conference_preview,
         description:
-            'From Kuala Lumpur to Johor’s Network School, our Malaysia trip was unforgettable thanks to Nodies’ support.',
+            'A fulfilling journey held in Manila connecting with UI/UX professionals and finding my path in design.',
         path: '/uxplusconference',
     },
 
