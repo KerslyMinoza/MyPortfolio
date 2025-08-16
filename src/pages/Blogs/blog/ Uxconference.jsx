@@ -100,7 +100,7 @@ function Uxconference(){
                     </div>
 
 
-                    <div className="section_title"> Leaving Inspired ❤️ </div>
+                    <div className="section_title"> Leaving Inspired ❤️❤️ </div>
                     <div className="blog_content">
                     Even though the conference wasn’t as technical as I originally expected, it sparked something in me. It reignited my passion for UX and reminded me why I chose this path. I’m leaving this experience inspired to build a stronger portfolio, one that truly reflects my journey and growth as a designer.
                     </div>
