@@ -2,7 +2,7 @@ import '../blogs.css';
 import Backbutton from '../../../components/ui_components/Backbutton';
 
 import Devcon from "../../../assets/images/blog/devcon/devcon.jpg";
-import Pic1 from "../../../assets/images/blog/devcon/Pic1.jpg";
+import Pic1 from "../../../assets/images/blog/devcon/pic1.jpg";
 import Pic2 from "../../../assets/images/blog/devcon/pic2.jpg";
 import Pic3 from "../../../assets/images/blog/devcon/pic3.jpg";
 import Pic4 from "../../../assets/images/blog/devcon/pic4.jpg";

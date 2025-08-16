@@ -2,21 +2,21 @@ import '../blogs.css';
 import Backbutton from '../../../components/ui_components/Backbutton';
 
 
-import Pic1 from "../../../assets/images/blog/ux_conference/Pic1.jpg";
-import Pic2 from "../../../assets/images/blog/ux_conference/Pic2.jpg";
-import Pic3 from "../../../assets/images/blog/ux_conference/Pic3.jpg";
-import Pic4 from "../../../assets/images/blog/ux_conference/Pic4.jpg";
-import Pic5 from "../../../assets/images/blog/ux_conference/Pic5.jpg";
-import Pic6 from "../../../assets/images/blog/ux_conference/Pic6.jpg";
-import Pic7 from "../../../assets/images/blog/ux_conference/Pic7.jpg";
-import Pic8 from "../../../assets/images/blog/ux_conference/Pic8.jpeg";
-import Pic9 from "../../../assets/images/blog/ux_conference/Pic9.jpeg";
+import Pic1 from "../../../assets/images/blog/ux_conference/pic1.jpg";
+import Pic2 from "../../../assets/images/blog/ux_conference/pic2.jpg";
+import Pic3 from "../../../assets/images/blog/ux_conference/pic3.jpg";
+import Pic4 from "../../../assets/images/blog/ux_conference/pic4.jpg";
+import Pic5 from "../../../assets/images/blog/ux_conference/pic5.jpg";
+import Pic6 from "../../../assets/images/blog/ux_conference/pic6.jpg";
+import Pic7 from "../../../assets/images/blog/ux_conference/pic7.jpg";
+import Pic8 from "../../../assets/images/blog/ux_conference/pic8.jpeg";
+import Pic9 from "../../../assets/images/blog/ux_conference/pic9.jpeg";
 import hands from "../../../assets/images/blog/ux_conference/hands.jpeg";
-import Pic10 from "../../../assets/images/blog/ux_conference/Pic10.jpeg";
-import Pic12 from "../../../assets/images/blog/ux_conference/Pic12.jpeg";
-import Pic13 from "../../../assets/images/blog/ux_conference/Pic13.jpg";
-import Pic14 from "../../../assets/images/blog/ux_conference/Pic14.jpg";
-import Pic15 from "../../../assets/images/blog/ux_conference/Pic15.jpg";
+import Pic10 from "../../../assets/images/blog/ux_conference/pic10.jpeg";
+import Pic12 from "../../../assets/images/blog/ux_conference/pic12.jpeg";
+import Pic13 from "../../../assets/images/blog/ux_conference/pic13.jpg";
+import Pic14 from "../../../assets/images/blog/ux_conference/pic14.jpg";
+import Pic15 from "../../../assets/images/blog/ux_conference/pic15.jpg";
 
 import Footer from '../../../components/footer/Footer';
 

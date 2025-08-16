@@ -2,7 +2,7 @@
 import '../blogs.css';
 import Backbutton from '../../../components/ui_components/Backbutton';
 
-import Pic1 from "../../../assets/images/blog/malaysia/Pic1.jpg";
+import Pic1 from "../../../assets/images/blog/malaysia/pic1.jpg";
 import Pic2 from "../../../assets/images/blog/malaysia/pic2.jpg";
 import Pic3 from "../../../assets/images/blog/malaysia/pic3.jpg";
 import Pic4 from "../../../assets/images/blog/malaysia/pic4.jpg";
