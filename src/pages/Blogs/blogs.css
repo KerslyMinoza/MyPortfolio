@@ -151,6 +151,10 @@ li {
         padding: 20px;
     }
 
+    .masonry_images {
+        column-count: 2;
+    }
+
     .content {
         width: 98%;
     }
