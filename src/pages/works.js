@@ -1,14 +1,12 @@
 import tiger from "../assets/images/moreworks/pinktiger.jpeg";
 import adhu from "../assets/images/moreworks/adhu.jpg";
 import RadPro from "../assets/images/moreworks/radpro.jpg";
-import Naavya from "../assets/images/moreworks/naavya.jpg";
 import WPG from "../assets/images/moreworks/wpg.png";
 import redhot from "../assets/images/moreworks/redhot.png";
 import Po from "../assets/images/moreworks/positivenest.png";
 import baagh from "../assets/images/moreworks/baagh_red.jpg";
 import palm from "../assets/images/moreworks/palm.jpg";
 import livingguild from "../assets/images/moreworks/livingguild.png";
-import danna from "../assets/images/moreworks/danna.jpg";
 import phenom from "../assets/images/moreworks/phenom.png";
 import companion from "../assets/images/moreworks/companion.png";
 import meworking from "../assets/images/moreworks/workin.webp";
@@ -22,26 +20,27 @@ import lover from "../assets/images/moreworks/lover.jpg";
 import freytech from "../assets/images/moreworks/freytech.png";
 import yanny from "../assets/images/moreworks/yanny.png";
 import anros from "../assets/images/moreworks/anros_logo.png";
-import omala from "../assets/images/moreworks/omala.jpg";
 import ohna from "../assets/images/moreworks/ohna.png";
-import mybabies from "../assets/images/moreworks/dawgs.jpg";
 import selfportrait from "../assets/images/moreworks/kersly.jpg";
 import orcaa from "../assets/images/moreworks/orcaa_logo.png";
 import badianwellness from "../assets/images/moreworks/badjian.jpg";
 import rhcpunlimited from "../assets/images/moreworks/rhcp.jpeg";
 import beagles from "../assets/images/moreworks/beagles.jpg";
 import riseabovefest from "../assets/images/moreworks/riseabove.jpg";
-import mishka from "../assets/images/moreworks/green.jpg";
 import snake from "../assets/images/moreworks/snake.png";
 import india_vector from "../assets/images/moreworks/india_vector.png";
 import creativchimp from "../assets/images/moreworks/creativchimp.png";
 import diagold from "../assets/images/moreworks/diagold.png";
 import johns from "../assets/images/moreworks/johns.png";
 import dymo from "../assets/images/moreworks/dymo.png";
-import pitchdeck from "../assets/images/moreworks/pitchdeck.png";
 import raga from "../assets/images/moreworks/raga.png";
 import starfly from "../assets/images/moreworks/starfly.png";
-import august_grind from "../assets/images/moreworks/august_grind.jpg";
+import sunset from "../assets/images/moreworks/sunset.png";
+import phobia from "../assets/images/moreworks/phobia.png";
+import notalk from "../assets/images/moreworks/no-talk.png";
+import character from "../assets/images/moreworks/character.png";
+import bestfriend from "../assets/images/moreworks/bestfriend.jpg";
+import hillarys from "../assets/images/moreworks/hillarys.png";
 
 export const WORKS = [
     {
@@ -66,12 +65,6 @@ export const WORKS = [
       image: RadPro,
     },
 
-    {
-      id: 1,
-      name: 'Naavya',
-      type: 'Acrylic Painting',
-      image: Naavya,
-    },
 
     {
       id: 1,
@@ -113,12 +106,15 @@ export const WORKS = [
       image: livingguild,
     },
 
-    {
+      {
       id: 1,
-      name: 'Danna',
-      type: 'Acrylic Painting',
-      image: danna,
+      name: 'Living Guild',
+      type: 'Best Friend',
+      image: bestfriend,
     },
+
+    
+
 
     {
       id: 1,
@@ -190,6 +186,48 @@ export const WORKS = [
     },
 
 
+       
+    {
+      id: 1,
+      name: 'Sunset',
+      type: 'Illustration',
+      image: sunset,
+    },
+
+        
+    {
+      id: 1,
+      name: 'Phobia',
+      type: 'Illustration',
+      image: phobia,
+    },
+
+            
+    {
+      id: 1,
+      name: 'Hillarys Postcard',
+      type: 'Illustration',
+      image: hillarys,
+    },
+
+
+        
+    {
+      id: 1,
+      name: 'No Talk',
+      type: 'Illustration',
+      image: notalk,
+    },
+
+      {
+      id: 1,
+      name: 'Character',
+      type: 'Illustration',
+      image: character,
+    },
+
+
+
     {
       id: 1,
       name: 'Nodies',
@@ -228,25 +266,10 @@ export const WORKS = [
 
     {
       id: 1,
-      name: 'Omala',
-      type: 'Acrylic Painting',
-      image: omala,
-    },
-
-    {
-      id: 1,
       name: 'Ohna Cakes & Bakes',
       type: 'Logo',
       image: ohna,
     },
-
-    {
-      id: 1,
-      name: 'My babies',
-      type: 'Acrylic Painting',
-      image: mybabies,
-    },
-
     {
       id: 1,
       name: 'Snake',
@@ -310,16 +333,6 @@ export const WORKS = [
       type: 'Poster',
       image: riseabovefest,
     },
-
-    {
-      id: 1,
-      name: 'Mishka',
-      type: 'Acrylic Painting',
-      image: mishka,
-    },
-
-
- 
 
     {
       id: 1,

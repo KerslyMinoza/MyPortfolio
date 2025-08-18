@@ -14,7 +14,7 @@ import axis_preview from "../../assets/images/axis_thumbnail.png";
 export const PROJECT = [
 
   {
-    id: 9,
+    id: 0,
     title: 'Nodies',
     image: nodies_preview,
     description:
@@ -44,7 +44,7 @@ export const PROJECT = [
   },
 
     {
-    id: 0,
+    id: 3,
     title: 'ORCAA',
     image: orcaa_preview,
     description: 'A streamlined app for personalized care management, fostering community engagement and tailored support.',
@@ -54,7 +54,7 @@ export const PROJECT = [
   },
 
   {
-    id: 3,
+    id: 4,
     title: 'Mednotes',
     image: mednotes_preview,
     description:
@@ -63,7 +63,7 @@ export const PROJECT = [
     type: ['Web App Design']
   },
   {
-    id: 4,
+    id: 5,
     title: 'Valhalla',
     image: valhalla_preview,
     description:
@@ -73,7 +73,7 @@ export const PROJECT = [
   },
 
   {
-    id: 5,
+    id: 6,
     title: 'Trux',
     image: trux_preview,
     description:
@@ -84,7 +84,7 @@ export const PROJECT = [
 
 
  {
-    id: 6,
+    id: 7,
     title: 'Poktfund Wallet',
     image: poktfundwallet_preview,
     description:
@@ -94,7 +94,7 @@ export const PROJECT = [
   },
 
   {
-    id: 7,
+    id: 8,
     title: 'Poktfund Random Avatar',
     image: avatar_preview,
     description:
@@ -104,7 +104,7 @@ export const PROJECT = [
   },
 
   {
-    id: 8,
+    id: 9,
     title: 'Hippomathics',
     image: hippomathics_preview,
     description:

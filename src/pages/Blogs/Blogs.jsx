@@ -3,6 +3,7 @@ import Nav from '../../components/nav/Nav.jsx';
 import ThumbnailBlog from '../../pages/Blogs/ThumbnailBlog.jsx';
 import { BLOG } from '../../pages/Blogs/blogs.js';
 import { bounceUp } from "../../components/animation.js";
+import { motion } from 'framer-motion';
 
 function Blogs(){
  
@@ -11,7 +12,13 @@ function Blogs(){
     return (
         <div>
             <Nav/>
-            <div className="blog_wrapper margin-s">
+            <motion.div 
+            variants={variants}
+            initial={initial}
+            animate="visible"
+            transition={transition}
+            viewport={{ once: true, amount: 0.2 }}
+            className="blog_wrapper margin-s">
             
                 <div className="blog_title"> Something Worth Sharing</div>
 
@@ -22,7 +29,7 @@ function Blogs(){
                             ))}
                         </div>
 
-            </div>
+            </motion.div>
         </div>
     );
 }
