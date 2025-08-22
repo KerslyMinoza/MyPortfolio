@@ -63,7 +63,7 @@
 
 
 .project_content {
-    padding-top: 20px;
+    padding-top: 10px;
     font-size: 16px;
     color: var(--basic5);
     font-weight: 300;
@@ -72,6 +72,19 @@
     animation: appear fade-in;
     animation-timeline: view();
     animation-duration: 500ms;
+}
+
+.project_content a {
+    color: #0095c9;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #dcf6ff;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.project_content a:hover {
+    background-color: #c5eef9;
 }
 
 
