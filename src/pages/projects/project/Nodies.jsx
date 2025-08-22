@@ -19,7 +19,10 @@ import Design_System3 from "../../../assets/images/nodies/design_system3.png";
 import Design_System4 from "../../../assets/images/nodies/design_system4.png";
 import Design_System5 from "../../../assets/images/nodies/design_system5.png";
 
+import Nodie1 from "../../../assets/images/nodies/nodie_waving.gif";
 import Nodie2 from "../../../assets/images/nodies/nodie_flying.gif";
+import Nodie3 from "../../../assets/images/nodies/nodie_crying.gif";
+import Nodie4 from "../../../assets/images/nodies/nodie_working.gif";
 import Nodie5 from "../../../assets/images/nodies/price_free.svg";
 import Nodie6 from "../../../assets/images/nodies/price_pro.svg";
 import Nodie7 from "../../../assets/images/nodies/price_starter.svg";
@@ -164,7 +167,10 @@ Sometimes I skip wireframing and design directly, especially when I am already f
 
 
                     <div className="masonry_images">
+                        <img src={Nodie1}></img>
                         <img src={Nodie2}></img>
+                        <img src={Nodie3}></img>
+                        <img src={Nodie4}></img>
                         <img src={Nodie5}></img>
                         <img src={Nodie6}></img>
                         <img src={Nodie7}></img>
