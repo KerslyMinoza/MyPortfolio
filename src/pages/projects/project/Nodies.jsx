@@ -19,9 +19,9 @@ import Design_System3 from "../../../assets/images/nodies/design_system3.png";
 import Design_System4 from "../../../assets/images/nodies/design_system4.png";
 import Design_System5 from "../../../assets/images/nodies/design_system5.png";
 
-import Nodie1 from "../../../assets/images/nodies/nodie_waving.gif";
+import Nodie1 from "../../../assets/images/nodies/Nodie_waving.gif";
 import Nodie2 from "../../../assets/images/nodies/nodie_flying.gif";
-import Nodie3 from "../../../assets/images/nodies/nodie_crying.gif";
+import Nodie3 from "../../../assets/images/nodies/Nodie_crying.gif";
 import Nodie4 from "../../../assets/images/nodies/nodie_working.gif";
 import Nodie5 from "../../../assets/images/nodies/price_free.svg";
 import Nodie6 from "../../../assets/images/nodies/price_pro.svg";
@@ -78,7 +78,7 @@ function Nodies(){
                     <div className="project_content">
                     When I started this project, my understanding of blockchain was still developing. While I had a grasp of the fundamentals, I leaned on the client for technical insights. Because of a tight timeline, I conducted competitor research to understand how leading platforms positioned themselves. This helped me identify patterns that developers were already comfortable with and areas where the experience could be simplified.
 
-Although our target audience consisted of highly technical users, I wanted to create an interface that felt approachable and intuitive. Studying similar products gave me confidence and allowed me to translate complex requirements into a user-friendly experience, even under pressure.
+                    Although our target audience consisted of highly technical users or let's say Web3 Developers, I wanted to create an interface that felt approachable and intuitive. Studying similar products gave me confidence and allowed me to translate complex requirements into a user-friendly experience, even under pressure.
                     </div>
 
                     <div className="section_title"> Branding</div>
