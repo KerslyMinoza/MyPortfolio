@@ -21,7 +21,7 @@ import Design_System5 from "../../../assets/images/nodies/design_system5.png";
 
 import Nodie1 from "../../../assets/images/nodies/Nodie_waving.gif";
 import Nodie2 from "../../../assets/images/nodies/nodie_flying.gif";
-import Nodie3 from "../../../assets/images/nodies/Nodie_crying.gif";
+import Nodie3 from "../../../assets/images/nodies/cry.gif";
 import Nodie4 from "../../../assets/images/nodies/nodie_working.gif";
 import Nodie5 from "../../../assets/images/nodies/price_free.svg";
 import Nodie6 from "../../../assets/images/nodies/price_pro.svg";
