@@ -26,7 +26,7 @@ export const PROJECT = [
   },
 
     {
-    id: 0,
+    id: 1,
     title: 'Function Chat',
     image: function_preview,
     description:
@@ -37,7 +37,7 @@ export const PROJECT = [
 
 
   {
-    id: 1,
+    id: 2,
     title: 'Ironwit',
     image: ironwit_preview,
     description:
@@ -46,7 +46,7 @@ export const PROJECT = [
     type: ['Mobile App Design','Branding']
   },
   {
-    id: 2,
+    id: 3,
     title: 'Waggle',
     image: waggle_preview,
     description:
@@ -56,7 +56,7 @@ export const PROJECT = [
   },
 
     {
-    id: 3,
+    id: 4,
     title: 'ORCAA',
     image: orcaa_preview,
     description: 'A streamlined app for personalized care management, fostering community engagement and tailored support.',
@@ -66,7 +66,7 @@ export const PROJECT = [
   },
 
   {
-    id: 4,
+    id: 5,
     title: 'Mednotes',
     image: mednotes_preview,
     description:
@@ -75,7 +75,7 @@ export const PROJECT = [
     type: ['Web App Design']
   },
   {
-    id: 5,
+    id: 6,
     title: 'Valhalla',
     image: valhalla_preview,
     description:
@@ -85,7 +85,7 @@ export const PROJECT = [
   },
 
   {
-    id: 6,
+    id: 7,
     title: 'Trux',
     image: trux_preview,
     description:
@@ -96,7 +96,7 @@ export const PROJECT = [
 
 
  {
-    id: 7,
+    id: 8,
     title: 'Poktfund Wallet',
     image: poktfundwallet_preview,
     description:
@@ -106,7 +106,7 @@ export const PROJECT = [
   },
 
   {
-    id: 8,
+    id: 9,
     title: 'Poktfund Random Avatar',
     image: avatar_preview,
     description:
@@ -126,7 +126,7 @@ export const PROJECT = [
   },
 
   {
-    id: 9,
+    id: 11,
     title: 'Hippomathics',
     image: hippomathics_preview,
     description:
@@ -136,7 +136,7 @@ export const PROJECT = [
   },
 
   {
-    id: 10,
+    id: 12,
     title: 'Zipcode Team Hover Illustrations',
     image: zipcode_preview,
     description:
@@ -146,7 +146,7 @@ export const PROJECT = [
   },
 
   {
-    id: 11,
+    id: 13,
     title: 'AXIS Martial Arts',
     image: axis_preview,
     description:
