@@ -22,7 +22,7 @@ import Axis from "./pages/projects/project/Axis.jsx";
 import Uxconference from "./pages/Blogs/blog/ Uxconference.jsx";
 import DevconBangkok from "./pages/Blogs/blog/DevconBangkok.jsx";
 import MalaysiaNodies from "./pages/Blogs/blog/MalaysiaNodies.jsx";
-import FunctionChat from "./pages/projects/project/Functionchat.jsx";
+import Functionchat from "./pages/projects/project/Functionchat.jsx";
 import Rikka from "./pages/projects/project/Rikka.jsx";
 
 
@@ -47,7 +47,7 @@ function App() {
       <Route path="trux" element={<Trux />} />
       <Route path="valhalla" element={<Valhalla />} />
       <Route path="poktfund" element={<Poktfund />} />
-      <Route path="functionchat" element={<FunctionChat />} />
+      <Route path="functionchat" element={<Functionchat />} />
       <Route path="hippomathics" element={<Hippomathics />} />
       <Route path="avatar" element={<Avatar />} />
       <Route path="nodies" element={<Nodies />} />
