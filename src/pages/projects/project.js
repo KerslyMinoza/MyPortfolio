@@ -8,8 +8,10 @@ import poktfundwallet_preview from "../../assets/images/poktfund_thumbnail.png";
 import avatar_preview from "../../assets/images/avatar_thumbnail.gif";
 import hippomathics_preview from "../../assets/images/hippomathics_thumbnail.png";
 import nodies_preview from "../../assets/images/nodies_thumbnail.png";
+import function_preview from "../../assets/images/function_thumbnail.png";
 import zipcode_preview from "../../assets/images/zipcode_thumbnail.png";
 import axis_preview from "../../assets/images/axis_thumbnail.png";
+import rikka_preview from "../../assets/images/rikka_thumbnail.png";
 
 export const PROJECT = [
 
@@ -21,6 +23,16 @@ export const PROJECT = [
       'A platform for building Web3 apps with fast APIs, real-time tracking, and powerful analytics. Designed to simplify and accelerate blockchain development.',
     path: '/nodies',
     type: ['Web App Design','Branding']
+  },
+
+    {
+    id: 0,
+    title: 'Function Chat',
+    image: function_preview,
+    description:
+      'An AI chat app powered by distributed inference for lightning-fast responses.',
+    path: '/functionchat',
+    type: ['Web App Design','Mobile App Design','Branding']
   },
 
 
@@ -103,6 +115,16 @@ export const PROJECT = [
     type: ['Illustration']
   },
 
+    {
+    id: 10,
+    title: 'Quantum Breakthrough Sales Page ',
+    image: rikka_preview,
+    description:
+      'A sales funnel landing page designed to inspire trust and drive enrollments for the Quantum Breakthrough course.',
+    path: '/rikka',
+    type: ['Landing Page Design']
+  },
+
   {
     id: 9,
     title: 'Hippomathics',
@@ -112,8 +134,6 @@ export const PROJECT = [
     path: '/hippomathics',
     type: ['Mobile App Development']
   },
-
-
 
   {
     id: 10,

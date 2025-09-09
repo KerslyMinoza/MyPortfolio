@@ -5,6 +5,7 @@ import leslie from "../../assets/images/clients/Leslie.png";
 import sierin from "../../assets/images/clients/Sierin.jpeg";
 import farlyn from "../../assets/images/clients/Farlyn.jpeg";
 import roxanne from "../../assets/images/clients/roxanne.jpeg";
+import mityak from "../../assets/images/clients/mityak.jpg";
 
 export const CLIENTS = [
     {
@@ -38,6 +39,16 @@ export const CLIENTS = [
       image: leslie,
       comment: '"Kersly is an incredibly talented graphic designer! I am a creative person and have a million ideas and having Kersly able to flesh those out visually is amazing. She has worked on everything from printable art, web graphics, card game designs, illustrations, packaging, catalog design, patent illustrations, logo work, and oh so much more! I feel like there is nothing she cannot do! Additionally, she is a joy to work with!"',
     },
+
+
+    {
+      id: 3,
+      name: 'Michelle Ann Badayos',
+      company: 'Project Manager at Nodies',
+      image: mityak,
+      comment: '"Kersly is an amazing and highly skilled UI/UX designer. Whenever I create a wireframe for a feature, she transforms it into something even more impressive, always capturing exactly what users would want to see. She recently started creating animated GIFs and cute visuals, adding creativity and bringing our platform to life. On top of that, she consistently delivers ahead of schedule, making her a truly reliable and inspiring designer."',
+    },
+    
 
     {
       id: 3,

@@ -63,10 +63,18 @@
    
 }
 
-@media only screen and (max-device-width: 1001px)  {
+@media only screen and (max-device-width: 999px)  {
     
     .thumbnail {
         width: 90%;
     }
   }
   
+  /* Macbooks */
+@media only screen and (min-device-width: 1000px) and (max-device-width: 1600px) {
+
+    .thumbnail {
+        width:30%;
+    }
+
+}

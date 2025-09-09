@@ -22,6 +22,10 @@
     .featured_title {
         font-size: 40px;
     }
+
+    .featured_works {
+        gap: 10px;
+    }
 }
 
 
@@ -32,6 +36,8 @@
     .featured_title {
         font-size: 30px;
     }
+
+
 }
   
   
