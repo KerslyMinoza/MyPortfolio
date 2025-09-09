@@ -217,7 +217,7 @@ li {
 }
 
 
-@media only screen and (min-width: 1200px) and (max-width: 1900px)  {
+@media only screen and (min-width: 1601px) and (max-width: 1900px)  {
     
     .blog {
         width: 60%;
@@ -233,6 +233,14 @@ li {
     }
 }
 
+  /* Macbooks */
+@media only screen and (min-device-width: 1000px) and (max-device-width: 1600px) {
+
+    .thumbnailblog {
+        width:30%;
+    }
+
+}
 
 @media only screen and (max-device-width: 1001px)  {
     
