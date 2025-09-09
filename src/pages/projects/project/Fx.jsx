@@ -32,7 +32,7 @@ import { useLocation } from 'react-router-dom';
 
 
 
-function Functionchat(){
+function Fx(){
 
     const location = useLocation();
     const projectId = location.state?.projectId;
@@ -169,4 +169,4 @@ function Functionchat(){
     );
 }
 
-export default Functionchat
+export default Fx
