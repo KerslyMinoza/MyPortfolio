@@ -240,6 +240,11 @@ li {
         width:30%;
     }
 
+    .blog {
+        width: 70%;
+        padding: 20px;
+    }
+
 }
 
 @media only screen and (max-device-width: 1001px)  {
