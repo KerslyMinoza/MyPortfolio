@@ -24,6 +24,7 @@ import DevconBangkok from "./pages/Blogs/blog/DevconBangkok.jsx";
 import MalaysiaNodies from "./pages/Blogs/blog/MalaysiaNodies.jsx";
 import Fx from "./pages/projects/project/Fx.jsx";
 import Rikka from "./pages/projects/project/Rikka.jsx";
+import Boldmade from "./pages/projects/project/Boldmade.jsx";
 
 
 
@@ -54,6 +55,7 @@ function App() {
       <Route path="zipcode" element={<Zipcode />} />
       <Route path="rikka" element={<Rikka />} />
       <Route path="axis" element={<Axis />} />
+      <Route path="boldmade" element={<Boldmade />} />
       <Route path="aboutme" element={<Aboutme />} />
       <Route path="contact" element={<Contact />} />
       <Route path="moreworks" element={<Moreworks />} />

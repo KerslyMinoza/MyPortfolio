@@ -12,6 +12,7 @@ import function_preview from "../../assets/images/function_thumbnail.png";
 import zipcode_preview from "../../assets/images/zipcode_thumbnail.png";
 import axis_preview from "../../assets/images/axis_thumbnail.png";
 import rikka_preview from "../../assets/images/rikka_thumbnail.png";
+import boldmade_preview from "../../assets/images/boldmade_thumbnail.png";
 
 export const PROJECT = [
 
@@ -150,9 +151,19 @@ export const PROJECT = [
     title: 'AXIS Martial Arts',
     image: axis_preview,
     description:
-      'Illustration project for a hover effect on the team section of Zipcode Creative Website.',
+      'A school management system to track student progress, customize ranks across different martial arts, and manage records with ease.',
     path: '/axis',
     type: ['Web App Design']
+  },
+
+    {
+    id: 14,
+    title: 'Bold Made',
+    image: boldmade_preview,
+    description:
+      'A card game celebrating women achievers worldwide, reimagined from the classic Old Maid into something bold and empowering.',
+    path: '/boldmade',
+    type: ['Illustration', 'Branding']
   },
 ]
 

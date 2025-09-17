@@ -40,6 +40,11 @@ const projectId = location.state?.projectId;
                     AXIS is a web-based application designed for managing martial arts schools primarily in Australia, New Zealand, and the UK. Its main function is to provide a secure and organized database for storing various records such as schedules, student history, grading, and statistics. Given the diverse and specialized nature of martial arts, this project allows for personalized customization of grading and ranking systems to align with individual school rules.
                     </div>
 
+                    <div className="project_content">
+                        <a href="https://axismartialarts.com/" target="_blank" rel="noopener noreferrer">Visit Axis Martial Arts </a>
+                    </div>                   
+
+
                     <div className="section_title"> Role</div>
 
                     <div className="project_content">
