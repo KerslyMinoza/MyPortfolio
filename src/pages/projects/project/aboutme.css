@@ -106,8 +106,8 @@
 }
 
 .intro {
-    width: 100%;
-    font-size: 24px;
+    width: 80%;
+    font-size: 20px;
     font-weight: 300;
     color: var(--basic5);
     line-height: 140%;
@@ -131,12 +131,14 @@
     }
 
     .about_me {
-        width: 100%;
+        width: 90%;
         
     }
 
     .photo_holder {
         width: 40%;
+        margin-top: 60px;
+       
     }
 
     .photo_holder img {
@@ -162,7 +164,7 @@
   @media only screen and (max-device-width: 900px)  {
 
     .about_me {
-        width: 100%;
+        width: 90%;
         padding: 0;
     }
 

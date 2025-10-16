@@ -120,7 +120,7 @@
     .footer_wrapper {
         display:flex;
         flex-direction: column;
-        width: 100%;
+        width: 90%;
         margin-top: 50px;
     }
 
@@ -170,7 +170,7 @@
   }
 
   /*macbooks*/
-  @media only screen and (min-device-width: 1279px) and (max-device-width: 1440px) {
+  @media only screen and (min-device-width: 1024px) and (max-device-width: 1440px) {
   
     .footer_wrapper {
         margin-left: 0;
@@ -186,19 +186,8 @@
     }
 
     .message{
-        font-size: 130px;
-    }
-
-}
-
-  /*responsive*/
-  @media only screen and (min-device-width: 1200px) and (max-device-width: 1350px) {
-  
-    .message {
         font-size: 120px;
     }
 
-    .contacts_wrapper {
-        justify-content: flex-start;
-    }
 }
+

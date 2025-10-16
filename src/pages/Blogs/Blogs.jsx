@@ -30,6 +30,8 @@ function Blogs(){
                         </div>
 
             </motion.div>
+
+            <div className="margin-m"></div>
         </div>
     );
 }
