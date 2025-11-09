@@ -59,7 +59,7 @@ function App() {
       <Route path="aboutme" element={<Aboutme />} />
       <Route path="contact" element={<Contact />} />
       <Route path="moreworks" element={<Moreworks />} />
-      <Route path="blog" element={<Blogs />} />
+      <Route path="blogs" element={<Blogs />} />
     </Routes>
   </BrowserRouter>
   )
