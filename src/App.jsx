@@ -2,7 +2,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { motion } from 'framer-motion'
 import Home from './pages/Home.jsx';
-import Blog from './pages/blogs/Blogs.jsx';
+import Blogs from './pages/blogs/Blogs.jsx';
 import Orcaa from './pages/projects/project/Orcaa.jsx';
 import Ironwit from './pages/projects/project/Ironwit.jsx';
 import Waggle from './pages/projects/project/Waggle.jsx';
@@ -59,7 +59,7 @@ function App() {
       <Route path="aboutme" element={<Aboutme />} />
       <Route path="contact" element={<Contact />} />
       <Route path="moreworks" element={<Moreworks />} />
-      <Route path="blog" element={<Blog />} />
+      <Route path="blog" element={<Blogs />} />
     </Routes>
   </BrowserRouter>
   )
