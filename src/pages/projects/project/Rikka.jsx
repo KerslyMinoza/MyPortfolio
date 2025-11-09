@@ -2,7 +2,7 @@ import './project.css';
 
 import Design from "../../../assets/images/rikka/rikka.png";
 import Backbutton from '../../../components/common/Backbutton';
-import Footer from '../../../components/layout/footer/Footer';
+import Footer from '../../../components/layout/footer/Footer.jsx';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';

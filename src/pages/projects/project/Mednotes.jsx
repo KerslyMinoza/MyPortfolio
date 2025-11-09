@@ -3,7 +3,7 @@ import Backbutton from '../../../components/common/Backbutton';
 import Design from "../../../assets/images/mednotes/mednotes.png";
 
 import Design12 from "../../../assets/images/orcaa/orcaa_12.png";
-import Footer from '../../../components/layout/footer/Footer';
+import Footer from '../../../components/layout/footer/Footer.jsx';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';

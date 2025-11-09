@@ -2,7 +2,7 @@ import './project.css';
 import Backbutton from '../../../components/common/Backbutton';
 
 import Design from "../../../assets/images/trux/trux.png";
-import Footer from '../../../components/layout/footer/Footer';
+import Footer from '../../../components/layout/footer/Footer.jsx';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';

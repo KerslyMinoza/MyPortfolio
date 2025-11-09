@@ -5,7 +5,7 @@ import AboutmeGif from "../assets/images/aboutme/aboutme.gif";
 import Testimonials from '../components/features/Testimonials/Testimonials.jsx';
 import { CLIENTS } from '../data/clients.js';
 import { bounceUp } from "../components/utils/animation.js";
-import Footer from '../components/layout/components/layout/footer/Footer';
+import Footer from '../components/layout/components/layout/footer/Footer.jsx';
 
 
 const { variants, initial, whileInView, transition } = bounceUp(0.3);
