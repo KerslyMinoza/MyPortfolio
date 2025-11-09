@@ -5,27 +5,27 @@ import { BLOG } from '../../data/blogs.js';
 import { bounceUp } from "../../components/utils/animation.js";
 import { motion } from 'framer-motion';
 
-function Blogs(){
- 
+function Allblogs(){
+
     const { variants, initial, whileInView, transition } = bounceUp(0.3);
 
     return (
         <div>
             <Nav/>
-            <motion.div 
+            <motion.div
             variants={variants}
             initial={initial}
             animate="visible"
             transition={transition}
             viewport={{ once: true, amount: 0.2 }}
             className="blog_wrapper margin-s">
-            
+
                 <div className="blog_title"> Something Worth Sharing</div>
 
                         <div
                             className="blog_works">
                             {BLOG.map((blog) => (
-                            <ThumbnailBlog blog={blog}/>      
+                            <ThumbnailBlog blog={blog}/>
                             ))}
                         </div>
 
@@ -36,4 +36,4 @@ function Blogs(){
     );
 }
 
-export default Blogs
+export default Allblogs
