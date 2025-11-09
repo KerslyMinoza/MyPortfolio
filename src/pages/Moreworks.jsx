@@ -1,5 +1,5 @@
 
-import Footer from '../components/layout/Footer/Footer.jsx';
+import Footer from '../components/layout/components/layout/footer/Footer';
 import Nav from '../components/layout/Nav/Nav.jsx';
 import './moreworks.css';
 import { WORKS } from '../data/works.js';
