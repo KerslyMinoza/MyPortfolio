@@ -59,7 +59,8 @@ function App() {
       <Route path="aboutme" element={<Aboutme />} />
       <Route path="contact" element={<Contact />} />
       <Route path="moreworks" element={<Moreworks />} />
-      <Route path="blogs" element={<Allblogs />} />
+
+      <Route path="blog" element={<Allblogs />} />
     </Routes>
   </BrowserRouter>
   )
