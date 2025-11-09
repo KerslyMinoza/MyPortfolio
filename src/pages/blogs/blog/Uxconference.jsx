@@ -18,7 +18,7 @@ import Pic13 from "../../../assets/images/blog/ux_conference/pic13.jpg";
 import Pic14 from "../../../assets/images/blog/ux_conference/pic14.jpg";
 import Pic15 from "../../../assets/images/blog/ux_conference/pic15.jpg";
 
-import Footer from '../../../components/layout/Footer/Footer.jsx';
+import Footer from '../../../components/layout/footer/Footer.jsx';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';

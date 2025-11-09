@@ -1,5 +1,5 @@
 
-import Footer from '../components/layout/Footer/Footer.jsx';
+import Footer from '../components/layout/footer/Footer.jsx';
 import Nav from '../components/layout/Nav/Nav.jsx';
 
 

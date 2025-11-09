@@ -33,7 +33,7 @@ import Penguin from "../../../assets/images/nodies/wink.png";
 import Branding from "../../../assets/images/nodies/branding.png";
 
 import Backbutton from '../../../components/common/Backbutton';
-import Footer from '../../../components/layout/Footer/Footer';
+import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';

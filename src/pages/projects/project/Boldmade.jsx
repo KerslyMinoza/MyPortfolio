@@ -67,7 +67,7 @@ import bm61 from "../../../assets/images/boldmade/bm_61.png";
 import bm62 from "../../../assets/images/boldmade/bm_62.png";
 
 
-import Footer from '../../../components/layout/Footer/Footer';
+import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';

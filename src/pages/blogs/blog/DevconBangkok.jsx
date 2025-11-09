@@ -38,7 +38,7 @@ import Pic34 from "../../../assets/images/blog/devcon/pic34.jpg";
 
 
 
-import Footer from '../../../components/layout/Footer/Footer.jsx';
+import Footer from '../../../components/layout/footer/Footer.jsx';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';

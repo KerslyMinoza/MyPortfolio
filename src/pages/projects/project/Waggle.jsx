@@ -17,7 +17,7 @@ import Design9 from "../../../assets/images/waggle/waggle_9.png";
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
-import Footer from '../../../components/layout/Footer/Footer';
+import Footer from '../../../components/layout/footer/Footer';
 
 function Waggle(){
 

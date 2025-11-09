@@ -15,7 +15,7 @@ import Design6 from "../../../assets/images/axis/design6.png";
 
 
 
-import Footer from '../../../components/layout/Footer/Footer';
+import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';

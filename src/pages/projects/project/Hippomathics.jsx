@@ -5,7 +5,7 @@ import Design1 from "../../../assets/images/hippomathics/hippo.webp";
 import Design2 from "../../../assets/images/hippomathics/ui.webp";
 import Design3 from "../../../assets/images/hippomathics/highest score.webp";
 import Video from "../../../assets/images/hippomathics/video.mp4";
-import Footer from '../../../components/layout/Footer/Footer';
+import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';

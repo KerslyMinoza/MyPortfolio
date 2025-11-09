@@ -14,7 +14,7 @@ import Design9 from "../../../assets/images/zipcode_team/carl.png";
 import Design10 from "../../../assets/images/zipcode_team/marissa.png";
 import Design11 from "../../../assets/images/zipcode_team/doggie.png";
 
-import Footer from '../../../components/layout/Footer/Footer';
+import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
