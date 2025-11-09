@@ -13,7 +13,7 @@ import Poktfund from './pages/projects/project/Poktfund.jsx';
 import Avatar from './pages/projects/project/Avatar.jsx';
 import Nodies from './pages/projects/project/Nodies.jsx';
 import Zipcode from './pages/projects/project/Zipcode.jsx';
-import Aboutme from './pages/projects/project/Aboutme.jsx';
+import Aboutme from './pages/Aboutme.jsx';
 import ScrollToTop from './components/utils/ScrollToTop.jsx';
 import Contact from "./pages/Contact.jsx";
 import Moreworks from "./pages/Moreworks.jsx";
