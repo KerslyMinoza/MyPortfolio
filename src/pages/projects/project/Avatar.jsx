@@ -1,10 +1,10 @@
 import './project.css';
-import Backbutton from '../../../components/ui_components/Backbutton';
+import Backbutton from '../../../components/common/Backbutton';
 
 import Design1 from "../../../assets/images/avatar_thumbnail.gif";
-import Footer from '../../../components/footer/Footer';
+import Footer from '../../../components/layout/Footer/Footer.jsx';
 
-import NextPrevious from '../../../components/ui_components/NextPrevious';
+import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
 
 function Avatar(){

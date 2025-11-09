@@ -1,14 +1,14 @@
 import './project.css';
-import Backbutton from '../../../components/ui_components/Backbutton';
+import Backbutton from '../../../components/common/Backbutton';
 
 import Design1 from "../../../assets/images/poktfund/1.webp";
 import Design2 from "../../../assets/images/poktfund/2.webp";
 import Design3 from "../../../assets/images/poktfund/3.webp";
 import Design4 from "../../../assets/images/poktfund/4.webp";
 import Video from "../../../assets/images/poktfund/poktfund_video.mp4";
-import Footer from '../../../components/footer/Footer';
+import Footer from '../../../components/layout/Footer/Footer';
 
-import NextPrevious from '../../../components/ui_components/NextPrevious';
+import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
 
 function Poktfund(){

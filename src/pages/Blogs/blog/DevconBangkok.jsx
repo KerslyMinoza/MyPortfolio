@@ -1,5 +1,5 @@
 import '../blogs.css';
-import Backbutton from '../../../components/ui_components/Backbutton';
+import Backbutton from '../../../components/common/Backbutton';
 
 import Devcon from "../../../assets/images/blog/devcon/devcon.jpg";
 import Pic1 from "../../../assets/images/blog/devcon/pic1.jpg";
@@ -38,9 +38,9 @@ import Pic34 from "../../../assets/images/blog/devcon/pic34.jpg";
 
 
 
-import Footer from '../../../components/footer/Footer';
+import Footer from '../../../components/layout/Footer/Footer.jsx';
 
-import NextPrevious from '../../../components/ui_components/NextPrevious';
+import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
 
 function DevconBangkok(){

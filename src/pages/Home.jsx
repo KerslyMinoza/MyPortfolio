@@ -1,7 +1,7 @@
-import Nav from '../components/nav/Nav.jsx';
-import Hero from '../components/hero/Hero.jsx';
-import FeaturedWorks from '../components/featured/FeaturedWorks.jsx';
-import Footer from '../components/footer/Footer.jsx';
+import Nav from '../components/layout/Nav/Nav.jsx';
+import Hero from '../components/layout/Hero/Hero.jsx';
+import FeaturedWorks from '../components/features/FeaturedWorks/FeaturedWorks.jsx';
+import Footer from '../components/layout/Footer/Footer.jsx';
 
 
 function Home(){

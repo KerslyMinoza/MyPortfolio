@@ -1,11 +1,11 @@
-import maroun from "../../assets/images/clients/Maroun.png";
-import maestro from "../../assets/images/clients/Maestro.png";
-import grace from "../../assets/images/clients/Grace.png";
-import leslie from "../../assets/images/clients/Leslie.png";
-import sierin from "../../assets/images/clients/Sierin.jpeg";
-import farlyn from "../../assets/images/clients/Farlyn.jpeg";
-import roxanne from "../../assets/images/clients/roxanne.jpeg";
-import mityak from "../../assets/images/clients/Michelle.jpg";
+import maroun from "../assets/images/clients/Maroun.png";
+import maestro from "../assets/images/clients/Maestro.png";
+import grace from "../assets/images/clients/Grace.png";
+import leslie from "../assets/images/clients/Leslie.png";
+import sierin from "../assets/images/clients/Sierin.jpeg";
+import farlyn from "../assets/images/clients/Farlyn.jpeg";
+import roxanne from "../assets/images/clients/roxanne.jpeg";
+import mityak from "../assets/images/clients/Michelle.jpg";
 
 export const CLIENTS = [
     {

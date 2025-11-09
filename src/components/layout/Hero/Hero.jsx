@@ -1,7 +1,7 @@
 import './hero.css';
-import KerslyGif from "../../assets/images/kersly.gif";
+import KerslyGif from "../../../assets/images/kersly.gif";
 import { motion } from 'framer-motion';
-import { bounceUp } from "../../components/animation.js";
+import { bounceUp } from "../../utils/animation.js";
 
 function Hero(){
 

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import './nav.css'
 import { useState } from 'react';
-import HamburgerIcon from "../../assets/images/hamburger.png";
-import CloseIcon from "../../assets/images/close.png";
+import HamburgerIcon from "../../../assets/images/hamburger.png";
+import CloseIcon from "../../../assets/images/close.png";
 import { motion, AnimatePresence } from "framer-motion";
 
 function Nav(){

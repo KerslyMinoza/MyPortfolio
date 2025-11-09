@@ -1,11 +1,11 @@
 import './aboutme.css';
-import Nav from '../../../components/nav/Nav.jsx';
+import Nav from '../../../components/layout/Nav/Nav.jsx';
 import { motion } from 'framer-motion';
 import AboutmeGif from "../../../assets/images/aboutme/aboutme.gif";
-import Testimonials from '../../../components/testimonials/Testimonials.jsx';
-import { CLIENTS } from '../../../components/testimonials/clients.js';
-import { bounceUp } from "../../../components/animation.js";
-import Footer from '../../../components/footer/Footer.jsx';
+import Testimonials from '../../../components/features/Testimonials/Testimonials.jsx';
+import { CLIENTS } from '../../../data/clients.js';
+import { bounceUp } from "../../../components/utils/animation.js";
+import Footer from '../../../components/layout/Footer/Footer.jsx';
 
 
 const { variants, initial, whileInView, transition } = bounceUp(0.3);

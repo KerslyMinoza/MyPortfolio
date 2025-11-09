@@ -1,6 +1,6 @@
 import './project.css';
-import Backbutton from '../../../components/ui_components/Backbutton';
-import NextPrevious from '../../../components/ui_components/NextPrevious';
+import Backbutton from '../../../components/common/Backbutton';
+import NextPrevious from '../../../components/common/NextPrevious';
 import DesignProcess from "../../../assets/images/orcaa/orcaa_design_process.png";
 import Wireframe from "../../../assets/images/orcaa/orcaa_wireframe_A.png";
 import WireframeB from "../../../assets/images/orcaa/orcaa_wireframe_B.png";
@@ -21,7 +21,7 @@ import Design9 from "../../../assets/images/orcaa/orcaa_9.png";
 import Design10 from "../../../assets/images/orcaa/orcaa_10.png";
 import Design11 from "../../../assets/images/orcaa/orcaa_11.png";
 import Design12 from "../../../assets/images/orcaa/orcaa_12.png";
-import Footer from '../../../components/footer/Footer';
+import Footer from '../../../components/layout/Footer/Footer';
 
 import { useLocation } from 'react-router-dom';
 

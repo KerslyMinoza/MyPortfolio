@@ -1,5 +1,5 @@
 import './project.css';
-import Backbutton from '../../../components/ui_components/Backbutton';
+import Backbutton from '../../../components/common/Backbutton';
 import DesignProcess from "../../../assets/images/waggle/design_process.png";
 import Branding from "../../../assets/images/waggle/branding.png";
 import Illustrations from "../../../assets/images/waggle/illustrations.png";
@@ -15,9 +15,9 @@ import Design7 from "../../../assets/images/waggle/waggle_7.png";
 import Design8 from "../../../assets/images/waggle/waggle_8.png";
 import Design9 from "../../../assets/images/waggle/waggle_9.png";
 
-import NextPrevious from '../../../components/ui_components/NextPrevious';
+import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
-import Footer from '../../../components/footer/Footer';
+import Footer from '../../../components/layout/Footer/Footer';
 
 function Waggle(){
 

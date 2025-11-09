@@ -1,6 +1,6 @@
 
 import '../blogs.css';
-import Backbutton from '../../../components/ui_components/Backbutton';
+import Backbutton from '../../../components/common/Backbutton';
 
 import Pic1 from "../../../assets/images/blog/malaysia/pic1.jpg";
 import Pic2 from "../../../assets/images/blog/malaysia/pic2.jpg";
@@ -47,9 +47,9 @@ import Pic45 from "../../../assets/images/blog/malaysia/pic45.png";
 
 
 
-import Footer from '../../../components/footer/Footer';
+import Footer from '../../../components/layout/Footer/Footer.jsx';
 
-import NextPrevious from '../../../components/ui_components/NextPrevious';
+import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
 
 function MalaysiaNodies(){

@@ -1,18 +1,18 @@
-import orcaa_preview from "../../assets/images/orcaa_thumbnail.png";
-import ironwit_preview from "../../assets/images/ironwit_thumbnail.png";
-import waggle_preview from "../../assets/images/waggle_thumbnail.png";
-import mednotes_preview from "../../assets/images/mednotes_thumbnail.png";
-import valhalla_preview from "../../assets/images/valhalla_thumbnail.png";
-import trux_preview from "../../assets/images/trux_thumbnail.png";
-import poktfundwallet_preview from "../../assets/images/poktfund_thumbnail.png";
-import avatar_preview from "../../assets/images/avatar_thumbnail.gif";
-import hippomathics_preview from "../../assets/images/hippomathics_thumbnail.png";
-import nodies_preview from "../../assets/images/nodies_thumbnail.png";
-import function_preview from "../../assets/images/function_thumbnail.png";
-import zipcode_preview from "../../assets/images/zipcode_thumbnail.png";
-import axis_preview from "../../assets/images/axis_thumbnail.png";
-import rikka_preview from "../../assets/images/rikka_thumbnail.png";
-import boldmade_preview from "../../assets/images/boldmade_thumbnail.png";
+import orcaa_preview from "../assets/images/orcaa_thumbnail.png";
+import ironwit_preview from "../assets/images/ironwit_thumbnail.png";
+import waggle_preview from "../assets/images/waggle_thumbnail.png";
+import mednotes_preview from "../assets/images/mednotes_thumbnail.png";
+import valhalla_preview from "../assets/images/valhalla_thumbnail.png";
+import trux_preview from "../assets/images/trux_thumbnail.png";
+import poktfundwallet_preview from "../assets/images/poktfund_thumbnail.png";
+import avatar_preview from "../assets/images/avatar_thumbnail.gif";
+import hippomathics_preview from "../assets/images/hippomathics_thumbnail.png";
+import nodies_preview from "../assets/images/nodies_thumbnail.png";
+import function_preview from "../assets/images/function_thumbnail.png";
+import zipcode_preview from "../assets/images/zipcode_thumbnail.png";
+import axis_preview from "../assets/images/axis_thumbnail.png";
+import rikka_preview from "../assets/images/rikka_thumbnail.png";
+import boldmade_preview from "../assets/images/boldmade_thumbnail.png";
 
 export const PROJECT = [
 

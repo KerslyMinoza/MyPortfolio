@@ -32,10 +32,10 @@ import Nodie7 from "../../../assets/images/nodies/price_starter.svg";
 import Penguin from "../../../assets/images/nodies/wink.png";
 import Branding from "../../../assets/images/nodies/branding.png";
 
-import Backbutton from '../../../components/ui_components/Backbutton';
-import Footer from '../../../components/footer/Footer';
+import Backbutton from '../../../components/common/Backbutton';
+import Footer from '../../../components/layout/Footer/Footer';
 
-import NextPrevious from '../../../components/ui_components/NextPrevious';
+import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
 
 

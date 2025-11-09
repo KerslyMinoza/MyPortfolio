@@ -1,6 +1,6 @@
 
-import Footer from '../components/footer/Footer.jsx';
-import Nav from '../components/nav/Nav.jsx';
+import Footer from '../components/layout/Footer/Footer.jsx';
+import Nav from '../components/layout/Nav/Nav.jsx';
 
 
 function Contact(){

@@ -1,8 +1,8 @@
 
-import Nav from '../../components/nav/Nav.jsx';
-import ThumbnailBlog from '../../pages/Blogs/ThumbnailBlog.jsx';
-import { BLOG } from '../../pages/Blogs/blogs.js';
-import { bounceUp } from "../../components/animation.js";
+import Nav from '../../components/layout/Nav/Nav.jsx';
+import ThumbnailBlog from './ThumbnailBlog.jsx';
+import { BLOG } from '../../data/blogs.js';
+import { bounceUp } from "../../components/utils/animation.js";
 import { motion } from 'framer-motion';
 
 function Blogs(){

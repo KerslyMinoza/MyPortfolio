@@ -1,7 +1,7 @@
 import './featuredworks.css';
-import Thumbnail from '../../pages/projects/Thumbnail.jsx';
-import { PROJECT } from '../../pages/projects/project.js';
-import { bounceUp } from "../../components/animation.js";
+import Thumbnail from '../../../pages/projects/Thumbnail.jsx';
+import { PROJECT } from '../../../data/projects.js';
+import { bounceUp } from "../../utils/animation.js";
 
 function FeaturedWorks() {
   const { variants, initial, whileInView, transition } = bounceUp(0.3);

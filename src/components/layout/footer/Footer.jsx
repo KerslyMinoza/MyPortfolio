@@ -1,8 +1,8 @@
 import './footer.css';
 import { motion } from 'framer-motion';
-import { bounceUp } from "../../components/animation.js";
-import IconEmail from "../../assets/images/icon_email.svg";
-import IconLinkedin from "../../assets/images/icon_linkedin.svg";
+import { bounceUp } from "../../utils/animation.js";
+import IconEmail from "../../../assets/images/icon_email.svg";
+import IconLinkedin from "../../../assets/images/icon_linkedin.svg";
 
 
 function Footer(){

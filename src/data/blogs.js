@@ -1,6 +1,6 @@
-import ux_conference_preview from "../../assets/images/blog/ux_thumbnail.jpg";
-import devcon_thumbnail from "../../assets/images/blog/devcon_thumbnail.jpg";
-import malaysia_thumbnail from "../../assets/images/blog/malaysia_thumbnail.jpg";
+import ux_conference_preview from "../assets/images/blog/ux_thumbnail.jpg";
+import devcon_thumbnail from "../assets/images/blog/devcon_thumbnail.jpg";
+import malaysia_thumbnail from "../assets/images/blog/malaysia_thumbnail.jpg";
 
 export const BLOG = [
 

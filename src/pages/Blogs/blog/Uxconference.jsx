@@ -1,5 +1,5 @@
 import '../blogs.css';
-import Backbutton from '../../../components/ui_components/Backbutton';
+import Backbutton from '../../../components/common/Backbutton';
 
 
 import Pic1 from "../../../assets/images/blog/ux_conference/pic1.jpg";
@@ -18,9 +18,9 @@ import Pic13 from "../../../assets/images/blog/ux_conference/pic13.jpg";
 import Pic14 from "../../../assets/images/blog/ux_conference/pic14.jpg";
 import Pic15 from "../../../assets/images/blog/ux_conference/pic15.jpg";
 
-import Footer from '../../../components/footer/Footer';
+import Footer from '../../../components/layout/Footer/Footer.jsx';
 
-import NextPrevious from '../../../components/ui_components/NextPrevious';
+import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
 
 function Uxconference(){

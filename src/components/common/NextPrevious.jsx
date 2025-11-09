@@ -1,6 +1,6 @@
 
 import './ui_components.css';
-import { PROJECT } from '../../pages/projects/project.js';
+import { PROJECT } from '../../data/projects.js';
 import { Link } from 'react-router-dom';
 
 function nextPrevious(project_id){

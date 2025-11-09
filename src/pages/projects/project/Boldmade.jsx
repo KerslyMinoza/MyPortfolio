@@ -1,6 +1,6 @@
 
 import './project.css';
-import Backbutton from '../../../components/ui_components/Backbutton';
+import Backbutton from '../../../components/common/Backbutton';
 
 import box from "../../../assets/images/boldmade/box.png";
 import bm1 from "../../../assets/images/boldmade/bm_1.png";
@@ -67,9 +67,9 @@ import bm61 from "../../../assets/images/boldmade/bm_61.png";
 import bm62 from "../../../assets/images/boldmade/bm_62.png";
 
 
-import Footer from '../../../components/footer/Footer';
+import Footer from '../../../components/layout/Footer/Footer';
 
-import NextPrevious from '../../../components/ui_components/NextPrevious';
+import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
 
 function Boldmade(){

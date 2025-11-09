@@ -1,11 +1,11 @@
 import './project.css';
-import Backbutton from '../../../components/ui_components/Backbutton';
+import Backbutton from '../../../components/common/Backbutton';
 import Design from "../../../assets/images/mednotes/mednotes.png";
 
 import Design12 from "../../../assets/images/orcaa/orcaa_12.png";
-import Footer from '../../../components/footer/Footer';
+import Footer from '../../../components/layout/Footer/Footer';
 
-import NextPrevious from '../../../components/ui_components/NextPrevious';
+import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
 
 function Mednotes(){

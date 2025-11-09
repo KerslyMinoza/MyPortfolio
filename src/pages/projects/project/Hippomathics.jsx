@@ -1,13 +1,13 @@
 import './project.css';
-import Backbutton from '../../../components/ui_components/Backbutton';
+import Backbutton from '../../../components/common/Backbutton';
 
 import Design1 from "../../../assets/images/hippomathics/hippo.webp";
 import Design2 from "../../../assets/images/hippomathics/ui.webp";
 import Design3 from "../../../assets/images/hippomathics/highest score.webp";
 import Video from "../../../assets/images/hippomathics/video.mp4";
-import Footer from '../../../components/footer/Footer';
+import Footer from '../../../components/layout/Footer/Footer';
 
-import NextPrevious from '../../../components/ui_components/NextPrevious';
+import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
 
 function Hippomathics(){

@@ -1,22 +1,22 @@
 
 import './project.css';
-import Backbutton from '../../../components/ui_components/Backbutton';
+import Backbutton from '../../../components/common/Backbutton';
 
-import Design1 from "../../../assets/images/zipcode team/amanda.png";
-import Design2 from "../../../assets/images/zipcode team/stacey.png";
-import Design3 from "../../../assets/images/zipcode team/bonnie.png";
-import Design4 from "../../../assets/images/zipcode team/tracey.png";
-import Design5 from "../../../assets/images/zipcode team/amanda.png";
-import Design6 from "../../../assets/images/zipcode team/josie.png";
-import Design7 from "../../../assets/images/zipcode team/jewell.png";
-import Design8 from "../../../assets/images/zipcode team/kate.png";
-import Design9 from "../../../assets/images/zipcode team/carl.png";
-import Design10 from "../../../assets/images/zipcode team/marissa.png";
-import Design11 from "../../../assets/images/zipcode team/doggie.png";
+import Design1 from "../../../assets/images/zipcode_team/amanda.png";
+import Design2 from "../../../assets/images/zipcode_team/stacey.png";
+import Design3 from "../../../assets/images/zipcode_team/bonnie.png";
+import Design4 from "../../../assets/images/zipcode_team/tracey.png";
+import Design5 from "../../../assets/images/zipcode_team/amanda.png";
+import Design6 from "../../../assets/images/zipcode_team/josie.png";
+import Design7 from "../../../assets/images/zipcode_team/jewell.png";
+import Design8 from "../../../assets/images/zipcode_team/kate.png";
+import Design9 from "../../../assets/images/zipcode_team/carl.png";
+import Design10 from "../../../assets/images/zipcode_team/marissa.png";
+import Design11 from "../../../assets/images/zipcode_team/doggie.png";
 
-import Footer from '../../../components/footer/Footer';
+import Footer from '../../../components/layout/Footer/Footer';
 
-import NextPrevious from '../../../components/ui_components/NextPrevious';
+import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
 
 function Zipcode(){
