@@ -1,5 +1,5 @@
 import '../blogs.css';
-import Backbutton from '../../../components/common/Backbutton';
+import Nav from '../../../components/layout/Nav/Nav.jsx';
 
 
 import Pic1 from "../../../assets/images/blog/ux_conference/pic1.jpg";
@@ -20,17 +20,18 @@ import Pic15 from "../../../assets/images/blog/ux_conference/pic15.jpg";
 
 import Footer from '../../../components/layout/footer/Footer';
 
-import NextPrevious from '../../../components/common/NextPrevious';
+import NextPreviousBlog from '../../../components/common/NextPreviousBlog';
 import { useLocation } from 'react-router-dom';
+import { BLOG } from '../../../data/blogs.js';
 
 function Uxconference(){
 
     const location = useLocation();
-    const blogId = location.state?.blogId;
+    const blogId = location.state?.blogId || BLOG.find(b => b.path === '/uxplusconference')?.id;
 
     return (
         <>
-            <Backbutton page ="blog"/>
+            <Nav/>
             <div className="blog" id="pokfund">
                 <div className="blog_name"> UX+ Conference 2024 Manila </div>
                 
@@ -102,16 +103,17 @@ function Uxconference(){
 
                     <div className="section_title"> Leaving Inspired ❤️❤️ </div>
                     <div className="blog_content">
-                    Even though the conference wasn’t as technical as I originally expected, it sparked something in me. It reignited my passion for UX and reminded me why I chose this path. I’m leaving this experience inspired to build a stronger portfolio, one that truly reflects my journey and growth as a designer.
+                    Even though the conference wasn't as technical as I originally expected, it sparked something in me. It reignited my passion for UX and reminded me why I chose this path. I'm leaving this experience inspired to build a stronger portfolio, one that truly reflects my journey and growth as a designer.
                     </div>
+             <NextPreviousBlog blog_id={blogId}/>
             </div>
-             
+
         </div>
 
-      <Footer/>  
+      <Footer/>
 
-    </>   
-        
+    </>
+
     );
 }
 

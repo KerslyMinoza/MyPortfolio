@@ -10,9 +10,9 @@ function ThumbnailBlog(blog){
     console.log(my_blog);
 
     return (
-        <Link 
-        to={my_blog.path} 
-        state={{ blogId: blog.id }}
+        <Link
+        to={my_blog.path}
+        state={{ blogId: my_blog.id }}
         className="thumbnailblog">
             <motion.img 
             src={my_blog.image} 

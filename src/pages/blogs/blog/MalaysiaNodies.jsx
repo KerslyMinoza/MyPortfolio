@@ -1,6 +1,6 @@
 
 import '../blogs.css';
-import Backbutton from '../../../components/common/Backbutton';
+import Nav from '../../../components/layout/Nav/Nav.jsx';
 
 import Pic1 from "../../../assets/images/blog/malaysia/pic1.jpg";
 import Pic2 from "../../../assets/images/blog/malaysia/pic2.jpg";
@@ -49,17 +49,18 @@ import Pic45 from "../../../assets/images/blog/malaysia/pic45.png";
 
 import Footer from '../../../components/layout/footer/Footer';
 
-import NextPrevious from '../../../components/common/NextPrevious';
+import NextPreviousBlog from '../../../components/common/NextPreviousBlog';
 import { useLocation } from 'react-router-dom';
+import { BLOG } from '../../../data/blogs.js';
 
 function MalaysiaNodies(){
 
     const location = useLocation();
-    const blogId = location.state?.blogId;
+    const blogId = location.state?.blogId || BLOG.find(b => b.path === '/malaysia_nodies')?.id;
 
     return (
         <>
-            <Backbutton page="blog"/>
+            <Nav/>
             <div className="blog" id="pokfund">
                 
                 <div className="blog_name"> Exploring Malaysia with Nodies Team 2025! </div>
@@ -166,17 +167,17 @@ function MalaysiaNodies(){
 
                 <div className="image_holder">
                     <img src={Pic45}></img>
-                </div>  
-
+                </div>
+             <NextPreviousBlog blog_id={blogId}/>
             </div>
 
-             
+
         </div>
 
-      <Footer/>  
+      <Footer/>
 
-    </>   
-        
+    </>
+
     );
 }
 

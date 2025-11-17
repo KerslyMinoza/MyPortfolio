@@ -1,5 +1,5 @@
 import '../blogs.css';
-import Backbutton from '../../../components/common/Backbutton';
+import Nav from '../../../components/layout/Nav/Nav.jsx';
 
 import Devcon from "../../../assets/images/blog/devcon/devcon.jpg";
 import Pic1 from "../../../assets/images/blog/devcon/pic1.jpg";
@@ -40,17 +40,18 @@ import Pic34 from "../../../assets/images/blog/devcon/pic34.jpg";
 
 import Footer from '../../../components/layout/footer/Footer';
 
-import NextPrevious from '../../../components/common/NextPrevious';
+import NextPreviousBlog from '../../../components/common/NextPreviousBlog';
 import { useLocation } from 'react-router-dom';
+import { BLOG } from '../../../data/blogs.js';
 
 function DevconBangkok(){
 
     const location = useLocation();
-    const blogId = location.state?.blogId;
+    const blogId = location.state?.blogId || BLOG.find(b => b.path === '/devcon_bangkok')?.id;
 
     return (
         <>
-            <Backbutton page="blog"/>
+            <Nav/>
             <div className="blog" id="pokfund">
                 <div className="blog_name"> Devcon + Team Building in Bangkok </div>
                 
@@ -144,15 +145,16 @@ function DevconBangkok(){
 
                     <div className="image_holder">
                         <img src={Pic34}></img>
-                    </div>   
+                    </div>
+             <NextPreviousBlog blog_id={blogId}/>
             </div>
-             
+
         </div>
 
-      <Footer/>  
+      <Footer/>
 
-    </>   
-        
+    </>
+
     );
 }
 

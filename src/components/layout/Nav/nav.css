@@ -55,8 +55,8 @@ button {
 }
 
 .activenav {
-  color: var(--basic110)  !important;
-  font-weight: var(--weight-regulars);
+  color: var(--basic10) !important;
+  font-weight: var(--weight-regular);
 }
 
 .close button {

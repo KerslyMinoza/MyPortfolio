@@ -72,8 +72,8 @@
     background-color: var(--primary2);
 }*/
 .button_holder {
-  position: relative;       /* So the fill stays inside */
-  overflow: hidden;         /* Clip to border-radius */
+  position: relative;
+  overflow: hidden;
   margin-top: 30px;
   width: 150px;
   text-align: center;
@@ -83,6 +83,8 @@
   padding-bottom: 14px;
   border-radius: 50px;
   cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
 }
 
 .button-fill {
@@ -90,23 +92,36 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 0%;                /* Start empty */
-  background-color: var(--primary1); /* Fill color */       /* Match button shape */
+  width: 0%;
+  background-color: var(--primary1);
+  border-radius: 50px;
   z-index: 0;
-  transition: width 0.4s ease-in-out;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-text {
   position: relative;
-  z-index: 1;                /* Keep text above fill */
+  z-index: 1;
   color: var(--basic6);
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button_holder:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .button_holder:hover .button-fill{
     width: 100%;
-    border-radius: 50px;
-    color:  var(--basic10);
-    transition: width 0.3s ease-in-out;
+}
+
+.button_holder:hover .button-text {
+    color: var(--basic10);
+}
+
+.button_holder:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .button_holder:active .button-fill{

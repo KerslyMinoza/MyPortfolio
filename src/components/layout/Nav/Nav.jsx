@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './nav.css'
 import { useState } from 'react';
 import HamburgerIcon from "../../../assets/images/hamburger.png";
@@ -8,6 +8,9 @@ import { motion, AnimatePresence } from "framer-motion";
 function Nav(){
 
     const [isOpen, setIsopen] = useState(false);
+    const location = useLocation();
+
+    const isActive = (path) => location.pathname === path;
 
     console.log(isOpen);
 
@@ -51,11 +54,11 @@ function Nav(){
 
 
                     <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/moreworks">More Works</Link></li>
-                        <li><Link to="/aboutme">About Me</Link></li>
-                        <li><Link to="/blog">Random Blog</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
+                        <li><Link to="/" className={isActive("/") ? "activenav" : ""}>Home</Link></li>
+                        <li><Link to="/moreworks" className={isActive("/moreworks") ? "activenav" : ""}>More Works</Link></li>
+                        <li><Link to="/aboutme" className={isActive("/aboutme") ? "activenav" : ""}>About Me</Link></li>
+                        <li><Link to="/blog" className={isActive("/blog") ? "activenav" : ""}>Random Blog</Link></li>
+                        <li><Link to="/contact" className={isActive("/contact") ? "activenav" : ""}>Contact</Link></li>
                     </ul>
                 </motion.div>
                 )}
@@ -65,11 +68,11 @@ function Nav(){
 
             <div className="nav_desktop">
                 <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/moreworks">More Works</Link></li>
-                    <li><Link to="/aboutme">About Me</Link></li>
-                    <li><Link to="/blog">Random Blog</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
+                    <li><Link to="/" className={isActive("/") ? "activenav" : ""}>Home</Link></li>
+                    <li><Link to="/moreworks" className={isActive("/moreworks") ? "activenav" : ""}>More Works</Link></li>
+                    <li><Link to="/aboutme" className={isActive("/aboutme") ? "activenav" : ""}>About Me</Link></li>
+                    <li><Link to="/blog" className={isActive("/blog") ? "activenav" : ""}>Random Blog</Link></li>
+                    <li><Link to="/contact" className={isActive("/contact") ? "activenav" : ""}>Contact</Link></li>
                 </ul>
             </div>
 
