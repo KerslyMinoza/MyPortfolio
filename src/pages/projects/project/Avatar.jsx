@@ -1,5 +1,5 @@
 import './project.css';
-import Backbutton from '../../../components/common/Backbutton';
+import Nav from '../../../components/layout/Nav/Nav.jsx';
 
 import Design1 from "../../../assets/images/avatar_thumbnail.gif";
 import Footer from '../../../components/layout/footer/Footer';
@@ -14,7 +14,7 @@ function Avatar(){
 
     return (
         <>
-            <Backbutton/>
+            <Nav/>
             <div className="project" id="pokfund">
                 <div className="project_name"> Poktfund Avatar </div>
                 

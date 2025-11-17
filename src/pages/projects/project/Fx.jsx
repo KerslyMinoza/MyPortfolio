@@ -24,8 +24,8 @@ import Image1 from "../../../assets/images/functionchat/functionnetwork.png";
 
 
 
-import Backbutton from '../../../components/common/Backbutton';
-import Footer from '../../../components/layout/footer/Footer.jsx';
+import Nav from '../../../components/layout/Nav/Nav.jsx';
+import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
@@ -39,7 +39,7 @@ function Fx(){
 
     return (
         <>
-            <Backbutton page="home"/>
+            <Nav/>
             <div className="project" id="orcaa">
                 <div className="project_name"> Function Chat </div>
                 

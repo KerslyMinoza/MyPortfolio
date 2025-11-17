@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0px 20px 20px 20px;
 }
 
 .section_wrapper {
@@ -47,10 +47,10 @@
     font-weight: 400;
     font-style: italic;
     font-size: 80px;
-    margin-top: 50px;
-    text-decoration: italic;   
-    
-    
+    margin-top: 0px;
+    text-decoration: italic;
+
+
 }
 
 .service_wrapper {
@@ -137,8 +137,8 @@
 
     .photo_holder {
         width: 40%;
-        margin-top: 60px;
-       
+        margin-top: 0px;
+
     }
 
     .photo_holder img {

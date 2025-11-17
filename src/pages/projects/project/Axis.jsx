@@ -1,5 +1,5 @@
 import './project.css';
-import Backbutton from '../../../components/common/Backbutton';
+import Nav from '../../../components/layout/Nav/Nav.jsx';
 import DesignProcess from "../../../assets/images/axis/design_process.png";
 import PainPoints from "../../../assets/images/axis/painpoints.png";
 import Userpersona1 from "../../../assets/images/axis/userpersona1.png";
@@ -15,7 +15,7 @@ import Design6 from "../../../assets/images/axis/design6.png";
 
 
 
-import Footer from '../../../components/layout/footer/Footer.jsx';
+import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
@@ -28,7 +28,7 @@ const projectId = location.state?.projectId;
 
     return (
         <>
-            <Backbutton page="home"/>
+            <Nav/>
             <div className="project" id="orcaa">
                 <div className="project_name"> AXIS </div>
                 

@@ -1,8 +1,8 @@
 import './project.css';
-import Backbutton from '../../../components/common/Backbutton';
+import Nav from '../../../components/layout/Nav/Nav.jsx';
 
 import Design from "../../../assets/images/trux/trux.png";
-import Footer from '../../../components/layout/footer/Footer.jsx';
+import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
@@ -14,7 +14,7 @@ function Trux(){
 
     return (
         <>
-            <Backbutton page="home"/>
+            <Nav/>
             <div className="project" id="orcaa">
                 <div className="project_name"> Trux </div>
                 

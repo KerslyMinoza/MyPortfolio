@@ -1,8 +1,8 @@
 import './project.css';
 
 import Design from "../../../assets/images/rikka/rikka.png";
-import Backbutton from '../../../components/common/Backbutton';
-import Footer from '../../../components/layout/footer/Footer.jsx';
+import Nav from '../../../components/layout/Nav/Nav.jsx';
+import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
@@ -14,7 +14,7 @@ function Rikka(){
 
     return (
         <>
-            <Backbutton page="home"/>
+            <Nav/>
             <div className="project" id="orcaa">
                 <div className="project_name"> Quantum Breakthrough</div>
                 

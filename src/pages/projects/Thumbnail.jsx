@@ -8,12 +8,12 @@ function Thumbnail(project){
 
 
     return (
-        <Link 
-        to={proj.path} 
+        <Link
+        to={proj.path}
         state={{ projectId: proj.id }}
         className="thumbnail">
-            <motion.img 
-            src={proj.image} 
+            <motion.img
+            src={proj.image}
             alt="Tilted Image"
             className="w-64 h-64 object-cover rounded-xl"
             whileHover={{ rotate: -1 }}
@@ -28,7 +28,7 @@ function Thumbnail(project){
                     <span className="type" key={i}>{t}</span>
                 ))}
             </div>
-            
+
         </Link>
     );
 }

@@ -1,12 +1,12 @@
 import './project.css';
-import Backbutton from '../../../components/common/Backbutton';
+import Nav from '../../../components/layout/Nav/Nav.jsx';
 
 import Design1 from "../../../assets/images/poktfund/1.webp";
 import Design2 from "../../../assets/images/poktfund/2.webp";
 import Design3 from "../../../assets/images/poktfund/3.webp";
 import Design4 from "../../../assets/images/poktfund/4.webp";
 import Video from "../../../assets/images/poktfund/poktfund_video.mp4";
-import Footer from '../../../components/layout/footer/Footer.jsx';
+import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
@@ -18,7 +18,7 @@ function Poktfund(){
 
     return (
         <>
-            <Backbutton page="home"/>
+            <Nav/>
             <div className="project" id="pokfund">
                 <div className="project_name"> Poktfund Wallet </div>
                 

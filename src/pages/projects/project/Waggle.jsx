@@ -1,5 +1,5 @@
 import './project.css';
-import Backbutton from '../../../components/common/Backbutton';
+import Nav from '../../../components/layout/Nav/Nav.jsx';
 import DesignProcess from "../../../assets/images/waggle/design_process.png";
 import Branding from "../../../assets/images/waggle/branding.png";
 import Illustrations from "../../../assets/images/waggle/illustrations.png";
@@ -17,7 +17,7 @@ import Design9 from "../../../assets/images/waggle/waggle_9.png";
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
-import Footer from '../../../components/layout/footer/Footer.jsx';
+import Footer from '../../../components/layout/footer/Footer';
 
 function Waggle(){
 
@@ -26,7 +26,7 @@ function Waggle(){
     
     return (
         <>
-            <Backbutton page="home"/>
+            <Nav/>
             <div className="project" id="orcaa">
                 <div className="project_name"> Waggle </div>
                 

@@ -18,7 +18,7 @@ function Allblogs(){
             animate="visible"
             transition={transition}
             viewport={{ once: true, amount: 0.2 }}
-            className="blog_wrapper margin-s">
+            className="blog_wrapper">
 
                 <div className="blog_title"> Something Worth Sharing</div>
 
