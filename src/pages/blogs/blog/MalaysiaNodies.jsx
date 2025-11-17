@@ -52,11 +52,28 @@ import Footer from '../../../components/layout/footer/Footer';
 import NextPreviousBlog from '../../../components/common/NextPreviousBlog';
 import { useLocation } from 'react-router-dom';
 import { BLOG } from '../../../data/blogs.js';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 function MalaysiaNodies(){
 
     const location = useLocation();
     const blogId = location.state?.blogId || BLOG.find(b => b.path === '/malaysia_nodies')?.id;
+
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const openModal = (imageSrc) => {
+        setSelectedImage(imageSrc);
+    };
+
+    const closeModal = () => {
+        setSelectedImage(null);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Escape') closeModal();
+    };
 
     return (
         <>
@@ -74,7 +91,7 @@ function MalaysiaNodies(){
                     </div>
 
                     <div className="image_holder">
-                        <img src={Pic29}></img>
+                        <img src={Pic29} onClick={() => openModal(Pic29)}></img>
                     </div>  
 
 
@@ -88,17 +105,17 @@ function MalaysiaNodies(){
 
 
                     <div className="masonry_images">
-                        <img src={Pic9}></img>
-                        <img src={Pic16}></img>
-                        <img src={Pic27}></img>
-                        <img src={Pic28}></img>
-                         <img src={Pic31}></img>
-                         <img src={Pic11}></img>
-                         <img src={Pic12}></img>
-                         <img src={Pic23}></img>
-                         <img src={Pic34}></img>
-                          <img src={Pic15}></img>
-                          <img src={Pic33}></img>
+                        <img src={Pic9} onClick={() => openModal(Pic9)}></img>
+                        <img src={Pic16} onClick={() => openModal(Pic16)}></img>
+                        <img src={Pic27} onClick={() => openModal(Pic27)}></img>
+                        <img src={Pic28} onClick={() => openModal(Pic28)}></img>
+                         <img src={Pic31} onClick={() => openModal(Pic31)}></img>
+                         <img src={Pic11} onClick={() => openModal(Pic11)}></img>
+                         <img src={Pic12} onClick={() => openModal(Pic12)}></img>
+                         <img src={Pic23} onClick={() => openModal(Pic23)}></img>
+                         <img src={Pic34} onClick={() => openModal(Pic34)}></img>
+                          <img src={Pic15} onClick={() => openModal(Pic15)}></img>
+                          <img src={Pic33} onClick={() => openModal(Pic33)}></img>
 
                     </div>
 
@@ -106,8 +123,8 @@ function MalaysiaNodies(){
                 <div className="section_title">Yesss Hardworking peeps</div>    
 
                     <div className="masonry_images">
-                        <img src={Pic35}></img>
-                        <img src={Pic36}></img>
+                        <img src={Pic35} onClick={() => openModal(Pic35)}></img>
+                        <img src={Pic36} onClick={() => openModal(Pic36)}></img>
                     </div>
                 
                 <div className="section_title">Why I Love Malaysia 🌍</div> 
@@ -121,17 +138,17 @@ function MalaysiaNodies(){
 
 
                 <div className="masonry_images">
-                    <img src={Pic10}></img>
-                    <img src={Pic5}></img>
-                    <img src={Pic19}></img>
-                    <img src={Pic17}></img>
-                    <img src={Pic41}></img>
-                    <img src={Pic40}></img>
-                    <img src={Pic39}></img>
-                    <img src={Pic38}></img>
-                    <img src={Pic37}></img>
-                    <img src={Pic18}></img>
-                    <img src={Pic20}></img>
+                    <img src={Pic10} onClick={() => openModal(Pic10)}></img>
+                    <img src={Pic5} onClick={() => openModal(Pic5)}></img>
+                    <img src={Pic19} onClick={() => openModal(Pic19)}></img>
+                    <img src={Pic17} onClick={() => openModal(Pic17)}></img>
+                    <img src={Pic41} onClick={() => openModal(Pic41)}></img>
+                    <img src={Pic40} onClick={() => openModal(Pic40)}></img>
+                    <img src={Pic39} onClick={() => openModal(Pic39)}></img>
+                    <img src={Pic38} onClick={() => openModal(Pic38)}></img>
+                    <img src={Pic37} onClick={() => openModal(Pic37)}></img>
+                    <img src={Pic18} onClick={() => openModal(Pic18)}></img>
+                    <img src={Pic20} onClick={() => openModal(Pic20)}></img>
                 </div>
 
 
@@ -147,11 +164,11 @@ function MalaysiaNodies(){
 
 
                 <div className="masonry_images">
-                    <img src={Pic43}></img>
-                    <img src={Pic42}></img>
-                    <img src={Pic44}></img>
-                    <img src={Pic1}></img>
-                    <img src={Pic2}></img>
+                    <img src={Pic43} onClick={() => openModal(Pic43)}></img>
+                    <img src={Pic42} onClick={() => openModal(Pic42)}></img>
+                    <img src={Pic44} onClick={() => openModal(Pic44)}></img>
+                    <img src={Pic1} onClick={() => openModal(Pic1)}></img>
+                    <img src={Pic2} onClick={() => openModal(Pic2)}></img>
                 </div>
 
 
@@ -166,13 +183,45 @@ function MalaysiaNodies(){
 
 
                 <div className="image_holder">
-                    <img src={Pic45}></img>
+                    <img src={Pic45} onClick={() => openModal(Pic45)}></img>
                 </div>
              <NextPreviousBlog blog_id={blogId}/>
             </div>
 
 
         </div>
+
+      {/* Modal */}
+      <AnimatePresence>
+          {selectedImage && (
+              <motion.div
+                  className="modal-overlay"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={closeModal}
+                  onKeyDown={handleKeyDown}
+                  tabIndex={0}
+              >
+                  <button className="modal-close" onClick={closeModal}>
+                      <XMarkIcon className="icon" />
+                  </button>
+
+                  <motion.div
+                      className="modal-content"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0.8, opacity: 0 }}
+                      transition={{ type: "spring", duration: 0.5 }}
+                      onClick={(e) => e.stopPropagation()}
+                  >
+                      <div className="modal-image-container">
+                          <img src={selectedImage} alt="Full size" />
+                      </div>
+                  </motion.div>
+              </motion.div>
+          )}
+      </AnimatePresence>
 
       <Footer/>
 

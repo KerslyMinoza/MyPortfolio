@@ -43,11 +43,28 @@ import Footer from '../../../components/layout/footer/Footer';
 import NextPreviousBlog from '../../../components/common/NextPreviousBlog';
 import { useLocation } from 'react-router-dom';
 import { BLOG } from '../../../data/blogs.js';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 function DevconBangkok(){
 
     const location = useLocation();
     const blogId = location.state?.blogId || BLOG.find(b => b.path === '/devcon_bangkok')?.id;
+
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const openModal = (imageSrc) => {
+        setSelectedImage(imageSrc);
+    };
+
+    const closeModal = () => {
+        setSelectedImage(null);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Escape') closeModal();
+    };
 
     return (
         <>
@@ -64,7 +81,7 @@ function DevconBangkok(){
                     </div>
 
                     <div className="image_holder">
-                        <img src={Pic1}></img>
+                        <img src={Pic1} onClick={() => openModal(Pic1)}></img>
                     </div>  
 
 
@@ -76,12 +93,12 @@ function DevconBangkok(){
 
 
                     <div className="masonry_images">
-                        <img src={Pic15}></img>
-                        <img src={Pic14}></img>
-                        <img src={Pic17}></img>
-                        <img src={Pic18}></img>
-                        <img src={Pic16}></img>
-                        <img src={Pic21}></img>
+                        <img src={Pic15} onClick={() => openModal(Pic15)}></img>
+                        <img src={Pic14} onClick={() => openModal(Pic14)}></img>
+                        <img src={Pic17} onClick={() => openModal(Pic17)}></img>
+                        <img src={Pic18} onClick={() => openModal(Pic18)}></img>
+                        <img src={Pic16} onClick={() => openModal(Pic16)}></img>
+                        <img src={Pic21} onClick={() => openModal(Pic21)}></img>
                     </div>
 
 
@@ -92,15 +109,15 @@ function DevconBangkok(){
                    </div>
 
                     <div className="masonry_images">
-                        <img src={Pic24}></img>
-                        <img src={Pic23}></img>
-                        <img src={Pic22}></img>
-                        <img src={Pic8}></img>
-                        <img src={Pic9}></img>
-                        <img src={Pic19}></img>
-                        <img src={Pic7}></img>
-                        <img src={Pic11}></img>
-                        <img src={Pic10}></img>
+                        <img src={Pic24} onClick={() => openModal(Pic24)}></img>
+                        <img src={Pic23} onClick={() => openModal(Pic23)}></img>
+                        <img src={Pic22} onClick={() => openModal(Pic22)}></img>
+                        <img src={Pic8} onClick={() => openModal(Pic8)}></img>
+                        <img src={Pic9} onClick={() => openModal(Pic9)}></img>
+                        <img src={Pic19} onClick={() => openModal(Pic19)}></img>
+                        <img src={Pic7} onClick={() => openModal(Pic7)}></img>
+                        <img src={Pic11} onClick={() => openModal(Pic11)}></img>
+                        <img src={Pic10} onClick={() => openModal(Pic10)}></img>
                     </div>
 
 
@@ -111,10 +128,10 @@ function DevconBangkok(){
                    </div>
 
                     <div className="masonry_images">
-                        <img src={Pic25}></img>
-                        <img src={Pic29}></img>
-                         <img src={Pic28}></img>
-                        <img src={Pic27}></img>
+                        <img src={Pic25} onClick={() => openModal(Pic25)}></img>
+                        <img src={Pic29} onClick={() => openModal(Pic29)}></img>
+                         <img src={Pic28} onClick={() => openModal(Pic28)}></img>
+                        <img src={Pic27} onClick={() => openModal(Pic27)}></img>
                     </div>
 
                     <div className="section_title">Team Building Adventures 🐅 </div>
@@ -125,15 +142,15 @@ function DevconBangkok(){
                    </div>
 
                     <div className="masonry_images">
-                        <img src={Pic31}></img>
-                        <img src={Pic33}></img>
-                         <img src={Pic2}></img>
-                        <img src={Pic3}></img>
-                        <img src={Pic4}></img>
-                        <img src={Pic5}></img>
-                        <img src={Pic32}></img>
-                        <img src={Pic30}></img>
-   
+                        <img src={Pic31} onClick={() => openModal(Pic31)}></img>
+                        <img src={Pic33} onClick={() => openModal(Pic33)}></img>
+                         <img src={Pic2} onClick={() => openModal(Pic2)}></img>
+                        <img src={Pic3} onClick={() => openModal(Pic3)}></img>
+                        <img src={Pic4} onClick={() => openModal(Pic4)}></img>
+                        <img src={Pic5} onClick={() => openModal(Pic5)}></img>
+                        <img src={Pic32} onClick={() => openModal(Pic32)}></img>
+                        <img src={Pic30} onClick={() => openModal(Pic30)}></img>
+
                     </div>
 
                     <div className="section_title">What I’m Taking Home </div>
@@ -144,12 +161,44 @@ function DevconBangkok(){
                    </div>
 
                     <div className="image_holder">
-                        <img src={Pic34}></img>
+                        <img src={Pic34} onClick={() => openModal(Pic34)}></img>
                     </div>
              <NextPreviousBlog blog_id={blogId}/>
             </div>
 
         </div>
+
+      {/* Modal */}
+      <AnimatePresence>
+          {selectedImage && (
+              <motion.div
+                  className="modal-overlay"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={closeModal}
+                  onKeyDown={handleKeyDown}
+                  tabIndex={0}
+              >
+                  <button className="modal-close" onClick={closeModal}>
+                      <XMarkIcon className="icon" />
+                  </button>
+
+                  <motion.div
+                      className="modal-content"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0.8, opacity: 0 }}
+                      transition={{ type: "spring", duration: 0.5 }}
+                      onClick={(e) => e.stopPropagation()}
+                  >
+                      <div className="modal-image-container">
+                          <img src={selectedImage} alt="Full size" />
+                      </div>
+                  </motion.div>
+              </motion.div>
+          )}
+      </AnimatePresence>
 
       <Footer/>
 
