@@ -29,6 +29,9 @@ import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 
 
@@ -36,6 +39,20 @@ function Fx(){
 
     const location = useLocation();
     const projectId = location.state?.projectId;
+
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const openModal = (imageSrc) => {
+        setSelectedImage(imageSrc);
+    };
+
+    const closeModal = () => {
+        setSelectedImage(null);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Escape') closeModal();
+    };
 
     return (
         <>
@@ -79,7 +96,7 @@ function Fx(){
 
                     
 
-                    <div className="image_holder"><img src={Image1}></img></div>
+                    <div className="image_holder"><img src={Image1} onClick={() => openModal(Image1)}></img></div>
 
                     <div className="section_title"> Branding</div>
                     <div className="project_content">
@@ -102,10 +119,10 @@ function Fx(){
                         <br/><br/>
                     </div>
  
-                    <div className="image_holder"><img src={Design1}></img></div>
-                    <div className="image_holder"><img src={Design2}></img></div>
-                    <div className="image_holder"><img src={Design3}></img></div>
-                    <div className="image_holder"><img src={Design4}></img></div>
+                    <div className="image_holder"><img src={Design1} onClick={() => openModal(Design1)}></img></div>
+                    <div className="image_holder"><img src={Design2} onClick={() => openModal(Design2)}></img></div>
+                    <div className="image_holder"><img src={Design3} onClick={() => openModal(Design3)}></img></div>
+                    <div className="image_holder"><img src={Design4} onClick={() => openModal(Design4)}></img></div>
 
 
                      <div className="section_title center_text">Prototyping</div>
@@ -115,7 +132,7 @@ function Fx(){
                     <br/><br/>
                     </div>
 
-                    <div className="image_holder"><img src={Proto1}></img></div>
+                    <div className="image_holder"><img src={Proto1} onClick={() => openModal(Proto1)}></img></div>
 
                     
 
@@ -130,11 +147,11 @@ function Fx(){
                     </div>
 
                     <div className="masonry_images">
-                        <img src={Mobile1}></img>
-                        <img src={Mobile2}></img>
-                        <img src={Mobile4}></img>
-                        <img src={Mobile5}></img>
-                        <img src={Mobile6}></img>
+                        <img src={Mobile1} onClick={() => openModal(Mobile1)}></img>
+                        <img src={Mobile2} onClick={() => openModal(Mobile2)}></img>
+                        <img src={Mobile4} onClick={() => openModal(Mobile4)}></img>
+                        <img src={Mobile5} onClick={() => openModal(Mobile5)}></img>
+                        <img src={Mobile6} onClick={() => openModal(Mobile6)}></img>
                     </div>
 
                     <div className="section_title center_text">Mobile App Prototyping</div>
@@ -144,7 +161,7 @@ function Fx(){
                     <br/><br/>
                     </div>
 
-                    <div className="image_holder"><img src={Proto2}></img></div>
+                    <div className="image_holder"><img src={Proto2} onClick={() => openModal(Proto2)}></img></div>
 
                     <div className="section_title center_text">Reflection</div>                  
 
@@ -156,10 +173,42 @@ function Fx(){
                     </div>                  
                     
 
-             <NextPrevious project_id={projectId}/>    
+             <NextPrevious project_id={projectId}/>
             </div>
-  
+
         </div>
+
+      {/* Modal */}
+      <AnimatePresence>
+          {selectedImage && (
+              <motion.div
+                  className="modal-overlay"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={closeModal}
+                  onKeyDown={handleKeyDown}
+                  tabIndex={0}
+              >
+                  <button className="modal-close" onClick={closeModal}>
+                      <XMarkIcon className="icon" />
+                  </button>
+
+                  <motion.div
+                      className="modal-content"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0.8, opacity: 0 }}
+                      transition={{ type: "spring", duration: 0.5 }}
+                      onClick={(e) => e.stopPropagation()}
+                  >
+                      <div className="modal-image-container">
+                          <img src={selectedImage} alt="Full size" />
+                      </div>
+                  </motion.div>
+              </motion.div>
+          )}
+      </AnimatePresence>
 
     <Footer/>
     </>   

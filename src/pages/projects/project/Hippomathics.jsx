@@ -9,13 +9,28 @@ import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 function Hippomathics(){
 
     const location = useLocation();
     const projectId = location.state?.projectId;
 
+    const [selectedImage, setSelectedImage] = useState(null);
 
+    const openModal = (imageSrc) => {
+        setSelectedImage(imageSrc);
+    };
+
+    const closeModal = () => {
+        setSelectedImage(null);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Escape') closeModal();
+    };
 
     return (
         <>
@@ -37,7 +52,7 @@ function Hippomathics(){
                     </ul>
 
 
-                    <div className="image_holder"><img src={Design1}></img></div>
+                    <div className="image_holder"><img src={Design1} onClick={() => openModal(Design1)}></img></div>
 
 
                     </div>
@@ -56,8 +71,8 @@ function Hippomathics(){
                     </div>
 
                     <div className="image_holder" id="hippomathics">
-                        <div className="image_holder"><img src={Design2}></img></div>
-                        <div className="image_holder"><img src={Design3}></img></div>
+                        <div className="image_holder"><img src={Design2} onClick={() => openModal(Design2)}></img></div>
+                        <div className="image_holder"><img src={Design3} onClick={() => openModal(Design3)}></img></div>
                     </div>
 
   
@@ -65,14 +80,46 @@ function Hippomathics(){
                     Although I can no longer update its features — since I’ve forgotten parts of the code and it’s no longer compatible with the latest Unity versions — it’s still miraculously live on the Play Store!
                     </div>
 
-             <NextPrevious project_id={projectId}/>      
+             <NextPrevious project_id={projectId}/>
             </div>
-            
+
         </div>
 
-      <Footer/>  
+      {/* Modal */}
+      <AnimatePresence>
+          {selectedImage && (
+              <motion.div
+                  className="modal-overlay"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={closeModal}
+                  onKeyDown={handleKeyDown}
+                  tabIndex={0}
+              >
+                  <button className="modal-close" onClick={closeModal}>
+                      <XMarkIcon className="icon" />
+                  </button>
 
-    </>   
+                  <motion.div
+                      className="modal-content"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0.8, opacity: 0 }}
+                      transition={{ type: "spring", duration: 0.5 }}
+                      onClick={(e) => e.stopPropagation()}
+                  >
+                      <div className="modal-image-container">
+                          <img src={selectedImage} alt="Full size" />
+                      </div>
+                  </motion.div>
+              </motion.div>
+          )}
+      </AnimatePresence>
+
+      <Footer/>
+
+    </>
         
     );
 }

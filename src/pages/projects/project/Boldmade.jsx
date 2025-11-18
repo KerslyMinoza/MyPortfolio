@@ -71,11 +71,28 @@ import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 function Boldmade(){
 
     const location = useLocation();
     const projectId = location.state?.projectId;
+
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const openModal = (imageSrc) => {
+        setSelectedImage(imageSrc);
+    };
+
+    const closeModal = () => {
+        setSelectedImage(null);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Escape') closeModal();
+    };
 
     return (
         <>
@@ -104,7 +121,7 @@ function Boldmade(){
                     </div>
 
                     <div className="margin-m"></div>
-                    <div className="image_holder" id="boldmade_box"><img src={box}></img></div>
+                    <div className="image_holder" id="boldmade_box"><img src={box} onClick={() => openModal(box)}></img></div>
 
                     <div className="margin-m"></div>
                     <div className="video_wrapper">
@@ -126,68 +143,68 @@ function Boldmade(){
                     <div className="margin-m"></div>
 
                     <div className="image_holder" id="portraits">
-                        <img src={bm1}></img>
-                        <img src={bm2}></img>
-                        <img src={bm3}></img>
-                        <img src={bm4}></img>
-                        <img src={bm5}></img>
-                        <img src={bm6}></img>
-                        <img src={bm7}></img>
-                        <img src={bm8}></img>
-                        <img src={bm9}></img>
-                        <img src={bm10}></img>
-                        <img src={bm11}></img>
-                        <img src={bm12}></img>
-                        <img src={bm13}></img>
-                        <img src={bm14}></img>
-                        <img src={bm15}></img>
-                        <img src={bm16}></img>
-                        <img src={bm17}></img>
-                        <img src={bm18}></img>
-                        <img src={bm19}></img>
-                        <img src={bm20}></img>
-                        <img src={bm21}></img>
-                        <img src={bm22}></img>
-                        <img src={bm23}></img>
-                        <img src={bm24}></img>
-                        <img src={bm25}></img>
-                        <img src={bm26}></img>
-                        <img src={bm27}></img>
-                        <img src={bm28}></img>
-                        <img src={bm29}></img>
-                        <img src={bm30}></img>
-                        <img src={bm31}></img>
-                        <img src={bm32}></img>
-                        <img src={bm33}></img>
-                        <img src={bm34}></img>
-                        <img src={bm35}></img>
-                        <img src={bm36}></img>
-                        <img src={bm37}></img>
-                        <img src={bm38}></img>
-                        <img src={bm39}></img>
-                        <img src={bm40}></img>
-                        <img src={bm41}></img>
-                        <img src={bm42}></img>
-                        <img src={bm43}></img>
-                        <img src={bm44}></img>
-                        <img src={bm45}></img>
-                        <img src={bm46}></img>
-                        <img src={bm47}></img>
-                        <img src={bm48}></img>
-                        <img src={bm49}></img>
-                        <img src={bm50}></img>
-                        <img src={bm51}></img>
-                        <img src={bm52}></img>
-                        <img src={bm53}></img>
-                        <img src={bm54}></img>
-                        <img src={bm55}></img>
-                        <img src={bm56}></img>
-                        <img src={bm57}></img>
-                        <img src={bm58}></img>
-                        <img src={bm59}></img>
-                        <img src={bm60}></img>
-                        <img src={bm61}></img>
-                        <img src={bm62}></img>
+                        <img src={bm1} onClick={() => openModal(bm1)}></img>
+                        <img src={bm2} onClick={() => openModal(bm2)}></img>
+                        <img src={bm3} onClick={() => openModal(bm3)}></img>
+                        <img src={bm4} onClick={() => openModal(bm4)}></img>
+                        <img src={bm5} onClick={() => openModal(bm5)}></img>
+                        <img src={bm6} onClick={() => openModal(bm6)}></img>
+                        <img src={bm7} onClick={() => openModal(bm7)}></img>
+                        <img src={bm8} onClick={() => openModal(bm8)}></img>
+                        <img src={bm9} onClick={() => openModal(bm9)}></img>
+                        <img src={bm10} onClick={() => openModal(bm10)}></img>
+                        <img src={bm11} onClick={() => openModal(bm11)}></img>
+                        <img src={bm12} onClick={() => openModal(bm12)}></img>
+                        <img src={bm13} onClick={() => openModal(bm13)}></img>
+                        <img src={bm14} onClick={() => openModal(bm14)}></img>
+                        <img src={bm15} onClick={() => openModal(bm15)}></img>
+                        <img src={bm16} onClick={() => openModal(bm16)}></img>
+                        <img src={bm17} onClick={() => openModal(bm17)}></img>
+                        <img src={bm18} onClick={() => openModal(bm18)}></img>
+                        <img src={bm19} onClick={() => openModal(bm19)}></img>
+                        <img src={bm20} onClick={() => openModal(bm20)}></img>
+                        <img src={bm21} onClick={() => openModal(bm21)}></img>
+                        <img src={bm22} onClick={() => openModal(bm22)}></img>
+                        <img src={bm23} onClick={() => openModal(bm23)}></img>
+                        <img src={bm24} onClick={() => openModal(bm24)}></img>
+                        <img src={bm25} onClick={() => openModal(bm25)}></img>
+                        <img src={bm26} onClick={() => openModal(bm26)}></img>
+                        <img src={bm27} onClick={() => openModal(bm27)}></img>
+                        <img src={bm28} onClick={() => openModal(bm28)}></img>
+                        <img src={bm29} onClick={() => openModal(bm29)}></img>
+                        <img src={bm30} onClick={() => openModal(bm30)}></img>
+                        <img src={bm31} onClick={() => openModal(bm31)}></img>
+                        <img src={bm32} onClick={() => openModal(bm32)}></img>
+                        <img src={bm33} onClick={() => openModal(bm33)}></img>
+                        <img src={bm34} onClick={() => openModal(bm34)}></img>
+                        <img src={bm35} onClick={() => openModal(bm35)}></img>
+                        <img src={bm36} onClick={() => openModal(bm36)}></img>
+                        <img src={bm37} onClick={() => openModal(bm37)}></img>
+                        <img src={bm38} onClick={() => openModal(bm38)}></img>
+                        <img src={bm39} onClick={() => openModal(bm39)}></img>
+                        <img src={bm40} onClick={() => openModal(bm40)}></img>
+                        <img src={bm41} onClick={() => openModal(bm41)}></img>
+                        <img src={bm42} onClick={() => openModal(bm42)}></img>
+                        <img src={bm43} onClick={() => openModal(bm43)}></img>
+                        <img src={bm44} onClick={() => openModal(bm44)}></img>
+                        <img src={bm45} onClick={() => openModal(bm45)}></img>
+                        <img src={bm46} onClick={() => openModal(bm46)}></img>
+                        <img src={bm47} onClick={() => openModal(bm47)}></img>
+                        <img src={bm48} onClick={() => openModal(bm48)}></img>
+                        <img src={bm49} onClick={() => openModal(bm49)}></img>
+                        <img src={bm50} onClick={() => openModal(bm50)}></img>
+                        <img src={bm51} onClick={() => openModal(bm51)}></img>
+                        <img src={bm52} onClick={() => openModal(bm52)}></img>
+                        <img src={bm53} onClick={() => openModal(bm53)}></img>
+                        <img src={bm54} onClick={() => openModal(bm54)}></img>
+                        <img src={bm55} onClick={() => openModal(bm55)}></img>
+                        <img src={bm56} onClick={() => openModal(bm56)}></img>
+                        <img src={bm57} onClick={() => openModal(bm57)}></img>
+                        <img src={bm58} onClick={() => openModal(bm58)}></img>
+                        <img src={bm59} onClick={() => openModal(bm59)}></img>
+                        <img src={bm60} onClick={() => openModal(bm60)}></img>
+                        <img src={bm61} onClick={() => openModal(bm61)}></img>
+                        <img src={bm62} onClick={() => openModal(bm62)}></img>
                     </div>
                     <div className="margin-m"></div>
                     <div className="project_content">
@@ -231,14 +248,46 @@ function Boldmade(){
                         ></iframe>
                     </div>
   
-            <NextPrevious project_id={projectId}/>    
+            <NextPrevious project_id={projectId}/>
             </div>
-             
+
         </div>
 
-      <Footer/>  
+      {/* Modal */}
+      <AnimatePresence>
+          {selectedImage && (
+              <motion.div
+                  className="modal-overlay"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={closeModal}
+                  onKeyDown={handleKeyDown}
+                  tabIndex={0}
+              >
+                  <button className="modal-close" onClick={closeModal}>
+                      <XMarkIcon className="icon" />
+                  </button>
 
-    </>   
+                  <motion.div
+                      className="modal-content"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0.8, opacity: 0 }}
+                      transition={{ type: "spring", duration: 0.5 }}
+                      onClick={(e) => e.stopPropagation()}
+                  >
+                      <div className="modal-image-container">
+                          <img src={selectedImage} alt="Full size" />
+                      </div>
+                  </motion.div>
+              </motion.div>
+          )}
+      </AnimatePresence>
+
+      <Footer/>
+
+    </>
         
     );
 }

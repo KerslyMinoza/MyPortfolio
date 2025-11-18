@@ -6,11 +6,28 @@ import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 function Trux(){
 
     const location = useLocation();
     const projectId = location.state?.projectId;
+
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const openModal = (imageSrc) => {
+        setSelectedImage(imageSrc);
+    };
+
+    const closeModal = () => {
+        setSelectedImage(null);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Escape') closeModal();
+    };
 
     return (
         <>
@@ -57,7 +74,7 @@ function Trux(){
                     Out of respect for the client’s request for privacy, I made sure to keep their company name confidential. I did ask for permission to include the app in my portfolio, and they were okay with it—as long as I concealed their identity and created my own branding for the presentation. So, I designed a dummy brand while keeping the original UI and functionality intact. Since this is a private system, the client didn’t want the exact interface to be copied for the same use case, which I completely understand. The app itself is quite extensive—it includes a payroll system, a diesel tracking system, and even a tablet app for drivers that allows the admin to monitor deliveries. It’s a large-scale application, so for the sake of confidentiality, I’m only showcasing select parts of the project in my portfolio.
                     </div>
 
-                    <div className="image_holder"><img src={Design}></img></div>
+                    <div className="image_holder"><img src={Design} onClick={() => openModal(Design)}></img></div>
 
                     <div className="section_title"> Reflection</div>
 
@@ -70,14 +87,46 @@ On top of that, there was clear tension between the CEO and the company I was de
 
 Despite all the chaos and stress, I actually enjoyed the design process itself. It was a fast-paced project with lots of pressure, but creatively, it was fulfilling. I just wish the experience had been smoother on the collaboration side.
                     </div>
-            <NextPrevious project_id={projectId}/>      
+            <NextPrevious project_id={projectId}/>
             </div>
-           
+
         </div>
-    
+
+      {/* Modal */}
+      <AnimatePresence>
+          {selectedImage && (
+              <motion.div
+                  className="modal-overlay"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={closeModal}
+                  onKeyDown={handleKeyDown}
+                  tabIndex={0}
+              >
+                  <button className="modal-close" onClick={closeModal}>
+                      <XMarkIcon className="icon" />
+                  </button>
+
+                  <motion.div
+                      className="modal-content"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0.8, opacity: 0 }}
+                      transition={{ type: "spring", duration: 0.5 }}
+                      onClick={(e) => e.stopPropagation()}
+                  >
+                      <div className="modal-image-container">
+                          <img src={selectedImage} alt="Full size" />
+                      </div>
+                  </motion.div>
+              </motion.div>
+          )}
+      </AnimatePresence>
+
         <Footer/>
 
-    </>   
+    </>
         
     );
 }

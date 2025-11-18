@@ -37,13 +37,28 @@ import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
-
-
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 function Nodies(){
 
     const location = useLocation();
     const projectId = location.state?.projectId;
+
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const openModal = (imageSrc) => {
+        setSelectedImage(imageSrc);
+    };
+
+    const closeModal = () => {
+        setSelectedImage(null);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Escape') closeModal();
+    };
 
     return (
         <>
@@ -88,7 +103,7 @@ The primary color is tech purple, chosen because it conveys a sense of modernity
 To give the brand more personality, I introduced a penguin character. Penguins are highly collaborative creatures that thrive in communities, which reflects the spirit of developers building together in a shared ecosystem. They are also approachable and friendly animals, making the product feel less intimidating and more welcoming for new users. By combining the modern energy of purple with the warmth of a penguin mascot, the brand strikes a unique balance of professionalism and playfulness.
                     </div>
 
-                    <div className="image_holder"><img src={Branding}></img></div>
+                    <div className="image_holder"><img src={Branding} onClick={() => openModal(Branding)}></img></div>
 
                     <div className="section_title"> Wireframe</div>
                     <div className="project_content">
@@ -97,8 +112,8 @@ To give the brand more personality, I introduced a penguin character. Penguins a
 Sometimes I skip wireframing and design directly, especially when I am already familiar with the flow. In this case, however, wireframes were useful for aligning quickly with the client and saving time under a tight deadline.
                     </div>
 
-                    <div className="image_holder"><img src={Wireframe1}></img></div>
-                    <div className="image_holder"><img src={Wireframe2}></img></div>
+                    <div className="image_holder"><img src={Wireframe1} onClick={() => openModal(Wireframe1)}></img></div>
+                    <div className="image_holder"><img src={Wireframe2} onClick={() => openModal(Wireframe2)}></img></div>
 
 
                      <div className="section_title"> Design System</div>
@@ -109,11 +124,11 @@ Sometimes I skip wireframing and design directly, especially when I am already f
 
 
                     <div className="masonry_images">
-                        <img src={Design_System1}></img>
-                        <img src={Design_System2}></img>
-                        <img src={Design_System3}></img>
-                        <img src={Design_System4}></img>
-                        <img src={Design_System5}></img>
+                        <img src={Design_System1} onClick={() => openModal(Design_System1)}></img>
+                        <img src={Design_System2} onClick={() => openModal(Design_System2)}></img>
+                        <img src={Design_System3} onClick={() => openModal(Design_System3)}></img>
+                        <img src={Design_System4} onClick={() => openModal(Design_System4)}></img>
+                        <img src={Design_System5} onClick={() => openModal(Design_System5)}></img>
                     </div>
 
                     <div className="section_title center_text">UI Design</div>       
@@ -126,12 +141,12 @@ Sometimes I skip wireframing and design directly, especially when I am already f
                      The overall look and feel strike a balance between professional and playful, ensuring the platform stands out without losing clarity.
                     </div>
  
-                    <div className="image_holder"><img src={Design1}></img></div>
-                    <div className="image_holder"><img src={Design2}></img></div>
-                    <div className="image_holder"><img src={Design3}></img></div>
-                    <div className="image_holder"><img src={Design4}></img></div>
-                    <div className="image_holder"><img src={Design5}></img></div>
-                    <div className="image_holder"><img src={Design6}></img></div>
+                    <div className="image_holder"><img src={Design1} onClick={() => openModal(Design1)}></img></div>
+                    <div className="image_holder"><img src={Design2} onClick={() => openModal(Design2)}></img></div>
+                    <div className="image_holder"><img src={Design3} onClick={() => openModal(Design3)}></img></div>
+                    <div className="image_holder"><img src={Design4} onClick={() => openModal(Design4)}></img></div>
+                    <div className="image_holder"><img src={Design5} onClick={() => openModal(Design5)}></img></div>
+                    <div className="image_holder"><img src={Design6} onClick={() => openModal(Design6)}></img></div>
 
 
                      <div className="section_title center_text">Prototyping</div>
@@ -144,19 +159,19 @@ Sometimes I skip wireframing and design directly, especially when I am already f
                      This combination of prototype and walkthrough ensured the design was not only presented visually but also clearly communicated.
                     </div>
 
-                     <div className="image_holder"><img src={Proto}></img></div>
+                     <div className="image_holder"><img src={Proto} onClick={() => openModal(Proto)}></img></div>
 
 
                     <div className="section_title center_text">Landing Page</div>
                     <div className="project_content">
                     For the landing page, I focused on creating a clear and modern first impression. I used tech purple to emphasize a futuristic yet approachable feel, supported by bold headlines and a strong call to action. Navigation was kept simple for quick access to docs, pricing, and resources, while subtle gradients and icons added polish without distraction. My goal was to make the page feel both trustworthy and inviting for developers exploring Nodies.
-                    </div> 
+                    </div>
 
-                      <div className="image_holder"><img src={Landing}></img></div>
+                      <div className="image_holder"><img src={Landing} onClick={() => openModal(Landing)}></img></div>
 
                       <div className="masonry_images">
-                        <img src={Mobile_Landing}></img>
-                    </div>                          
+                        <img src={Mobile_Landing} onClick={() => openModal(Mobile_Landing)}></img>
+                    </div>
 
                      <div className="section_title center_text">Before we end, Meet Mr. Nodie!</div>
                     <div className="project_content">
@@ -165,14 +180,14 @@ Sometimes I skip wireframing and design directly, especially when I am already f
 
 
                     <div className="masonry_images">
-                        <img src={Nodie1}></img>
-                        <img src={Nodie2}></img>
-                        <img src={Nodie3}></img>
-                        <img src={Nodie4}></img>
-                        <img src={Nodie5}></img>
-                        <img src={Nodie6}></img>
-                        <img src={Nodie7}></img>
-        
+                        <img src={Nodie1} onClick={() => openModal(Nodie1)}></img>
+                        <img src={Nodie2} onClick={() => openModal(Nodie2)}></img>
+                        <img src={Nodie3} onClick={() => openModal(Nodie3)}></img>
+                        <img src={Nodie4} onClick={() => openModal(Nodie4)}></img>
+                        <img src={Nodie5} onClick={() => openModal(Nodie5)}></img>
+                        <img src={Nodie6} onClick={() => openModal(Nodie6)}></img>
+                        <img src={Nodie7} onClick={() => openModal(Nodie7)}></img>
+
                     </div>
                     
 
@@ -188,15 +203,47 @@ Sometimes I skip wireframing and design directly, especially when I am already f
 
                     
 
-                    <div className="image_holder"><img src={Penguin} style={{ width: '300px' }}></img></div>
-             <NextPrevious project_id={projectId}/>    
+                    <div className="image_holder"><img src={Penguin} onClick={() => openModal(Penguin)} style={{ width: '300px' }}></img></div>
+             <NextPrevious project_id={projectId}/>
             </div>
-  
+
         </div>
 
+      {/* Modal */}
+      <AnimatePresence>
+          {selectedImage && (
+              <motion.div
+                  className="modal-overlay"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={closeModal}
+                  onKeyDown={handleKeyDown}
+                  tabIndex={0}
+              >
+                  <button className="modal-close" onClick={closeModal}>
+                      <XMarkIcon className="icon" />
+                  </button>
+
+                  <motion.div
+                      className="modal-content"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0.8, opacity: 0 }}
+                      transition={{ type: "spring", duration: 0.5 }}
+                      onClick={(e) => e.stopPropagation()}
+                  >
+                      <div className="modal-image-container">
+                          <img src={selectedImage} alt="Full size" />
+                      </div>
+                  </motion.div>
+              </motion.div>
+          )}
+      </AnimatePresence>
+
     <Footer/>
-    </>   
-        
+    </>
+
     );
 }
 

@@ -10,11 +10,28 @@ import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 function Poktfund(){
 
     const location = useLocation();
     const projectId = location.state?.projectId;
+
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const openModal = (imageSrc) => {
+        setSelectedImage(imageSrc);
+    };
+
+    const closeModal = () => {
+        setSelectedImage(null);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Escape') closeModal();
+    };
 
     return (
         <>
@@ -71,7 +88,7 @@ function Poktfund(){
                     Streamline your POKT transactions with our user-friendly mobile application. Benefit from multiple options for sending and receiving funds, including the quick and convenient QR code scanning feature using your device's camera. Effortlessly manage transactions with a simple swipe to add new contacts or initiate direct sends without manual address input.
                     </div>
 
-                    <div className="image_holder"><img src={Design1} style={{ width: '70%' }}></img></div>
+                    <div className="image_holder"><img src={Design1} onClick={() => openModal(Design1)} style={{ width: '70%' }}></img></div>
 
 
                     <div className="section_feature" id="recolor">2. Contacts</div>
@@ -80,7 +97,7 @@ function Poktfund(){
                     Easily store and manage your known addresses with our contact feature, eliminating the need for manual address entry for each transaction. Enjoy seamless integration with Unstoppable Domains for an effortless POKT experience..
                     </div>
 
-                    <div className="image_holder"><img src={Design2} style={{ width: '70%' }}></img></div>
+                    <div className="image_holder"><img src={Design2} onClick={() => openModal(Design2)} style={{ width: '70%' }}></img></div>
 
 
 
@@ -90,7 +107,7 @@ function Poktfund(){
                     Leverage the industry standard BIP-32 specification with ease to generate multiple accounts from a mnemonic passphrase. Wallet creation is now a matter of a simple tap, with each wallet assigned a unique POKT avatar for easy identification.
                     </div>
 
-                    <div className="image_holder"><img src={Design3} style={{ width: '70%' }}></img></div>
+                    <div className="image_holder"><img src={Design3} onClick={() => openModal(Design3)} style={{ width: '70%' }}></img></div>
 
 
                     <div className="section_feature" id="recolor">4. Up to Date On-chain data</div>
@@ -99,14 +116,46 @@ function Poktfund(){
                     Discover and visualize POKT's on-chain data, including your node's performance and relay breakdown, through our mobile application. Act as your own blockchain explorer and enjoy a comprehensive POKT experience.
                     </div>
 
-                    <div className="image_holder"><img src={Design4} style={{ width: '50%' }}></img></div>
-            <NextPrevious project_id={projectId}/> 
+                    <div className="image_holder"><img src={Design4} onClick={() => openModal(Design4)} style={{ width: '50%' }}></img></div>
+            <NextPrevious project_id={projectId}/>
             </div>
-           
+
         </div>
 
+      {/* Modal */}
+      <AnimatePresence>
+          {selectedImage && (
+              <motion.div
+                  className="modal-overlay"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={closeModal}
+                  onKeyDown={handleKeyDown}
+                  tabIndex={0}
+              >
+                  <button className="modal-close" onClick={closeModal}>
+                      <XMarkIcon className="icon" />
+                  </button>
+
+                  <motion.div
+                      className="modal-content"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0.8, opacity: 0 }}
+                      transition={{ type: "spring", duration: 0.5 }}
+                      onClick={(e) => e.stopPropagation()}
+                  >
+                      <div className="modal-image-container">
+                          <img src={selectedImage} alt="Full size" />
+                      </div>
+                  </motion.div>
+              </motion.div>
+          )}
+      </AnimatePresence>
+
         <Footer/>
-    </>   
+    </>
         
     );
 }

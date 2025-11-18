@@ -8,11 +8,28 @@ import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 function Ironwit(){
 
     const location = useLocation();
     const projectId = location.state?.projectId;
+
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const openModal = (imageSrc) => {
+        setSelectedImage(imageSrc);
+    };
+
+    const closeModal = () => {
+        setSelectedImage(null);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Escape') closeModal();
+    };
 
     return (
         <>
@@ -59,7 +76,7 @@ function Ironwit(){
                     </div>
 
                     <div className="section_title"> Design Process</div>
-                    <div className="image_holder"><img src={DesignProcess}></img></div>
+                    <div className="image_holder"><img src={DesignProcess} onClick={() => openModal(DesignProcess)}></img></div>
 
 
                     <div className="section_title">Branding</div>
@@ -74,14 +91,14 @@ function Ironwit(){
                     <div className="project_content">
                     Developed three personas for Orcaa: the carer (the individual receiving care), a likely family member (typically the one managing the care), and the patient.
                     </div>
-   
-                    <div className="image_holder"><img src={PersonaA}></img></div>
+
+                    <div className="image_holder"><img src={PersonaA} onClick={() => openModal(PersonaA)}></img></div>
 
                     <div className="section_title"> Wireframe</div>
                     <div className="project_content">
                     Sometimes, when wireframing, I also create a prototype to give my client a complete experience of the design pitch.
                     </div>
-                    <div className="image_holder"><img src={Wireframe}></img></div>
+                    <div className="image_holder"><img src={Wireframe} onClick={() => openModal(Wireframe)}></img></div>
 
 
                     <div className="section_title center_text">Final Design</div>       
@@ -94,7 +111,7 @@ function Ironwit(){
                     To maintain the quality of the UI design, I continued to use Figma for visual design and then transferred the assets and flows into Axure for prototyping. This process required extra effort, juggling between two tools, but it allowed me to deliver both a polished design and a fully interactive prototype that met the client’s expectations.
                     </div> 
 
-                    <div className="image_holder"><img src={HighFidelity}></img></div>
+                    <div className="image_holder"><img src={HighFidelity} onClick={() => openModal(HighFidelity)}></img></div>
 
                      <div className="section_title center_text">Reflection</div> 
                      <div className="project_content">
@@ -115,12 +132,44 @@ function Ironwit(){
                     </div>
                     
                     
-            <NextPrevious project_id={projectId}/>          
+            <NextPrevious project_id={projectId}/>
             </div>
         </div>
 
+      {/* Modal */}
+      <AnimatePresence>
+          {selectedImage && (
+              <motion.div
+                  className="modal-overlay"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={closeModal}
+                  onKeyDown={handleKeyDown}
+                  tabIndex={0}
+              >
+                  <button className="modal-close" onClick={closeModal}>
+                      <XMarkIcon className="icon" />
+                  </button>
+
+                  <motion.div
+                      className="modal-content"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0.8, opacity: 0 }}
+                      transition={{ type: "spring", duration: 0.5 }}
+                      onClick={(e) => e.stopPropagation()}
+                  >
+                      <div className="modal-image-container">
+                          <img src={selectedImage} alt="Full size" />
+                      </div>
+                  </motion.div>
+              </motion.div>
+          )}
+      </AnimatePresence>
+
      <Footer/>
-    </>   
+    </>
         
     );
 }

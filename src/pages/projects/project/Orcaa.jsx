@@ -24,13 +24,29 @@ import Design12 from "../../../assets/images/orcaa/orcaa_12.png";
 import Footer from '../../../components/layout/footer/Footer';
 
 import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 
 function Orcaa(){
 
     const location = useLocation();
     const projectId = location.state?.projectId;
-    
+
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const openModal = (imageSrc) => {
+        setSelectedImage(imageSrc);
+    };
+
+    const closeModal = () => {
+        setSelectedImage(null);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Escape') closeModal();
+    };
 
     return (
         <>
@@ -76,48 +92,48 @@ function Orcaa(){
                     </div>
 
                     <div className="section_title"> Design Process</div>
-                    <div className="image_holder"><img src={DesignProcess}></img></div>
+                    <div className="image_holder"><img src={DesignProcess} onClick={() => openModal(DesignProcess)}></img></div>
 
 
                     <div className="section_title">Branding</div>
                     <div className="project_content">
                     Orcaa represents affection and sociability, and it has a notable presence. While the caregiving industry is very competitive, one brand stands out. To highlight this, I created a comprehensive brand book for Orcaa.
                     </div>
-                    <div className="image_holder"><img src={Branding}></img></div>
+                    <div className="image_holder"><img src={Branding} onClick={() => openModal(Branding)}></img></div>
 
                     <div className="section_title"> User Persona</div>
                     <div className="project_content">
                     Developed three personas for Orcaa: the carer (the individual receiving care), a likely family member (typically the one managing the care), and the patient.
                     </div>
-   
-                    <div className="image_holder"><img src={PersonaC}></img></div>          
-                    <div className="image_holder"><img src={PersonaB}></img></div>
-                    <div className="image_holder"><img src={PersonaA}></img></div>
+
+                    <div className="image_holder"><img src={PersonaC} onClick={() => openModal(PersonaC)}></img></div>
+                    <div className="image_holder"><img src={PersonaB} onClick={() => openModal(PersonaB)}></img></div>
+                    <div className="image_holder"><img src={PersonaA} onClick={() => openModal(PersonaA)}></img></div>
 
                     <div className="section_title"> Wireframe</div>
                     <div className="project_content">
                     Sometimes, when wireframing, I also create a prototype to give my client a complete experience of the design pitch.
                     </div>
-                    <div className="image_holder"><img src={Wireframe}></img></div>
-                    <div className="image_holder"><img src={WireframeB}></img></div>
+                    <div className="image_holder"><img src={Wireframe} onClick={() => openModal(Wireframe)}></img></div>
+                    <div className="image_holder"><img src={WireframeB} onClick={() => openModal(WireframeB)}></img></div>
 
 
                     <div className="section_title center_text">Final Design</div>       
  
 
                     <div className="image_holder" id="high_fidelity">
-                        <img src={Design1}></img>
-                        <img src={Design2}></img>
-                        <img src={Design3}></img>
-                        <img src={Design4}></img>
-                        <img src={Design5}></img>
-                        <img src={Design6}></img>
-                        <img src={Design7}></img>
-                        <img src={Design8}></img>
-                        <img src={Design9}></img>
-                        <img src={Design10}></img>
-                        <img src={Design11}></img>
-                        <img src={Design12}></img>
+                        <img src={Design1} onClick={() => openModal(Design1)}></img>
+                        <img src={Design2} onClick={() => openModal(Design2)}></img>
+                        <img src={Design3} onClick={() => openModal(Design3)}></img>
+                        <img src={Design4} onClick={() => openModal(Design4)}></img>
+                        <img src={Design5} onClick={() => openModal(Design5)}></img>
+                        <img src={Design6} onClick={() => openModal(Design6)}></img>
+                        <img src={Design7} onClick={() => openModal(Design7)}></img>
+                        <img src={Design8} onClick={() => openModal(Design8)}></img>
+                        <img src={Design9} onClick={() => openModal(Design9)}></img>
+                        <img src={Design10} onClick={() => openModal(Design10)}></img>
+                        <img src={Design11} onClick={() => openModal(Design11)}></img>
+                        <img src={Design12} onClick={() => openModal(Design12)}></img>
                      </div>
 
                      <div className="section_title center_text">Reflection</div> 
@@ -129,14 +145,45 @@ function Orcaa(){
                     <div className="project_content">
                     The app is still in development, and while version 1 is already quite ambitious, we're hopeful that it will exceed expectations and succeed. I'm proud to be working with such talented developers who are able to bring everything together in just a few months. The development process has been unusual as well, as I don't have direct communication with the foreign development team. Still, we're optimistic and looking forward to a successful beta launch soon.
                     </div> 
-            <NextPrevious project_id={projectId}/> 
+            <NextPrevious project_id={projectId}/>
             </div>
-            
+
         </div>
-        
+
+      {/* Modal */}
+      <AnimatePresence>
+          {selectedImage && (
+              <motion.div
+                  className="modal-overlay"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={closeModal}
+                  onKeyDown={handleKeyDown}
+                  tabIndex={0}
+              >
+                  <button className="modal-close" onClick={closeModal}>
+                      <XMarkIcon className="icon" />
+                  </button>
+
+                  <motion.div
+                      className="modal-content"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0.8, opacity: 0 }}
+                      transition={{ type: "spring", duration: 0.5 }}
+                      onClick={(e) => e.stopPropagation()}
+                  >
+                      <div className="modal-image-container">
+                          <img src={selectedImage} alt="Full size" />
+                      </div>
+                  </motion.div>
+              </motion.div>
+          )}
+      </AnimatePresence>
 
         <Footer/>
-    </>   
+    </>
         
     );
 }
