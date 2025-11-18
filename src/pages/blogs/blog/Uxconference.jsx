@@ -23,11 +23,28 @@ import Footer from '../../../components/layout/footer/Footer';
 import NextPreviousBlog from '../../../components/common/NextPreviousBlog';
 import { useLocation } from 'react-router-dom';
 import { BLOG } from '../../../data/blogs.js';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 function Uxconference(){
 
     const location = useLocation();
     const blogId = location.state?.blogId || BLOG.find(b => b.path === '/uxplusconference')?.id;
+
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const openModal = (imageSrc) => {
+        setSelectedImage(imageSrc);
+    };
+
+    const closeModal = () => {
+        setSelectedImage(null);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Escape') closeModal();
+    };
 
     return (
         <>
@@ -45,9 +62,9 @@ function Uxconference(){
 
 
                     <div className="masonry_images">
-                        <img src={Pic13}></img>
-                        <img src={Pic1}></img>
-                        <img src={Pic14}></img>
+                        <img src={Pic13} onClick={() => openModal(Pic13)}></img>
+                        <img src={Pic1} onClick={() => openModal(Pic1)}></img>
+                        <img src={Pic14} onClick={() => openModal(Pic14)}></img>
                     </div>
 
                     <div className="section_title">Networking or Meatballs? 🍴</div>
@@ -57,47 +74,47 @@ function Uxconference(){
                     </div>
 
                     <div className="masonry_images">
-                        <img src={Pic10}></img>
-                        <img src={Pic15}></img>
+                        <img src={Pic10} onClick={() => openModal(Pic10)}></img>
+                        <img src={Pic15} onClick={() => openModal(Pic15)}></img>
                     </div>
 
 
                     <div className="section_title">Stories That Inspire! 🎤</div>
 
                     <div className="blog_content">
-                        What stood out the most to me was how the speakers shared not just their expertise, but also their journeys. They talked about where they started, the struggles they faced, and how passion fueled their projects. It wasn’t just about design as visuals. It was about the experience, the logic behind decisions, and the impact it can create.
+                        What stood out the most to me was how the speakers shared not just their expertise, but also their journeys. They talked about where they started, the struggles they faced, and how passion fueled their projects. It wasn't just about design as visuals. It was about the experience, the logic behind decisions, and the impact it can create.
                     </div>
 
                     <div className="masonry_images">
-                        <img src={Pic2}></img>
-                        <img src={Pic3}></img>
-                        <img src={Pic4}></img>
-                        <img src={Pic6}></img>
-                        <img src={Pic7}></img>
-                        <img src={Pic8}></img>
+                        <img src={Pic2} onClick={() => openModal(Pic2)}></img>
+                        <img src={Pic3} onClick={() => openModal(Pic3)}></img>
+                        <img src={Pic4} onClick={() => openModal(Pic4)}></img>
+                        <img src={Pic6} onClick={() => openModal(Pic6)}></img>
+                        <img src={Pic7} onClick={() => openModal(Pic7)}></img>
+                        <img src={Pic8} onClick={() => openModal(Pic8)}></img>
                     </div>
 
 
                     <div className="section_title">My Favorite Talk 🌟 </div>
                     <div className="blog_content">
-                       One of my favorite talks was by Alex Skougarevskaya, who shared her journey to becoming the Head of Design at Canva. I loved her energy. Quirky, fun, and playful, yet deeply thoughtful in her approach to design. She made me realize that design isn’t just about following rules. It’s also about bringing your personality into the work.
+                       One of my favorite talks was by Alex Skougarevskaya, who shared her journey to becoming the Head of Design at Canva. I loved her energy. Quirky, fun, and playful, yet deeply thoughtful in her approach to design. She made me realize that design isn't just about following rules. It's also about bringing your personality into the work.
                     </div>
 
 
 
                     <div className="image_holder">
-                        <img src={Pic5}></img>
+                        <img src={Pic5} onClick={() => openModal(Pic5)}></img>
                     </div>
 
 
                     <div className="section_title">Meeting Old and New Friends 🤝 </div>
 
                     <div className="blog_content">
-                      Another highlight for me was reconnecting with my ex-colleague, who’s actually one of the people who inspired me to pursue this career in the first place. On top of that, I had the chance to meet and bond with other UX designers from Accenture, which was such a fun and meaningful experience.
+                      Another highlight for me was reconnecting with my ex-colleague, who's actually one of the people who inspired me to pursue this career in the first place. On top of that, I had the chance to meet and bond with other UX designers from Accenture, which was such a fun and meaningful experience.
                     </div>
 
                     <div className="image_holder">
-                        <img src={hands}></img>
+                        <img src={hands} onClick={() => openModal(hands)}></img>
                     </div>
 
 
@@ -109,6 +126,38 @@ function Uxconference(){
             </div>
 
         </div>
+
+      {/* Modal */}
+      <AnimatePresence>
+          {selectedImage && (
+              <motion.div
+                  className="modal-overlay"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={closeModal}
+                  onKeyDown={handleKeyDown}
+                  tabIndex={0}
+              >
+                  <button className="modal-close" onClick={closeModal}>
+                      <XMarkIcon className="icon" />
+                  </button>
+
+                  <motion.div
+                      className="modal-content"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0.8, opacity: 0 }}
+                      transition={{ type: "spring", duration: 0.5 }}
+                      onClick={(e) => e.stopPropagation()}
+                  >
+                      <div className="modal-image-container">
+                          <img src={selectedImage} alt="Full size" />
+                      </div>
+                  </motion.div>
+              </motion.div>
+          )}
+      </AnimatePresence>
 
       <Footer/>
 
