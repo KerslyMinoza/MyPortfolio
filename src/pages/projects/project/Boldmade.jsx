@@ -81,10 +81,8 @@ function Boldmade(){
         <>
             <Nav/>
             <div className="project" id="boldmade">
-                <div className="project_name">Bold Made</div>
-                
-
                 <div className="content">
+                    <div className="project_name">Bold Made</div>
                     <div className="section_title"> Project Overview</div>
 
                     <div className="project_content">

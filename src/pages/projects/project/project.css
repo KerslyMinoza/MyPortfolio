@@ -26,16 +26,14 @@
 }
 
 .project_name {
-
     font-family: "Instrument Serif", serif;
     font-style: italic;
     margin-top: 30px;
     font-size: 80px;
     font-weight: 500;
     color: var(--basic6);
-    display: flex;
-    width: 60%;
-
+    width: 100%;
+    text-align: left;
 }
 
 .project .section_title {
@@ -163,11 +161,7 @@ iframe {
     }
 
     .content {
-        width: 60%;
-    }
-
-    .project_name {
-        width: 60%;
+        width: 100%;
     }
 
     #high_fidelity img {
@@ -188,7 +182,6 @@ iframe {
     }
 
     .project_name {
-        width: 98%;
         margin-top: 35px;
         margin-bottom: -30px !important;
         font-size: 60px;

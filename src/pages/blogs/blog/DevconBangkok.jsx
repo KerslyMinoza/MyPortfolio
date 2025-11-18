@@ -70,10 +70,9 @@ function DevconBangkok(){
         <>
             <Nav/>
             <div className="blog" id="pokfund">
-                <div className="blog_name"> Devcon + Team Building in Bangkok </div>
-                
-                 <div className="margin-s"></div>
+                <div className="margin-s"></div>
                 <div className="content">
+                    <div className="blog_name"> Devcon + Team Building in Bangkok </div>
                     <div className="section_title">A Week to Remember. Sawadeeka! ✈️</div>
 
                     <div className="blog_content">

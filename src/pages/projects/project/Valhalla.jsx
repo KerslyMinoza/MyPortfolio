@@ -16,10 +16,8 @@ function Valhalla(){
         <>
             <Nav/>
             <div className="project" id="orcaa">
-                <div className="project_name"> Valhalla </div>
-                
-
                 <div className="content">
+                    <div className="project_name"> Valhalla </div>
                     <div className="section_title"> Project Overview</div>
 
                     <div className="project_content">

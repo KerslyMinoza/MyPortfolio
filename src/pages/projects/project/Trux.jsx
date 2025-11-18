@@ -16,10 +16,8 @@ function Trux(){
         <>
             <Nav/>
             <div className="project" id="orcaa">
-                <div className="project_name"> Trux </div>
-                
-
                 <div className="content">
+                    <div className="project_name"> Trux </div>
                     <div className="section_title"> Project Overview</div>
 
                     <div className="project_content">

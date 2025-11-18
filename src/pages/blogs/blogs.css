@@ -50,9 +50,8 @@
     font-weight: 500;
     color: var(--basic6);
     line-height:80px;
-    width: 60%;
+    width: 100%;
     text-align: left;
-    align-self: flex-start;
 }
 
 .blog .section_title {
@@ -249,10 +248,6 @@ li {
         width: 100%;
     }
 
-    .blog_name {
-        width: 100%;
-    }
-
 }
 
 /* Mobile and Tablet */
@@ -280,7 +275,6 @@ li {
     }
 
     .blog_name {
-        width: 98%;
         margin-top: 35px;
         margin-bottom: -30px !important;
         font-size: 60px;

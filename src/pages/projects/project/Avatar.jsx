@@ -16,10 +16,8 @@ function Avatar(){
         <>
             <Nav/>
             <div className="project" id="pokfund">
-                <div className="project_name"> Poktfund Avatar </div>
-                
-
                 <div className="content">
+                    <div className="project_name"> Poktfund Avatar </div>
                     <div className="section_title"> Project Overview</div>
 
                     <div className="project_content">

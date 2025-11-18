@@ -50,10 +50,9 @@ function Uxconference(){
         <>
             <Nav/>
             <div className="blog" id="pokfund">
-                <div className="blog_name"> UX+ Conference 2024 Manila </div>
-                
-                 <div className="margin-s"></div>
+                <div className="margin-s"></div>
                 <div className="content">
+                    <div className="blog_name"> UX+ Conference 2024 Manila </div>
                     <div className="section_title">From Cebu to Manila! ✈️</div>
 
                     <div className="blog_content">

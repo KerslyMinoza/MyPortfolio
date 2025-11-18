@@ -18,10 +18,8 @@ const projectId = location.state?.projectId;
         <>
            <Nav/>
             <div className="project" id="orcaa">
-                <div className="project_name"> Mednotes </div>
-                
-
                 <div className="content">
+                    <div className="project_name"> Mednotes </div>
                     <div className="section_title"> Project Overview</div>
 
                     <div className="project_content">
