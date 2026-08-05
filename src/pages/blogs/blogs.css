@@ -13,6 +13,12 @@
 
 
 
+/* the navigation above carries its own bottom padding, so this only has to
+   part the two — the same spacing the projects grid uses */
+.blog_wrapper {
+    padding-top: 24px;
+}
+
 .blog_works {
     display: flex;
     flex-wrap: wrap;
@@ -153,23 +159,30 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    animation: appear linear;
-    animation-timeline: view();
-    animation-duration: 300ms;
+    /* scroll-in animation is handled by framer-motion in ThumbnailBlog.jsx —
+       the scroll-timeline animation that used to sit here fought with it */
 }
 
+
+/* the frame the zoom is clipped to — the radius lives here now, so the image
+   inside can grow past its own edges without corners appearing */
+.thumbnailblog_media {
+    overflow: hidden;
+    border-radius: 18px;
+    background-color: #F3F3F3;
+}
 
 .thumbnailblog img{
     border: none;
+    display: block;
     width: 100%;
     height: auto;
-    background-color: #F3F3F3;
-    border-radius: 18px;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.thumbnailblog img:hover {
-    animation: scaleup;
-    animation-duration: 500ms;
+/* driven off the card, not the image, so the whole card is the target */
+.thumbnailblog:hover img {
+    transform: scale(1.045);
 }
 
 .thumbnailblog .title {
@@ -209,7 +222,7 @@ li {
    
 }
 
-@media only screen and (max-device-width: 1001px)  {
+@media only screen and (max-width: 1001px)  {
     
     .thumbnailblog {
         width: 90%;
@@ -361,7 +374,7 @@ li {
     border-radius: 8px;
 }
 
-@media only screen and (max-device-width: 1001px) {
+@media only screen and (max-width: 1001px) {
     .modal-content {
         max-width: 98%;
     }

@@ -25,25 +25,32 @@
     height: auto;
 }
 
+/* set exactly like "Work Experiences" on the career page — the same family,
+   weight, tracking and line-height, and the same fluid size, so a project's
+   title and a section heading anywhere else on the site are one thing */
 .project_name {
-    font-family: "Instrument Serif", serif;
-    font-style: italic;
+    font-family: var(--font-primary);
     margin-top: 30px;
-    font-size: 80px;
-    font-weight: 500;
+    font-size: clamp(38px, 6.4vw, 120px);
+    font-weight: var(--weight-semibold);
+    line-height: 96%;
+    letter-spacing: -0.03em;
     color: var(--basic6);
     width: 100%;
     text-align: left;
 }
 
+/* 48px semibold, reached from about 1430px wide up and scaling down below —
+   a flat 48 would crowd a phone, and this class has no mobile override */
 .project .section_title {
     margin-top: 50px;
     border-bottom: 0.4px solid var(--basic2);
-    font-size: 32px;
-    font-weight: 400;
+    font-size: clamp(24px, 3.36vw, 48px);
+    font-weight: var(--weight-semibold);
+    line-height: 108%;
     color: #313131;
     text-align: left;
-    letter-spacing: -1px;
+    letter-spacing: -0.025em;
 
 }
 
@@ -60,12 +67,22 @@
 }
 
 
+/* 16px, and held there for anything nested inside as well — the body copy is
+   a mix of bare text, lists and links, and only the bare text was inheriting
+   this reliably. line-height stays in px so it is 1.5 against that size. */
+.project_content,
+.project_content p,
+.project_content li,
+.project_content span,
+.project_content div {
+    font-size: 16px;
+}
+
 .project_content {
     padding-top: 10px;
-    font-size: 16px;
     color: var(--basic5);
     font-weight: 300;
-    letter-spacing: -1%;
+    letter-spacing: -0.01em; /* was -1%, which is not a length and was ignored */
     line-height: 24px;
     animation: appear fade-in;
     animation-timeline: view();
@@ -181,10 +198,11 @@ iframe {
         width: 98%;
     }
 
+    /* no font-size here: the clamp above already comes down to about 60px at
+       this width, and a fixed one would break step with the career page */
     .project_name {
         margin-top: 35px;
         margin-bottom: -30px !important;
-        font-size: 60px;
     }
 
     #high_fidelity img {

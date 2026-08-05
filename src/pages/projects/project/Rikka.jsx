@@ -1,8 +1,8 @@
 import './project.css';
 
 import Design from "../../../assets/images/rikka/rikka.png";
-import Nav from '../../../components/layout/Nav/Nav.jsx';
-import Footer from '../../../components/layout/footer/Footer';
+import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
+import Backbutton from '../../../components/common/Backbutton.jsx';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
@@ -31,7 +31,8 @@ function Rikka(){
 
     return (
         <>
-            <Nav/>
+            <SiteNav/>
+            <Backbutton page="projects"/>
             <div className="project" id="orcaa">
                 <div className="content">
                     <div className="project_name"> Quantum Breakthrough</div>
@@ -121,7 +122,6 @@ function Rikka(){
           )}
       </AnimatePresence>
 
-        <Footer/>
 
     </>
         

@@ -1,0 +1,17 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* the deck responds to the wheel directly, so the page must not move under it */
+.home--locked {
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.home--locked .hero_section {
+  flex: 1 1 auto;
+  min-height: 0; /* lets the hero shrink to whatever the nav leaves behind */
+}

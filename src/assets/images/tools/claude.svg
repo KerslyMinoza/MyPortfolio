@@ -1,0 +1,7 @@
+<!-- A wordmark stand-in, not Anthropic's official burst symbol. Replace with the
+     real asset from anthropic.com/brand when you have it. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" role="img" aria-label="Claude">
+  <text x="110" y="46" text-anchor="middle"
+        font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="44" font-weight="600" letter-spacing="-1" fill="#D97757">Claude</text>
+</svg>

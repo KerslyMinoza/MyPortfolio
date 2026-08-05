@@ -124,7 +124,7 @@
 
 /*for responsive*/
 
-@media only screen and (min-device-width: 901px) and (max-device-width: 1600px) {
+@media only screen and (min-width: 901px) and (max-width: 1600px) {
 
     .section_wrapper {
        gap: 20px;
@@ -163,7 +163,7 @@
 
   /* for mobile */
 
-  @media only screen and (max-device-width: 900px)  {
+  @media only screen and (max-width: 900px)  {
 
     .about_me {
         width: 90%;

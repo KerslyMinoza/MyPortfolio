@@ -1,0 +1,166 @@
+/* ---------------------------------------------------------------------------
+   Scroll-driven project deck — the cards stacked on the right of the hero.
+--------------------------------------------------------------------------- */
+
+/* the card and its rail, stacked and centred against the intro. The cards
+   behind spill out past the right edge — nothing here clips them, so they run
+   on until .hero_frame cuts them off at the edge of the viewport */
+.deck {
+  position: relative;
+  flex: 0 0 auto;
+  width: var(--deck-card-w);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: clamp(14px, 2.2vh, 30px);
+  /* tied to the card so the depth reads the same at every size */
+  perspective: calc(var(--deck-card-w) * 2.9);
+  perspective-origin: 50% 45%;
+  box-sizing: border-box;
+}
+
+/* exactly one card: the centre card lands dead-centre of the hero and the rest
+   of the stack recedes off to the right of it */
+.deck_stage {
+  position: relative;
+  width: 100%;
+  height: var(--deck-card-h);
+  transform-style: preserve-3d;
+}
+
+.deck_card {
+  position: absolute;
+  inset: 0;
+  width: var(--deck-card-w);
+  height: var(--deck-card-h);
+  will-change: transform, opacity;
+}
+
+.deck_card_link {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: clamp(18px, 2.8vh, 38px);
+  overflow: hidden;
+  background-color: var(--basic3);
+  cursor: pointer;
+}
+
+.deck_card_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/* keeps the caption readable no matter how light the thumbnail is */
+.deck_card_scrim {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 52%;
+  background: linear-gradient(
+    to top,
+    rgba(6, 6, 6, 0.78),
+    rgba(6, 6, 6, 0.42) 42%,
+    rgba(6, 6, 6, 0)
+  );
+  pointer-events: none;
+}
+
+/* bottom-left, not centred: most thumbnails carry their own wordmark in the
+   middle of the card and the two would collide */
+.deck_card_caption {
+  position: absolute;
+  inset: auto 0 clamp(18px, 3vh, 44px) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 0 clamp(20px, 2.4vw, 48px);
+  text-align: left;
+  pointer-events: none;
+}
+
+.deck_card_title {
+  font-family: var(--font-primary);
+  font-size: clamp(20px, min(1.7vw, 3vh), 44px);
+  font-weight: var(--weight-regular);
+  letter-spacing: -0.02em;
+  color: var(--basic1);
+}
+
+.deck_card_types {
+  font-family: var(--font-primary);
+  font-size: clamp(12px, min(0.9vw, 1.6vh), 22px);
+  font-weight: var(--weight-light);
+  letter-spacing: 0.4px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* --- progress rail ------------------------------------------------------- */
+
+/* a row under the card, running from its left edge — the button padding is
+   what sets the dots in from the corner */
+.deck_rail {
+  display: flex;
+  align-items: center;
+  /* the buttons carry padding of their own, so the dots end up about
+     clamp(13px, 1.6vh, 21px) apart on the page */
+  gap: clamp(0px, 0.2vh, 4px);
+  pointer-events: none;
+}
+
+/* the dot is a few pixels across — this is the part you can actually hit */
+.deck_rail_hit {
+  display: block;
+  padding: clamp(5px, 0.6vh, 8px);
+  border: 0;
+  background: none;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.deck_rail_hit:focus-visible {
+  outline: 2px solid var(--basic5);
+  outline-offset: 1px;
+  border-radius: 50%;
+}
+
+.deck_rail_dot {
+  display: block;
+  width: var(--deck-dot-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--basic5);
+}
+
+/* --- mobile / reduced-motion list ---------------------------------------- */
+
+.deck_list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+}
+
+.deck_list .deck_card_link {
+  height: auto;
+  aspect-ratio: 1092 / 868;
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(20, 20, 24, 0.1);
+}
+
+.deck_list .deck_card_title {
+  font-size: var(--text-xl);
+}
+
+@media only screen and (max-width: 1001px) {
+  .deck_list .deck_card_caption {
+    inset: auto 0 18px 0;
+  }
+}

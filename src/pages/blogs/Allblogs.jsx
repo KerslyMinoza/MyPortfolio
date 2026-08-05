@@ -1,35 +1,26 @@
 
-import Nav from '../../components/layout/Nav/Nav.jsx';
+import SiteNav from '../../components/layout/SiteNav/SiteNav.jsx';
 import ThumbnailBlog from './ThumbnailBlog.jsx';
 import { BLOG } from '../../data/blogs.js';
-import { bounceUp } from "../../components/utils/animation.js";
-import { motion } from 'framer-motion';
+
+/* Laid out like the projects page: the navigation names the page, so there is
+   no heading, and the cards carry the animation themselves — cascading along
+   each row as they come into view — rather than the grid arriving as one
+   block. */
 
 function Allblogs(){
 
-    const { variants, initial, whileInView, transition } = bounceUp(0.3);
-
     return (
         <div>
-            <Nav/>
-            <motion.div
-            variants={variants}
-            initial={initial}
-            animate="visible"
-            transition={transition}
-            viewport={{ once: true, amount: 0.2 }}
-            className="blog_wrapper">
+            <SiteNav/>
 
-                <div className="blog_title"> Something Worth Sharing</div>
-
-                        <div
-                            className="blog_works">
-                            {BLOG.map((blog) => (
-                            <ThumbnailBlog blog={blog}/>
-                            ))}
-                        </div>
-
-            </motion.div>
+            <div className="blog_wrapper">
+                <div className="blog_works">
+                    {BLOG.map((blog, index) => (
+                        <ThumbnailBlog key={blog.id} blog={blog} index={index} />
+                    ))}
+                </div>
+            </div>
 
             <div className="margin-m"></div>
         </div>

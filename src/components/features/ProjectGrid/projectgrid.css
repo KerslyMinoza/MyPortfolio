@@ -1,0 +1,65 @@
+/* the navigation above carries its own bottom padding, so this only has to
+   part the two rather than clear the whole gap on its own */
+.projects_wrapper {
+    scroll-margin-top: 40px;
+    padding-top: 24px;
+}
+
+.projects_heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.projects_title {
+    font-family: var(--font-secondary);
+    font-style: italic;
+    font-size: 60px;
+    font-weight: 200;
+    color: var(--basic5);
+}
+
+.projects_subtitle {
+    margin: 14px auto 0 auto;
+    max-width: 560px;
+    font-family: var(--font-primary);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-light);
+    color: var(--basic4);
+    line-height: 145%;
+}
+
+.projects_grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 40px;
+}
+
+/* Macbooks */
+@media only screen and (min-width: 1001px) and (max-width: 1600px) {
+
+    .projects_title {
+        font-size: 60px;
+    }
+
+    .projects_grid {
+        gap: 10px;
+    }
+}
+
+/* For mobile */
+@media only screen and (max-width: 1000px) {
+
+    .projects_wrapper {
+        padding-top: 20px;
+    }
+
+    .projects_title {
+        font-size: 30px;
+    }
+
+    .projects_subtitle {
+        font-size: var(--text-base);
+        padding: 0 20px;
+    }
+}

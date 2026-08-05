@@ -12,8 +12,6 @@ function Footer(){
     
     return (
             <div className="footer_wrapper margin-m">
-                <div className="section_contact">Contact Me</div>
-                
                 <motion.div
                 variants={variants}
                 initial={initial}
@@ -22,8 +20,11 @@ function Footer(){
                 viewport={{ once: true, amount: 0.2 }}
                 className="message">
 
-                    Let's Build  <br/>SomethingTogether!
-                    
+                    {/* the break falls after "Build" rather than after "Apps":
+                        "Let's Build Apps" on one line runs wider than the
+                        footer at the display size on a large monitor */}
+                    Let's Build<br/>Apps Together
+
                 </motion.div>
 
                 <div className="contacts_wrapper">

@@ -1,0 +1,152 @@
+/* ---------------------------------------------------------------------------
+   About Me — the intro, the moodboard collage, and the music and painting.
+
+   Same measured column as the career page, so the two read as a pair, and the
+   same vw-based sizing rather than breakpoints.
+--------------------------------------------------------------------------- */
+
+.about {
+  width: min(100% - clamp(48px, 8vw, 160px), 1240px);
+  margin: 0 auto;
+  padding-bottom: clamp(80px, 14vh, 220px);
+  box-sizing: border-box;
+}
+
+.about_section {
+  margin-top: clamp(72px, 13vh, 190px);
+}
+
+.about_section:first-of-type {
+  margin-top: clamp(24px, 4vh, 56px);
+}
+
+.about_heading {
+  margin: 0;
+  font-family: var(--font-primary);
+  font-size: clamp(38px, 6.4vw, 120px);
+  font-weight: var(--weight-semibold);
+  line-height: 96%;
+  letter-spacing: -0.03em;
+  color: var(--basic6);
+}
+
+.about_copy {
+  margin: clamp(18px, 2.6vh, 34px) 0 0 0;
+  max-width: 62ch;
+  font-family: var(--font-primary);
+  font-size: clamp(15px, 1.15vw, 20px);
+  font-weight: var(--weight-light);
+  line-height: 158%;
+  letter-spacing: -0.1px;
+  color: #292929;
+}
+
+.about_link {
+  display: inline-block;
+  margin-top: clamp(18px, 2.6vh, 34px);
+  padding-bottom: 3px;
+  font-family: var(--font-primary);
+  font-size: clamp(16px, 1.35vw, 24px);
+  font-weight: var(--weight-semibold);
+  letter-spacing: -0.015em;
+  color: var(--basic6);
+  text-decoration: none;
+  border-bottom: 2px solid var(--basic6);
+  transition: color 0.35s ease, border-color 0.35s ease;
+}
+
+.about_link:hover {
+  color: var(--basic4);
+  border-color: var(--basic4);
+}
+
+/* the Spotify player. Held to roughly the measure of the copy above it rather
+   than the full column, which the embed is not designed to fill */
+.about_embed {
+  margin-top: clamp(24px, 3.6vh, 46px);
+  max-width: 640px;
+}
+
+.about_embed iframe {
+  display: block;
+  border: 0;
+}
+
+/* --- the intro, with its photo taped up beside it ------------------------ */
+
+.about_intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: clamp(30px, 5vw, 90px);
+  align-items: start;
+}
+
+/* Pinned up rather than laid out. Positive degrees lean the top of the photo
+   to the right — negate this one number to have it lean the other way. */
+.about_polaroid {
+  position: relative;
+  margin-top: clamp(20px, 4vh, 60px);
+  transform: rotate(7deg);
+}
+
+.about_polaroid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: #F1F1F1;
+  box-shadow: 0 22px 48px rgba(20, 20, 24, 0.16);
+}
+
+/* --- the moodboard ------------------------------------------------------- */
+
+/* A scatter rather than a grid of tiles: every pin sits on the same grid row,
+   so the ones whose columns overlap sit on top of each other, and each is
+   dropped down the page by its own multiple of --pin-step. That is what gives
+   it the pinned-up look instead of a tidy gallery. */
+.moodboard {
+  /* the unit every pin's drop is a multiple of, so raising it opens the whole
+     board up at once rather than needing each pin moved */
+  --pin-step: clamp(36px, 4.6vw, 92px);
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: start;
+  margin-top: clamp(30px, 5vh, 76px);
+}
+
+.moodboard_pin {
+  grid-row: 1; /* one row, so everything can overlap everything */
+  grid-column: var(--col) / span var(--span);
+  align-self: start;
+  margin-top: calc(var(--pin-step) * var(--drop));
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  box-shadow: 0 16px 36px rgba(20, 20, 24, 0.16);
+}
+
+/* --- narrow screens ------------------------------------------------------ */
+
+@media only screen and (max-width: 860px) {
+  .about_intro {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about_polaroid {
+    max-width: 320px;
+  }
+
+  /* the scatter needs room it does not have here, so the pins fall back to two
+     plain columns — the tilt on each one is all that is kept */
+  .moodboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .moodboard_pin {
+    width: calc(50% - 5px);
+    margin-top: 0;
+  }
+}

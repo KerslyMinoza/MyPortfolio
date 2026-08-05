@@ -32,8 +32,8 @@ import Nodie7 from "../../../assets/images/nodies/price_starter.svg";
 import Penguin from "../../../assets/images/nodies/wink.png";
 import Branding from "../../../assets/images/nodies/branding.png";
 
-import Nav from '../../../components/layout/Nav/Nav.jsx';
-import Footer from '../../../components/layout/footer/Footer';
+import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
+import Backbutton from '../../../components/common/Backbutton.jsx';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
@@ -62,7 +62,8 @@ function Nodies(){
 
     return (
         <>
-            <Nav/>
+            <SiteNav/>
+            <Backbutton page="projects"/>
             <div className="project" id="orcaa">
                 <div className="content">
                     <div className="project_name"> Nodies </div>
@@ -241,7 +242,6 @@ Sometimes I skip wireframing and design directly, especially when I am already f
           )}
       </AnimatePresence>
 
-    <Footer/>
     </>
 
     );

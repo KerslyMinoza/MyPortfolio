@@ -1,8 +1,8 @@
 import './project.css';
-import Nav from '../../../components/layout/Nav/Nav.jsx';
+import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
+import Backbutton from '../../../components/common/Backbutton.jsx';
 
 import Design from "../../../assets/images/trux/trux.png";
-import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
@@ -31,7 +31,8 @@ function Trux(){
 
     return (
         <>
-            <Nav/>
+            <SiteNav/>
+            <Backbutton page="projects"/>
             <div className="project" id="orcaa">
                 <div className="content">
                     <div className="project_name"> Trux </div>
@@ -124,7 +125,6 @@ Despite all the chaos and stress, I actually enjoyed the design process itself. 
           )}
       </AnimatePresence>
 
-        <Footer/>
 
     </>
         

@@ -1,13 +1,15 @@
 
 import Footer from '../components/layout/footer/Footer';
-import Nav from '../components/layout/Nav/Nav.jsx';
+import SiteNav from '../components/layout/SiteNav/SiteNav.jsx';
 
+/* The footer stays here — on this page it is the content, not a repeat of the
+   navigation above it. */
 
 function Contact(){
 
     return (
         <div>
-            <Nav/>
+            <SiteNav/>
             <div className="reduceMargin"></div>
             <Footer/>
         </div>

@@ -25,6 +25,7 @@ import MalaysiaNodies from "./pages/blogs/blog/MalaysiaNodies.jsx";
 import Fx from "./pages/projects/project/Fx.jsx";
 import Rikka from "./pages/projects/project/Rikka.jsx";
 import Boldmade from "./pages/projects/project/Boldmade.jsx";
+import Allprojects from "./pages/Allprojects.jsx";
 
 
 
@@ -38,6 +39,7 @@ function App() {
     <ScrollToTop />
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="projects" element={<Allprojects />} />
       <Route path="uxplusconference" element={<Uxconference />} />
       <Route path="devcon_bangkok" element={<DevconBangkok />} />
       <Route path="malaysia_nodies" element={<MalaysiaNodies />} />

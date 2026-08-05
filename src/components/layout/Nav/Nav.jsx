@@ -54,8 +54,8 @@ function Nav(){
 
 
                     <ul>
-                        <li><Link to="/" className={isActive("/") ? "activenav" : ""}>Projects</Link></li>
-                       {/* <li><Link to="/moreworks" className={isActive("/moreworks") ? "activenav" : ""}>More Works</Link></li> */}
+                        <li><Link to="/" className={isActive("/") ? "activenav" : ""}>Home</Link></li>
+                        <li><Link to="/projects" className={isActive("/projects") ? "activenav" : ""}>All projects</Link></li>
                         <li><Link to="/aboutme" className={isActive("/aboutme") ? "activenav" : ""}>About Me</Link></li>
                         <li><Link to="/blog" className={isActive("/blog") ? "activenav" : ""}>Random Blog</Link></li>
                         <li><Link to="/contact" className={isActive("/contact") ? "activenav" : ""}>Contact</Link></li>
@@ -67,13 +67,26 @@ function Nav(){
 
 
             <div className="nav_desktop">
-                <ul>
-                    <li><Link to="/" className={isActive("/") ? "activenav" : ""}>Projects</Link></li>
-                    {/* <li><Link to="/moreworks" className={isActive("/moreworks") ? "activenav" : ""}>More Works</Link></li> */}
-                    <li><Link to="/aboutme" className={isActive("/aboutme") ? "activenav" : ""}>About Me</Link></li>
-                    <li><Link to="/blog" className={isActive("/blog") ? "activenav" : ""}>Random Blog</Link></li>
-                    <li><Link to="/contact" className={isActive("/contact") ? "activenav" : ""}>Contact</Link></li>
-                </ul>
+                {/* the portrait the hero used to carry, now leading the links.
+                    Home sits right beside it, so it is left as an image rather
+                    than a second link to the same page */}
+                <div className="nav_lead">
+                    {/* lives in public/, so it is served straight off the root */}
+                    <img className="nav_avatar" src="/avatar.png" alt="Kersly Miñoza" />
+
+                    <ul>
+                        <li><Link to="/" className={isActive("/") ? "activenav" : ""}>Home</Link></li>
+                        <li><Link to="/projects" className={isActive("/projects") ? "activenav" : ""}>All projects</Link></li>
+                        <li><Link to="/aboutme" className={isActive("/aboutme") ? "activenav" : ""}>About Me</Link></li>
+                        <li><Link to="/blog" className={isActive("/blog") ? "activenav" : ""}>Random Blog</Link></li>
+                    </ul>
+                </div>
+
+                <Link
+                    to="/contact"
+                    className={`nav_contact ${isActive("/contact") ? "activecontact" : ""}`}>
+                    Contact
+                </Link>
             </div>
 
 

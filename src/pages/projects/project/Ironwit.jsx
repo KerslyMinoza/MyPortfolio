@@ -1,10 +1,10 @@
 import './project.css';
-import Nav from '../../../components/layout/Nav/Nav.jsx';
+import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
+import Backbutton from '../../../components/common/Backbutton.jsx';
 import DesignProcess from "../../../assets/images/ironwit/design_process.png";
 import Wireframe from "../../../assets/images/ironwit/wireframe.png";
 import PersonaA from "../../../assets/images/ironwit/userpersona.png";
 import HighFidelity from "../../../assets/images/ironwit/high_fidelity.png";
-import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
@@ -33,7 +33,8 @@ function Ironwit(){
 
     return (
         <>
-            <Nav/>
+            <SiteNav/>
+            <Backbutton page="projects"/>
             <div className="project" id="orcaa">
                 <div className="content">
                     <div className="project_name"> Ironwit </div>
@@ -168,7 +169,6 @@ function Ironwit(){
           )}
       </AnimatePresence>
 
-     <Footer/>
     </>
         
     );

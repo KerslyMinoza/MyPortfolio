@@ -1,17 +1,23 @@
-import Nav from '../components/layout/Nav/Nav.jsx';
+import './home.css';
 import Hero from '../components/layout/Hero/Hero.jsx';
-import FeaturedWorks from '../components/features/FeaturedWorks/FeaturedWorks.jsx';
-import Footer from '../components/layout/footer/Footer';
 
+/* The hero carries the site's links in its own row, so a top nav would only
+   repeat them. It is parked rather than removed — restore these and the <Nav/>
+   below to bring it back:
+
+   import Nav from '../components/layout/Nav/Nav.jsx';
+   import useStackMode from '../components/utils/useStackMode.js';
+
+   The page no longer locks its scroll either. That was there to hold the page
+   still under the wheel-driven project deck, which is parked too — see
+   Hero.jsx — and locking a page that has nothing to scroll just traps it. */
 
 function Home(){
 
     return (
-        <div>
-            <Nav/>
+        <div className="home">
+            {/* <Nav/> */}
             <Hero/>
-            <FeaturedWorks/>
-            <Footer/>
         </div>
     );
 }

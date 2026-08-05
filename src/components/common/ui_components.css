@@ -1,26 +1,46 @@
 
+/* Pinned to the window, with its corner named rather than left to fall where
+   the document happens to put it. z-index clears .site_nav's 50 — the nav's
+   blur is absolute and full width, and would otherwise paint over this. */
 .backbutton
 {
     position: fixed;
-    float: left;
-    margin: 10px;
-    width: 50px;
-    height: 50px;
+    top: clamp(18px, 3.4vh, 44px);
+    left: clamp(16px, 3vw, 48px);
+    z-index: 60;
+    width: clamp(44px, 3.4vw, 52px);
+    height: clamp(44px, 3.4vw, 52px);
     background-color: var(--basic1);
+    box-shadow: 0 10px 26px rgba(20, 20, 24, 0.13);
     display: flex;
     justify-content: center; /* horizontal */
     align-items: center;
-    border-radius: 30px;
+    border-radius: 50%;
+    transition: background-color 0.35s ease,
+                transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .backbutton:hover {
-    background-color: var(--primary1);
-    border: solid var(--basic1);
+    background-color: var(--basic10);
+    transform: translateY(-2px);
+}
+
+/* the arrow is stroked black, so it has to flip on the dark fill */
+.backbutton:hover img {
+    filter: invert(1);
 }
 
 .backbutton:active {
-    background-color: var(--primary2);
+    background-color: var(--basic5);
+    transform: translateY(0);
+}
 
+/* the hamburger owns the top-left on a phone, so this crosses to the far side */
+@media only screen and (max-width: 760px) {
+    .backbutton {
+        left: auto;
+        right: clamp(16px, 4vw, 32px);
+    }
 }
 
 
@@ -34,33 +54,56 @@
     justify-content: space-between;
     width: 100%;
     margin-top: 50px;
-    display: flex;
-    border-top: 2px solid var(--basic5);; 
+    /* room underneath: with the contact footer gone from project pages, this
+       pair is the last thing on the page and was ending flush with it */
+    margin-bottom: clamp(60px, 12vh, 160px);
+    border-top: 2px solid var(--basic5);
     padding-top: 20px;
 
 }
 
+/* No outline of its own — it is text until you hover it, and then it takes the
+   same black pill the navigation links use. */
 .nextButton a  {
+    position: relative;
+    z-index: 0; /* keeps the pill behind the text, not behind the page */
     margin-right: 0;
-    font-family: "Instrument Serif", serif;
-    font-size: 28px;
-    font-style: italic;
-    color: var(--basic-color2);
-    border-style: solid;
-    border-color: var(--basic5);
-    border-width: 1px;
-    padding: 4px 20px 4px 20px;
-    border-radius: 40px;
+    font-family: var(--font-ui); /* Work Sans */
+    font-size: 20px;
+    font-weight: var(--weight-medium);
+    letter-spacing: -0.02em;
+    /* was var(--basic-color2), which is not a variable this project defines —
+       the colour was falling through to whatever it inherited */
+    color: var(--basic6);
+    text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 10px;
+    transition: color 0.35s ease,
+                transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
     transform: translateY(0);
 }
 
+/* the pill sits on a pseudo-element so hovering never nudges the layout */
+.nextButton a::before {
+    content: "";
+    position: absolute;
+    inset: -8px -14px;
+    background-color: var(--basic10);
+    border-radius: 8px;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right; /* retracts to the right on the way out */
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* the chevrons are stroked with currentColor, so they turn white with the
+   label rather than needing their own hover rule */
 .chevron-icon {
-    width: 14px;
-    height: 14px;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    stroke-width: 2;
     display: inline-block;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -76,10 +119,13 @@
 
 
 .nextButton a:hover  {
-    background-color: var(--primary1);
+    color: var(--basic1);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
+.nextButton a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left; /* wipes in from the left on the way in */
 }
 
 .nextButton.prev a:hover .chevron-icon {
@@ -91,9 +137,7 @@
 }
 
 .nextButton a:active  {
-    background-color: var(--primary2);
     transform: translateY(0);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -152,9 +196,9 @@
 }
 
 
-  /* for mobile */
+  /* for mobile — matches nav.css: viewport width, not device width */
 
-  @media only screen and (max-device-width: 1001px)  {
+  @media only screen and (max-width: 1000px)  {
 
 
     .nav_mobile{
@@ -173,6 +217,12 @@
 
     .nav-text-mobile {
       display: inline;
+    }
+
+    /* 20px carries fine on a phone once the label is just "Prev" and "Next",
+       so only the gap tightens */
+    .nextButton a {
+      gap: 8px;
     }
 
 

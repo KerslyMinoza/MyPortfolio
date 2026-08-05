@@ -1,6 +1,7 @@
 
 import './project.css';
-import Nav from '../../../components/layout/Nav/Nav.jsx';
+import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
+import Backbutton from '../../../components/common/Backbutton.jsx';
 
 import box from "../../../assets/images/boldmade/box.png";
 import bm1 from "../../../assets/images/boldmade/bm_1.png";
@@ -67,7 +68,6 @@ import bm61 from "../../../assets/images/boldmade/bm_61.png";
 import bm62 from "../../../assets/images/boldmade/bm_62.png";
 
 
-import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
@@ -96,7 +96,8 @@ function Boldmade(){
 
     return (
         <>
-            <Nav/>
+            <SiteNav/>
+            <Backbutton page="projects"/>
             <div className="project" id="boldmade">
                 <div className="content">
                     <div className="project_name">Bold Made</div>
@@ -285,7 +286,6 @@ function Boldmade(){
           )}
       </AnimatePresence>
 
-      <Footer/>
 
     </>
         

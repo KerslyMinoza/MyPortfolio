@@ -6,6 +6,7 @@
     margin-right: auto;
     margin-bottom: 70px;
     width: 80%;
+    max-width: var(--content-max); /* stops the footer sprawling on wide monitors */
     height: auto;
     border-radius: 20px;
     padding: 3%;
@@ -17,11 +18,16 @@
     color: #313131;
 }
 
+/* Set like the hero name on the home page, down to the size: --display-size is
+   shared, so the two move together instead of one being a number that happens
+   to look close. Tracking and line-height are in em, so they follow it. */
 .message {
-    font-size: 150px;
-    color: var(--basic6); 
-    letter-spacing: -3px;
-    line-height: 90%;
+    font-family: var(--font-primary);
+    font-size: var(--display-size);
+    font-weight: var(--weight-semibold);
+    color: var(--basic6);
+    letter-spacing: -0.025em;
+    line-height: 92%;
 }
 
 .section_contact {
@@ -48,75 +54,64 @@
 .contact_text {
     margin-top: 20px;
     font-size: 20px;
-    font-weight: 200;
+    font-weight: var(--weight-regular);
     letter-spacing: -0.5px;
 }
 
 .button_holder {
-    margin-top: 30px;
-    width: 150px;
-    text-align: center;
-    font-size: 20px;
-    border: solid var(--basic6); 
-    padding-top: 14px;
-    padding-bottom: 14px;
-    border-radius: 50px;
-}
-
-/*.button_holder:hover {
-    background-color: var(--primary1);
-    color:  var(--basic10); 
-}
-
-.button_holder:active {
-    background-color: var(--primary2);
-}*/
-.button_holder {
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* clips the fill to the pill shape */
   margin-top: 30px;
   width: 150px;
   text-align: center;
   font-size: 20px;
-  border: solid var(--basic6);
+  border: 1.5px solid var(--basic6);
   padding-top: 14px;
   padding-bottom: 14px;
   border-radius: 50px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateY(0);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Square edge + parent clipping keeps the wipe a clean vertical sweep. Same
+   fill, same easing and same duration as the pill behind a navigation link, so
+   the two read as one gesture. */
 .button-fill {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0%;
-  background-color: var(--primary1);
-  border-radius: 50px;
+  inset: 0;
+  background-color: var(--basic10);
   z-index: 0;
-  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scaleX(0);
+  transform-origin: right; /* retracts to the right on the way out */
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .button-text {
   position: relative;
   z-index: 1;
+  font-weight: var(--weight-medium);
   color: var(--basic6);
-  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 0.4s ease,
+              letter-spacing 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .button_holder:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--basic10); /* outline melts into the fill */
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.09);
 }
 
 .button_holder:hover .button-fill{
-    width: 100%;
+    transform: scaleX(1);
+    transform-origin: left; /* wipes in from the left */
 }
 
 .button_holder:hover .button-text {
-    color: var(--basic10);
+    color: var(--basic1); /* white on the black fill, as the nav links go */
+    letter-spacing: 0.4px;
 }
 
 .button_holder:active {
@@ -124,13 +119,14 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
+/* lifts off the black just enough to register as a press */
 .button_holder:active .button-fill{
-    background-color: var(--primary2);
+    background-color: var(--basic5);
 }
 
   /* for mobile */
 
-  @media only screen and (max-device-width: 1001px)  { 
+  @media only screen and (max-width: 1001px)  { 
 
     .footer_wrapper {
         display:flex;
@@ -143,10 +139,10 @@
         border-width: 1.5px;
     }
 
+    /* no font-size here: --display-size already comes down to about 42px at
+       this width, and overriding it would break step with the hero name */
     .message {
         margin-top: 10px;
-        font-size: 42px;
-        letter-spacing: -1.2px;
     }
 
     .section_contact {
@@ -184,8 +180,21 @@
 
   }
 
+/* On a phone --display-size bottoms out around 42px: it divides the page by
+   7.6, the width of the home page's whole name-reel-name line, and nothing
+   here has to fit that. The sign-off is the last thing on the page and can
+   carry far more weight than that, so it is sized off the viewport directly.
+
+   The break after "Build" stays, and "Apps Together" wraps again underneath
+   it — three lines at this size, which is what the measure allows. */
+@media only screen and (max-width: 760px) {
+  .message {
+    font-size: clamp(44px, 17vw, 96px);
+  }
+}
+
   /*macbooks*/
-  @media only screen and (min-device-width: 1024px) and (max-device-width: 1440px) {
+  @media only screen and (min-width: 1024px) and (max-width: 1440px) {
   
     .footer_wrapper {
         margin-left: 0;
@@ -200,9 +209,9 @@
         justify-content: flex-start;
     }
 
-    .message{
-        font-size: 120px;
-    }
+    /* the 120px that used to sit here is gone — --display-size covers this
+       range on its own, and it was keyed to the device's screen rather than
+       the window, so resizing the browser never reached it anyway */
 
 }
 

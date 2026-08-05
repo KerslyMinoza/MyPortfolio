@@ -6,7 +6,6 @@ body,
     margin: 0;
     padding: 0;
     /* Colors */
-    overflow-x: hidden;
     --primary1: #FAFF00;
     --primary2: #EAE439;
     --basic1: white;
@@ -18,8 +17,34 @@ body,
     --basic10: #060606;
     --button-radius: 0.5rem;
 
+    /* past this the page stops growing and centres on wide monitors. Wide
+       enough that an iMac can carry the 300px hero name, the deck and the gap
+       between them without the name having to give ground */
+    --content-max: 2300px;
+
+    /* the page's side margins: a fifth of the screen on a big monitor, easing
+       back to a plain edge on a laptop, where a fifth either side would leave
+       nothing in the middle. The nav and the hero both sit on this, which is
+       what keeps the two aligned. */
+    --page-gutter: clamp(24px, calc(28vw - 200px), 20vw);
+
+    /* The display type — the hero name, and the footer's sign-off, which is set
+       to match it. The size comes from what the hero has to hold: "Kersly", the
+       reel and "Miñoza" come to about 7.6 times the font size on one line, so
+       the room inside the margins divided by that is the largest it can be.
+       Height caps it on a short screen. */
+    --display-inset: clamp(24px, 9vw, 220px);
+    --display-room: calc(100vw - 2 * var(--display-inset));
+    --display-size: clamp(
+        40px,
+        min(calc(var(--display-room) / 7.6), 21vh),
+        300px
+    );
+
     /* Font Family */
     --font-primary: "DM Sans", sans-serif;
+    /* the next/previous pair at the foot of a project page */
+    --font-ui: "Work Sans", sans-serif;
     --font-secondary: "Instrument Serif", serif;
 
     /* Font sizes */
@@ -35,11 +60,18 @@ body,
     --weight-light: 300;
     --weight-regular: 400;
     --weight-medium: 500;
+    --weight-semibold: 600;
     --weight-bold: 700;
 
     /* Line height */
     --leading-normal: 1.5;
     --leading-tight: 1.25;
+}
+
+/* Only on <html>: overflow on body or #root would turn them into scroll
+   containers, which silently kills `position: sticky` in the hero. */
+html {
+    overflow-x: hidden;
 }
 
 
@@ -131,8 +163,10 @@ body {
   margin-top: 50px;
 }
 
+/* pulls the footer up on pages where it is the content rather than a sign-off,
+   against the 200px of clearance it carries by default */
 .reduceMargin {
-  margin-top: -100px;
+  margin-top: -150px;
 }
 
 .section_title {
@@ -145,7 +179,7 @@ body {
 }
 
 /* for mobile */
-@media only screen and (max-device-width: 1001px)  {
+@media only screen and (max-width: 1001px)  {
   .reduceMargin {
     margin-top: -40px;
   }

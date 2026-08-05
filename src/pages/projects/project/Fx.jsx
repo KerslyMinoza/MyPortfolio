@@ -24,8 +24,8 @@ import Image1 from "../../../assets/images/functionchat/functionnetwork.png";
 
 
 
-import Nav from '../../../components/layout/Nav/Nav.jsx';
-import Footer from '../../../components/layout/footer/Footer';
+import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
+import Backbutton from '../../../components/common/Backbutton.jsx';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
@@ -56,7 +56,8 @@ function Fx(){
 
     return (
         <>
-            <Nav/>
+            <SiteNav/>
+            <Backbutton page="projects"/>
             <div className="project" id="orcaa">
                 <div className="content">
                     <div className="project_name"> Function Chat </div>
@@ -210,7 +211,6 @@ function Fx(){
           )}
       </AnimatePresence>
 
-    <Footer/>
     </>   
         
     );

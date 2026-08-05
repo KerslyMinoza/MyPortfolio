@@ -1,8 +1,8 @@
 import './project.css';
-import Nav from '../../../components/layout/Nav/Nav.jsx';
+import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
+import Backbutton from '../../../components/common/Backbutton.jsx';
 
 import Design1 from "../../../assets/images/avatar_thumbnail.gif";
-import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
@@ -31,7 +31,8 @@ function Avatar(){
 
     return (
         <>
-            <Nav/>
+            <SiteNav/>
+            <Backbutton page="projects"/>
             <div className="project" id="pokfund">
                 <div className="content">
                     <div className="project_name"> Poktfund Avatar </div>
@@ -80,7 +81,6 @@ function Avatar(){
           )}
       </AnimatePresence>
 
-      <Footer/>
 
     </>
         

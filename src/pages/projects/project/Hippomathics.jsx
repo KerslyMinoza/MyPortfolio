@@ -1,11 +1,11 @@
 import './project.css';
-import Nav from '../../../components/layout/Nav/Nav.jsx';
+import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
+import Backbutton from '../../../components/common/Backbutton.jsx';
 
 import Design1 from "../../../assets/images/hippomathics/hippo.webp";
 import Design2 from "../../../assets/images/hippomathics/ui.webp";
 import Design3 from "../../../assets/images/hippomathics/highest score.webp";
 import Video from "../../../assets/images/hippomathics/video.mp4";
-import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
@@ -34,7 +34,8 @@ function Hippomathics(){
 
     return (
         <>
-            <Nav/>
+            <SiteNav/>
+            <Backbutton page="projects"/>
             <div className="project" id="pokfund">
                 <div className="content">
                     <div className="project_name"> Hippomathics </div>
@@ -117,7 +118,6 @@ function Hippomathics(){
           )}
       </AnimatePresence>
 
-      <Footer/>
 
     </>
         

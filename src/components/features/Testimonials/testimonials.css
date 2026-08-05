@@ -46,7 +46,7 @@
     color: var(--basic4);
 }
 
-@media only screen and (max-device-width: 1001px)  {
+@media only screen and (max-width: 1001px)  {
 
     .testimonial_box {
         padding: 16px;

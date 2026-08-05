@@ -1,0 +1,215 @@
+/* ---------------------------------------------------------------------------
+   The site's navigation row. The home page carries it inside the hero, under
+   the name; every other page carries it along the top with Home added back.
+   Only the row differs between the two — the links themselves are shared, so
+   .site_link is imported by both.
+--------------------------------------------------------------------------- */
+
+/* Sticky rather than fixed: it holds the top of the window all the same, but
+   it keeps its place in the flow, so the page below does not have to be padded
+   by exactly the nav's height to avoid starting underneath it.
+
+   No panel and no edge — the page's own colour, held solid behind the links
+   and then falling away to nothing below them. Content scrolling up runs out
+   under the fade rather than meeting a line, so there is never a bar to
+   notice. The extra bottom padding is the room that fade needs.
+
+   The stops are written as rgba white rather than `transparent`, which some
+   engines still interpolate through transparent black and leave a grey cast
+   across the middle of the gradient.
+
+   The home page is untouched — its links live in the hero, not in this row. */
+.site_nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(28px, 4.4vh, 64px) clamp(24px, 4vw, 90px) clamp(42px, 6.5vh, 96px);
+  box-sizing: border-box;
+}
+
+.site_nav_links {
+  position: relative; /* above the blur, for the same reason as the bar */
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(24px, 5vw, 110px);
+}
+
+/* The hamburger and the page's name — only ever seen on a narrow screen, so
+   this one switch is what hides both.
+
+   Positioned, and deliberately: the blur below is absolute, and an absolute
+   element paints above a static one inside the same stacking context however
+   the two are ordered. Left static, this bar renders underneath the blur and
+   comes out smeared. The links escape it only because .site_link is already
+   relative for its hover pill. */
+.site_nav_bar {
+  display: none;
+  position: relative;
+  z-index: 1;
+}
+
+.site_nav_toggle {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* The bar itself: a blur of whatever is passing underneath, masked so it thins
+   out towards the bottom instead of ending on a line. The gradient is in the
+   mask rather than in a colour — the page fades out because it goes soft and
+   stops being blurred, not because white is being painted over it.
+
+   The tint is only enough to hold the links legible over a dark thumbnail; the
+   heavier one this replaced is what made the whole bar read as white. */
+.site_nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  backdrop-filter: blur(18px) saturate(1.3);
+  -webkit-backdrop-filter: blur(18px) saturate(1.3);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.58) 0%,
+    rgba(255, 255, 255, 0.42) 55%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  /* the falloff: fully applied down to 40%, gone entirely by the bottom edge */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 40%,
+    rgba(0, 0, 0, 0.55) 72%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 40%,
+    rgba(0, 0, 0, 0.55) 72%,
+    transparent 100%
+  );
+}
+
+.site_link {
+  position: relative;
+  z-index: 0; /* keeps the pill behind the text, not behind the page */
+  font-family: var(--font-primary);
+  font-size: clamp(15px, min(1.3vw, 2.2vh), 22px);
+  font-weight: var(--weight-regular);
+  color: var(--basic6);
+  text-decoration: none;
+  transition: color 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* the page you are on, carried by weight alone — the colour is already spoken
+   for by the hover, which turns the text white on a black pill */
+.site_link--active {
+  font-weight: var(--weight-bold);
+}
+
+/* the pill sits on a pseudo-element so hovering never nudges the layout */
+.site_link::before {
+  content: "";
+  position: absolute;
+  inset: -8px -14px;
+  background-color: var(--basic10);
+  border-radius: 8px;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: right; /* retracts to the right on the way out */
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site_link:hover {
+  color: var(--basic1);
+  transform: translateY(-2px);
+}
+
+.site_link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left; /* wipes in from the left on the way in */
+}
+
+/* --- narrow screens ------------------------------------------------------ */
+
+/* Six links will not sit in a row on a phone, so the row folds behind the
+   hamburger and drops down as a list when it is opened. */
+@media only screen and (max-width: 760px) {
+  /* Set larger here than on a wide screen, not smaller. The links are a list
+     to be tapped rather than a row to be scanned, and .site_link's desktop
+     size is driven by vw and vh, both of which bottom out on a phone.
+
+     One rule covers the drawer and the home page's list, since both are
+     .site_link. */
+  .site_link {
+    font-size: clamp(20px, 6vw, 30px);
+  }
+
+  .site_nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: clamp(18px, 3vh, 28px) clamp(20px, 6vw, 44px) clamp(22px, 3.4vh, 34px);
+  }
+
+  .site_nav_bar {
+    display: flex;
+    align-items: center;
+    gap: clamp(12px, 3.4vw, 22px);
+    width: 100%;
+  }
+
+  .site_nav_current {
+    font-family: var(--font-primary);
+    font-size: clamp(17px, 4.6vw, 24px);
+    font-weight: var(--weight-semibold);
+    letter-spacing: -0.02em;
+    color: var(--basic6);
+  }
+
+  .site_nav_toggle {
+    display: block;
+    width: 34px;
+    height: 34px;
+    /* a thumb's worth of target around a small icon, without the box showing */
+    margin: -8px;
+    padding: 8px;
+    box-sizing: content-box;
+  }
+
+  .site_nav_toggle img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .site_nav_links {
+    display: none;
+  }
+
+  .site_nav--open .site_nav_links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(18px, 3vh, 30px);
+    width: 100%;
+    padding: clamp(26px, 4vh, 40px) 0 clamp(10px, 2vh, 20px);
+  }
+
+  /* opened, it stops being a fade over the page and becomes a panel — the
+     links have to stay legible over whatever is scrolled behind them */
+  .site_nav--open::before {
+    background-image: none;
+    background-color: #FFFFFF;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}

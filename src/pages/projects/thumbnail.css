@@ -7,23 +7,29 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    animation: appear linear;
-    animation-timeline: view();
-    animation-duration: 300ms;
+    /* scroll-in animation is handled by framer-motion in Thumbnail.jsx */
 }
 
+
+/* the frame the zoom is clipped to — the radius lives here now, so the image
+   inside can grow past its own edges without corners appearing */
+.thumbnail_media {
+    overflow: hidden;
+    border-radius: 18px;
+    background-color: #F3F3F3;
+}
 
 .thumbnail img{
     border: none;
+    display: block;
     width: 100%;
     height: auto;
-    background-color: #F3F3F3;
-    border-radius: 18px;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.thumbnail img:hover {
-    animation: scaleup;
-    animation-duration: 500ms;
+/* driven off the card, not the image, so the whole card is the target */
+.thumbnail:hover img {
+    transform: scale(1.045);
 }
 
 .thumbnail .title {
@@ -64,7 +70,7 @@
    
 }
 
-@media only screen and (max-device-width: 999px)  {
+@media only screen and (max-width: 999px)  {
     
     .thumbnail {
         width: 90%;
@@ -72,7 +78,7 @@
   }
   
   /* Macbooks */
-@media only screen and (min-device-width: 1000px) and (max-device-width: 1600px) {
+@media only screen and (min-width: 1000px) and (max-width: 1600px) {
 
     .thumbnail {
         width:30%;

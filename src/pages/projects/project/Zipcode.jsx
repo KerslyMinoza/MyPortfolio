@@ -1,6 +1,7 @@
 
 import './project.css';
-import Nav from '../../../components/layout/Nav/Nav.jsx';
+import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
+import Backbutton from '../../../components/common/Backbutton.jsx';
 
 import Design1 from "../../../assets/images/zipcode_team/amanda.png";
 import Design2 from "../../../assets/images/zipcode_team/stacey.png";
@@ -14,7 +15,6 @@ import Design9 from "../../../assets/images/zipcode_team/carl.png";
 import Design10 from "../../../assets/images/zipcode_team/marissa.png";
 import Design11 from "../../../assets/images/zipcode_team/doggie.png";
 
-import Footer from '../../../components/layout/footer/Footer';
 
 import NextPrevious from '../../../components/common/NextPrevious';
 import { useLocation } from 'react-router-dom';
@@ -43,7 +43,8 @@ function Zipcode(){
 
     return (
         <>
-            <Nav/>
+            <SiteNav/>
+            <Backbutton page="projects"/>
             <div className="project" id="pokfund">
                 <div className="content">
                     <div className="project_name"> Zipcode Team </div>
@@ -104,7 +105,6 @@ function Zipcode(){
           )}
       </AnimatePresence>
 
-      <Footer/>
 
     </>
         
