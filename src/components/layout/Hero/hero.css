@@ -167,7 +167,11 @@
 .hero_tagline {
   margin: 0;
   font-family: var(--font-primary);
-  font-size: clamp(16px, min(2.2vw, 3.8vh), 32px);
+  /* Set against the name rather than on its own. The two hang off the ends of
+     it, so at the old 2.2vw they came to within about 100px of meeting in the
+     middle on a MacBook — and once the name grew they were reading as a second
+     line of display type rather than as a note under it. */
+  font-size: clamp(15px, min(1.65vw, 2.9vh), 24px);
   font-weight: var(--weight-light);
   color: #292929;
   line-height: 145%;

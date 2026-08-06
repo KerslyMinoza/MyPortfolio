@@ -181,15 +181,13 @@
     align-items: center;
     gap: clamp(12px, 3.4vw, 22px);
     width: 100%;
+    /* over the full-screen panel, so the close button stays reachable and the
+       page's name stays legible once it is open */
+    z-index: 3;
   }
 
-  /* Except on a project or journal page, where the back button is pinned to
-     that same left corner — there the name starts to the right of it, so the
-     two read as a pair rather than sitting on top of each other. The button is
-     16px in and 44px across at this width, so this clears about 60px. */
-  .site_nav--with-back .site_nav_current {
-    padding-left: clamp(46px, 12vw, 62px);
-  }
+  /* The name needs no allowance for the back button any more: it has come out
+     of that corner and sits under the bar instead — see ui_components.css. */
 
   .site_nav_current {
     font-family: var(--font-primary);
@@ -246,28 +244,28 @@
      Its own white, since the bar no longer turns into a panel. The horizontal
      padding matches the nav's, so the links stay on the same left edge they
      have when the row is open on a wider screen. */
+  /* The whole screen, fixed to the viewport rather than hung off the bar. With
+     one fixed size there is nothing left for the animation to lay out — only
+     opacity moves — and a panel that covers everything needs no shadow to lift
+     it off the page, because no page is left showing to lift it off.
+
+     inset rather than height: 100vh, which on a phone counts the address bar in
+     and would push the last rows below the fold.
+
+     Centred down the page, and on the same left edge the links keep in every
+     other layout. */
   .site_nav_links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 2;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
     gap: clamp(18px, 3vh, 30px);
     padding: 0 clamp(20px, 6vw, 44px);
     box-sizing: border-box;
     background-color: #ffffff;
-    box-shadow: 0 18px 40px rgba(20, 20, 24, 0.1);
-    overflow: hidden;
-  }
-
-  .site_nav_link_row:first-child {
-    margin-top: clamp(26px, 4vh, 40px);
-  }
-
-  .site_nav_link_row:last-child {
-    margin-bottom: clamp(10px, 2vh, 20px);
+    overflow-y: auto;
   }
 
   /* The blur is pinned to the bar's own height rather than filling the nav.
@@ -277,11 +275,11 @@
      re-blur of a taller and taller strip, which is most of why opening the
      menu stuttered. Held to a fixed height it is computed once and left alone.
 
-     The height is the bar exactly: the nav's own padding above and below, with
-     the 34px toggle between them. */
+     The height is the bar exactly — see --site-nav-h in global.css, which the
+     back button is placed off as well. */
   .site_nav::before {
     bottom: auto;
-    height: calc(clamp(18px, 3vh, 28px) + 34px + clamp(22px, 3.4vh, 34px));
+    height: var(--site-nav-h);
   }
 
   /* The drawer no longer turns the bar into a white panel — it brings its own,

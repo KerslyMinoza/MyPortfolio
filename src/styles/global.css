@@ -17,6 +17,12 @@ body,
     --basic10: #060606;
     --button-radius: 0.5rem;
 
+    /* The top bar's height on a phone: the nav's own padding above and below,
+       with the 34px toggle between them. Two things are measured off it — the
+       blur strip is cut to it, and the back button is parked just under it — so
+       it is stated once here rather than copied into both files. */
+    --site-nav-h: calc(clamp(18px, 3vh, 28px) + 34px + clamp(22px, 3.4vh, 34px));
+
     /* past this the page stops growing and centres on wide monitors. Wide
        enough that an iMac can carry the 300px hero name, the deck and the gap
        between them without the name having to give ground */
@@ -30,14 +36,24 @@ body,
 
     /* The display type — the hero name, and the footer's sign-off, which is set
        to match it. The size comes from what the hero has to hold: "Kersly", the
-       reel and "Miñoza" come to about 7.6 times the font size on one line, so
-       the room inside the margins divided by that is the largest it can be.
-       Height caps it on a short screen. */
-    --display-inset: clamp(24px, 9vw, 220px);
+       reel and "Miñoza" on one line. The room inside the margins divided by
+       that line's width, as a multiple of the font size, is the largest it can
+       be. Height caps it on a short screen.
+
+       The divisor was 7.6, which was well over the mark: measured on a laptop
+       the line comes to about 6.7 times the font size, so the name was sitting
+       at seven eighths of the size it had room for and a MacBook carried a band
+       of empty page either side of it. 7 keeps a margin over the measurement —
+       under 6.7 and the name would start running into the inset.
+
+       The inset came in with it: a fifteenth of the screen rather than a
+       eleventh. It is the hero's own padding as well, so easing it moves the
+       taglines and the link row out to meet the wider name. */
+    --display-inset: clamp(24px, 7vw, 190px);
     --display-room: calc(100vw - 2 * var(--display-inset));
     --display-size: clamp(
         40px,
-        min(calc(var(--display-room) / 7.6), 21vh),
+        min(calc(var(--display-room) / 7), 21vh),
         300px
     );
 

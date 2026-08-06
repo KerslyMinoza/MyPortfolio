@@ -25,46 +25,45 @@ import CloseIcon from '../../../assets/images/close.png';
    now, and only the phone should be doing that. */
 const PHONE = '(max-width: 760px)';
 
-/* The drawer grows out of the bar rather than arriving at full height, and the
-   links follow it in one after the next.
+/* The panel fills the screen and simply fades — nothing about its size is
+   animated any more.
+
+   Growing it from the bar was the trouble: height is a layout property, so
+   every frame put the whole page through layout again, and no amount of tuning
+   the curve fixes that. A full-height panel has one size, so the only thing
+   moving is opacity, which the compositor handles on its own.
 
    Closing is not the opening played backwards: it runs faster and the links
-   leave in reverse, the last one first, so the drawer looks like it is being
-   drawn back up rather than falling apart. */
+   leave in reverse, the last one first. */
 const DRAWER = {
   hidden: {
-    height: 0,
     opacity: 0,
     transition: {
-      height: { duration: 0.3, ease: [0.4, 0, 0.2, 1] },
-      opacity: { duration: 0.18 },
-      staggerChildren: 0.035,
+      duration: 0.2,
+      ease: [0.4, 0, 0.2, 1],
+      staggerChildren: 0.025,
       staggerDirection: -1,
     },
   },
   open: {
-    height: 'auto',
     opacity: 1,
     transition: {
-      height: { duration: 0.42, ease: [0.22, 1, 0.36, 1] },
-      opacity: { duration: 0.22 },
-      delayChildren: 0.1,
-      staggerChildren: 0.055,
+      duration: 0.26,
+      ease: [0.22, 1, 0.36, 1],
+      delayChildren: 0.07,
+      staggerChildren: 0.05,
     },
   },
 };
 
-/* The arrival the rest of the site uses, tightened: a drawer is a short
-   distance to travel, so the 40px the hero name rises through would read as a
-   lurch at this size.
+/* Down from above, one after the next — they arrive from the direction the
+   panel came from.
 
-   Without the blur the rest of the site opens with, deliberately. Six of them
-   animating a filter at once, over a panel that is itself still resizing, is
-   work the compositor cannot hand off — it was visibly costing frames on a
-   phone. Transform and opacity are free by comparison, and at 12px the blur was
-   never doing much anyway. */
+   Transform and opacity only. No blur: six of them animating a filter at once
+   is work the compositor cannot hand off, and it was visibly costing frames on
+   a phone. */
 const DRAWER_LINK = {
-  hidden: { y: 12, opacity: 0 },
+  hidden: { y: -14, opacity: 0 },
   open: { y: 0, opacity: 1 },
 };
 
@@ -98,14 +97,6 @@ function SiteNav({ mobileOnly = false }) {
      you are on the page you are looking at. */
   const current = SITE_LINKS.find((link) => link.to !== '/' && isActive(link.to));
 
-  /* The name sits at the far left of the bar, which on a project or journal
-     page is the corner the back button is pinned to. Those are the pages one
-     level inside a section, so the route is enough to know — and knowing lets
-     the name step aside for the button rather than land underneath it. The
-     alternative was indenting it on every page, including the ones with
-     nothing there to clear. */
-  const hasBackButton = /^\/(projects|journal)\/.+/.test(pathname);
-
   const links = SITE_LINKS.map((link) => (
     <Link
       key={link.to}
@@ -122,7 +113,6 @@ function SiteNav({ mobileOnly = false }) {
         'site_nav',
         open ? 'site_nav--open' : '',
         mobileOnly ? 'site_nav--mobile-only' : '',
-        hasBackButton ? 'site_nav--with-back' : '',
       ]
         .filter(Boolean)
         .join(' ')}>

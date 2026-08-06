@@ -35,9 +35,23 @@
     transform: translateY(0);
 }
 
-/* No side-swap on a phone any more: the hamburger has moved to the top right,
-   so this keeps the left that the rule above gives it. The two used to collide
-   in the top-left corner, which is what sent this across. */
+/* On a phone it drops out of the corner and sits in the band between the bar
+   and the title, which is where it reads as belonging to the page rather than
+   floating over it. Still fixed, so it stays put as the page moves under it.
+
+   Placed off --site-nav-h, so it follows the bar rather than being a number
+   that happens to clear it today. The left is the title's own edge: .project
+   and .blog sit at 90% with 20px of padding, which comes to about 39px on a
+   phone, so the button and the words below it start on the same line.
+
+   The band is about 55px deep and the button is 44px, so it sits inside it
+   without reaching the title. */
+@media only screen and (max-width: 760px) {
+    .backbutton {
+        top: calc(var(--site-nav-h) + 4px);
+        left: clamp(20px, 10vw, 44px);
+    }
+}
 
 
 .backbutton img {
