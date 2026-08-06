@@ -1,5 +1,6 @@
 import '../blogs.css';
-import Nav from '../../../components/layout/Nav/Nav.jsx';
+import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
+import Backbutton from '../../../components/common/Backbutton.jsx';
 
 import Devcon from "../../../assets/images/blog/devcon/devcon.jpg";
 import Pic1 from "../../../assets/images/blog/devcon/pic1.jpg";
@@ -38,8 +39,6 @@ import Pic34 from "../../../assets/images/blog/devcon/pic34.jpg";
 
 
 
-import Footer from '../../../components/layout/footer/Footer';
-
 import NextPreviousBlog from '../../../components/common/NextPreviousBlog';
 import { useLocation } from 'react-router-dom';
 import { BLOG } from '../../../data/blogs.js';
@@ -50,7 +49,7 @@ import { XMarkIcon } from '@heroicons/react/24/outline';
 function DevconBangkok(){
 
     const location = useLocation();
-    const blogId = location.state?.blogId || BLOG.find(b => b.path === '/devcon_bangkok')?.id;
+    const blogId = location.state?.blogId || BLOG.find(b => b.path === '/journal/devcon-bangkok')?.id;
 
     const [selectedImage, setSelectedImage] = useState(null);
 
@@ -68,9 +67,9 @@ function DevconBangkok(){
 
     return (
         <>
-            <Nav/>
+            <SiteNav/>
+            <Backbutton page="journal"/>
             <div className="blog" id="pokfund">
-                <div className="margin-s"></div>
                 <div className="content">
                     <div className="blog_name"> Devcon + Team Building in Bangkok </div>
                     <div className="section_title">A Week to Remember. Sawadeeka! ✈️</div>
@@ -162,10 +161,13 @@ function DevconBangkok(){
                     <div className="image_holder">
                         <img src={Pic34} onClick={() => openModal(Pic34)}></img>
                     </div>
-             <NextPreviousBlog blog_id={blogId}/>
             </div>
 
         </div>
+
+            <div className="blog" >
+                <NextPreviousBlog blog_id={blogId}/>
+            </div>
 
       {/* Modal */}
       <AnimatePresence>
@@ -198,8 +200,6 @@ function DevconBangkok(){
               </motion.div>
           )}
       </AnimatePresence>
-
-      <Footer/>
 
     </>
 

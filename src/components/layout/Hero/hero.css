@@ -76,6 +76,15 @@
   aspect-ratio: 4 / 5;
   border-radius: 50%;
   overflow: hidden;
+  /* iOS Safari does not clip a <video> to its parent's border-radius, and a
+     transformed child escapes it on desktop WebKit too — which is why the reel
+     came out square on a real phone. clip-path does clip descendants, transform
+     and all, so it is what actually holds the shape; the radius stays for the
+     plate that shows while the clip is still loading. 50%/50% is the same
+     ellipse the radius describes, so it follows the 4:5 box and the circle it
+     becomes on a phone without needing its own value for each. */
+  -webkit-clip-path: ellipse(50% 50% at 50% 50%);
+  clip-path: ellipse(50% 50% at 50% 50%);
   /* keeps the grain below blending with the clip and nothing else */
   isolation: isolate;
   background-color: #F1F1F1;
@@ -105,18 +114,35 @@
    Raising it moves her right, and it cannot go past -16% the other way without
    opening a gap down the right-hand edge; widen the clip to travel further.
 
-   The clip is 9:16 against a 4:5 oval, so about a third of its height is cut
-   away too. Centred, that took the top of her hair with it — pulling the
-   window up to 12% keeps her head whole and her body in the middle. */
+   vid3.mp4 is 1080x1356 — near enough the oval's own 4:5 that the clip is
+   scaled to the box's width and only about a seventh of its height is cut away,
+   where the 9:16 clip this replaced lost about a third. Because nothing is left
+   over horizontally, object-position's first value does nothing here; `left` is
+   what frames her sideways. The window sits at 12% rather than centred, which
+   is what keeps the top of her hair in frame.
+
+   The scale is a zoom on top of that framing rather than a reframing: the
+   origin is pinned to where she actually sits in the box — 47% across and 56%
+   down, about chest height — so she stays put and the oval closes in around
+   her. Scaling about the box's own centre instead would drift her sideways as
+   it tightened. At 1.375 the oval holds about 9%-72% of the clip's height and
+   20%-82% of its width, against 2%-88% and 10%-96% unzoomed.
+
+   `top` then drops the clip down inside the oval, which sits her lower in it
+   and opens headroom above. There is slack to do that because the scale leaves
+   the clip taller than the oval at both ends — past about 15% it runs out and
+   a band of the plate appears along the bottom. */
 .hero_reel_clip {
   position: absolute;
-  top: 0;
+  top: 9%;
   left: -11%;
   width: 116%;
   height: 100%;
   display: block;
   object-fit: cover;
   object-position: 50% 12%;
+  transform: scale(1.375);
+  transform-origin: 47% 56%;
   /* lifted and flattened a touch, so the grain reads across the whole frame
      rather than only in the midtones */
   filter: brightness(1.12) contrast(0.9);
@@ -152,6 +178,21 @@
   text-align: right;
 }
 
+/* Both of these belong to the phone and are switched on in the media query at
+   the foot of this file — off is the default so nothing has to be undone for
+   the wide layout.
+
+   The break: across the foot of a wide screen the tagline has the room to stay
+   on one line. Removing the <br> outright is what turns it off; a <br> keeps
+   breaking the line whatever else you set on it.
+
+   The button: on a wide screen the row of links sits under the name with
+   Projects already in it, so this would be the same link twice. */
+.hero_tagline_break,
+.hero_cta {
+  display: none;
+}
+
 /* --- the link row -------------------------------------------------------- */
 
 .hero_links {
@@ -172,9 +213,13 @@
    rather than being centred — a phone has no width to spare for a name, a reel
    and a name again side by side. */
 @media only screen and (max-width: 760px) {
+  /* Asymmetric here, where the wide layout pads top and bottom alike. The bar
+     above is only a hamburger on a phone, so it leaves the top of the screen
+     all but empty — this drops the reel, the name and the rest into it rather
+     than starting them straight under the bar. */
   .hero_section {
     align-items: flex-start;
-    padding: clamp(28px, 5vh, 60px) 0;
+    padding: clamp(52px, 9vh, 104px) 0 clamp(28px, 5vh, 60px);
   }
 
   .hero_layout {
@@ -186,6 +231,12 @@
     align-items: flex-start;
     gap: clamp(38px, 7vh, 74px);
     padding: 0 clamp(20px, 6vw, 44px);
+    /* A little more down the left than the right. Stacked, everything here is
+       left-aligned — the reel, both names, the taglines and the button all
+       start on this edge, so it is the one the eye reads against and it can
+       carry the wider margin. Only the hero is set this way, and the hero is
+       the home page, so no other page moves. */
+    padding-left: clamp(28px, 8vw, 58px);
   }
 
   .hero_masthead {
@@ -199,9 +250,12 @@
     gap: 0;
   }
 
+  /* Sized off the viewport rather than the type: stacked, it leads the page
+     instead of sitting inside the name's line, so it is free to be far larger
+     than the 1.15em it takes on a wide screen. */
   .hero_reel {
     order: -1;
-    height: clamp(88px, 28vw, 150px);
+    height: clamp(120px, 40vw, 190px);
     aspect-ratio: 1; /* a circle here, not the oval it is on a wide screen */
     margin-bottom: clamp(22px, 4vh, 44px);
   }
@@ -217,16 +271,61 @@
     margin-top: clamp(20px, 3.4vh, 36px);
   }
 
+  /* Set larger here than the desktop rule bottoms out at, the same way the
+     links are. Stacked and left-aligned, these two lines are the only thing
+     under the name, so they can carry more weight than they could sharing a
+     row. Both still break to two lines at most at the widest phone. */
   .hero_tagline {
-    font-size: clamp(18px, 4.8vw, 22px);
+    font-size: clamp(21px, 6vw, 28px);
   }
 
   .hero_tagline:last-child {
     text-align: left;
   }
 
-  /* a list to run a thumb down, rather than a row that wraps into a block */
+  /* "and vibe code." drops to its own line here, where the tagline has a phone's
+     width rather than the foot of a monitor to run along */
+  .hero_tagline_break {
+    display: inline;
+  }
+
+  /* The one thing to act on, with the links folded away behind the hamburger.
+     Solid rather than the outlined pill the footer uses: that one fills in on
+     hover, and there is no hover here to fill it. */
+  .hero_cta {
+    display: block;
+    margin-top: clamp(26px, 4vh, 42px);
+  }
+
+  .hero_cta_button {
+    display: inline-block;
+    padding: clamp(13px, 1.8vh, 17px) clamp(24px, 6.4vw, 34px);
+    border-radius: 50px;
+    background-color: var(--basic10);
+    color: var(--basic1);
+    font-family: var(--font-primary);
+    font-size: clamp(17px, 4.4vw, 20px);
+    font-weight: var(--weight-medium);
+    letter-spacing: -0.01em;
+    /* the press, since a phone has no hover to lean on */
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+                background-color 0.25s ease;
+  }
+
+  .hero_cta_button:active {
+    background-color: var(--basic5);
+    transform: scale(0.97);
+  }
+
+  /* The hamburger at the top of the page carries these now — see Home.jsx —
+     so the row is not stacked into a list here, it is dropped. Leaving both
+     would put the same five links on the screen twice.
+
+     The column rules are kept against the day the hamburger goes: they are
+     what turned this from a row that wrapped into a block into a list to run
+     a thumb down. */
   .hero_links {
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     gap: clamp(20px, 3.4vh, 34px);

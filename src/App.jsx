@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { motion } from 'framer-motion'
 import Home from './pages/Home.jsx';
 import Allblogs from './pages/blogs/Allblogs.jsx';
@@ -26,8 +26,24 @@ import Fx from "./pages/projects/project/Fx.jsx";
 import Rikka from "./pages/projects/project/Rikka.jsx";
 import Boldmade from "./pages/projects/project/Boldmade.jsx";
 import Allprojects from "./pages/Allprojects.jsx";
+import { PROJECT } from "./data/projects.js";
+import { BLOG } from "./data/blogs.js";
 
 
+/* Every path the site used to answer on, against where that page lives now.
+   Anything already linked or indexed still lands rather than hitting nothing.
+
+   The project entries are derived rather than listed: the move was mechanical —
+   /nodies became /projects/nodies — so a new project needs nothing added here.
+   The journal's slugs also lost their underscores, which is not derivable, so
+   each entry carries its old path in blogs.js. */
+const REDIRECTS = [
+  ['/aboutme', '/career'],
+  ['/moreworks', '/about-me'],
+  ['/blog', '/journal'],
+  ...PROJECT.map((project) => [project.path.replace('/projects/', '/'), project.path]),
+  ...BLOG.map((blog) => [blog.legacyPath, blog.path]),
+];
 
 
 
@@ -39,30 +55,40 @@ function App() {
     <ScrollToTop />
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="projects" element={<Allprojects />} />
-      <Route path="uxplusconference" element={<Uxconference />} />
-      <Route path="devcon_bangkok" element={<DevconBangkok />} />
-      <Route path="malaysia_nodies" element={<MalaysiaNodies />} />
-      <Route path="orcaa" element={<Orcaa />} />
-      <Route path="ironwit" element={<Ironwit />} />
-      <Route path="waggle" element={<Waggle />} />
-      <Route path="mednotes" element={<Mednotes />} />
-      <Route path="trux" element={<Trux />} />
-      <Route path="valhalla" element={<Valhalla />} />
-      <Route path="poktfund" element={<Poktfund />} />
-      <Route path="functionchat" element={<Fx />} />
-      <Route path="hippomathics" element={<Hippomathics />} />
-      <Route path="avatar" element={<Avatar />} />
-      <Route path="nodies" element={<Nodies />} />
-      <Route path="zipcode" element={<Zipcode />} />
-      <Route path="rikka" element={<Rikka />} />
-      <Route path="axis" element={<Axis />} />
-      <Route path="boldmade" element={<Boldmade />} />
-      <Route path="aboutme" element={<Aboutme />} />
-      <Route path="contact" element={<Contact />} />
-      <Route path="moreworks" element={<Moreworks />} />
 
-      <Route path="blog" element={<Allblogs />} />
+      {/* the navigation's own six, each one named after the link that reaches it */}
+      <Route path="projects" element={<Allprojects />} />
+      <Route path="career" element={<Aboutme />} />
+      <Route path="about-me" element={<Moreworks />} />
+      <Route path="journal" element={<Allblogs />} />
+      <Route path="contact" element={<Contact />} />
+
+      {/* the work itself, under the section it belongs to */}
+      <Route path="projects/nodies" element={<Nodies />} />
+      <Route path="projects/functionchat" element={<Fx />} />
+      <Route path="projects/ironwit" element={<Ironwit />} />
+      <Route path="projects/waggle" element={<Waggle />} />
+      <Route path="projects/orcaa" element={<Orcaa />} />
+      <Route path="projects/mednotes" element={<Mednotes />} />
+      <Route path="projects/valhalla" element={<Valhalla />} />
+      <Route path="projects/trux" element={<Trux />} />
+      <Route path="projects/poktfund" element={<Poktfund />} />
+      <Route path="projects/avatar" element={<Avatar />} />
+      <Route path="projects/rikka" element={<Rikka />} />
+      <Route path="projects/hippomathics" element={<Hippomathics />} />
+      <Route path="projects/zipcode" element={<Zipcode />} />
+      <Route path="projects/axis" element={<Axis />} />
+      <Route path="projects/boldmade" element={<Boldmade />} />
+
+      <Route path="journal/malaysia-nodies" element={<MalaysiaNodies />} />
+      <Route path="journal/devcon-bangkok" element={<DevconBangkok />} />
+      <Route path="journal/ux-conference" element={<Uxconference />} />
+
+      {/* replace rather than push, so the back button returns to wherever the
+          old link was followed from instead of bouncing through it again */}
+      {REDIRECTS.map(([from, to]) => (
+        <Route key={from} path={from} element={<Navigate to={to} replace />} />
+      ))}
     </Routes>
   </BrowserRouter>
   )

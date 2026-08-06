@@ -1,3 +1,20 @@
+/* The home page name arriving: each word up from below and out of a blur, one
+   let go a beat after the last. The footer's sign-off is set to this as well —
+   the first words on the site and the last are the same gesture, so they are
+   the same numbers rather than two that happen to look alike.
+
+   A word has to be inline-block or a flex item for either the lift or the blur
+   to take: neither applies to a plain run of inline text. */
+export const introItem = {
+  hidden: { y: 40, opacity: 0, filter: 'blur(10px)' },
+  visible: { y: 0, opacity: 1, filter: 'blur(0px)' },
+};
+
+export const introTransition = { type: 'spring', stiffness: 60, damping: 14, mass: 0.8 };
+
+/* goes on the parent, which is what walks the words apart */
+export const INTRO_STAGGER = 0.12;
+
 export const bounceUp = (delay = 0) => ({
     variants: {
       hidden: { y: 100, opacity: 0 },

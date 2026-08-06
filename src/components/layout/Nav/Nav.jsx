@@ -55,9 +55,9 @@ function Nav(){
 
                     <ul>
                         <li><Link to="/" className={isActive("/") ? "activenav" : ""}>Home</Link></li>
-                        <li><Link to="/projects" className={isActive("/projects") ? "activenav" : ""}>All projects</Link></li>
-                        <li><Link to="/aboutme" className={isActive("/aboutme") ? "activenav" : ""}>About Me</Link></li>
-                        <li><Link to="/blog" className={isActive("/blog") ? "activenav" : ""}>Random Blog</Link></li>
+                        <li><Link to="/projects" className={isActive("/projects") ? "activenav" : ""}>Projects</Link></li>
+                        <li><Link to="/career" className={isActive("/career") ? "activenav" : ""}>Career</Link></li>
+                        <li><Link to="/journal" className={isActive("/journal") ? "activenav" : ""}>Journal</Link></li>
                         <li><Link to="/contact" className={isActive("/contact") ? "activenav" : ""}>Contact</Link></li>
                     </ul>
                 </motion.div>
@@ -76,9 +76,9 @@ function Nav(){
 
                     <ul>
                         <li><Link to="/" className={isActive("/") ? "activenav" : ""}>Home</Link></li>
-                        <li><Link to="/projects" className={isActive("/projects") ? "activenav" : ""}>All projects</Link></li>
-                        <li><Link to="/aboutme" className={isActive("/aboutme") ? "activenav" : ""}>About Me</Link></li>
-                        <li><Link to="/blog" className={isActive("/blog") ? "activenav" : ""}>Random Blog</Link></li>
+                        <li><Link to="/projects" className={isActive("/projects") ? "activenav" : ""}>Projects</Link></li>
+                        <li><Link to="/career" className={isActive("/career") ? "activenav" : ""}>Career</Link></li>
+                        <li><Link to="/journal" className={isActive("/journal") ? "activenav" : ""}>Journal</Link></li>
                     </ul>
                 </div>
 

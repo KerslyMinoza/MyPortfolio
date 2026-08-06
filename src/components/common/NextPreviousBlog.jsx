@@ -22,7 +22,8 @@ console.log ("NEXTPREVIOUS BLOG COMPONENT:" + blg_id)
                     state={{ blogId: blg_id - 1 }}
                     >
                      <ChevronLeftIcon className="chevron-icon" />
-                     <span>Prev</span>
+                     <span className="project-title-desktop">{BLOG.find(b => b.id === blg_id - 1).title}</span>
+                     <span className="nav-text-mobile">Prev</span>
                     </Link>
                 </div>
                 ) : (
@@ -35,7 +36,8 @@ console.log ("NEXTPREVIOUS BLOG COMPONENT:" + blg_id)
                     to={BLOG.find(b => b.id === blg_id + 1).path}
                     state={{ blogId: blg_id + 1 }}
                     >
-                    <span>Next</span>
+                    <span className="nav-text-mobile">Next</span>
+                    <span className="project-title-desktop">{BLOG.find(b => b.id === blg_id + 1).title}</span>
                     <ChevronRightIcon className="chevron-icon" />
                     </Link>
                 </div>

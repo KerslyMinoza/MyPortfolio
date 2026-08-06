@@ -30,6 +30,16 @@
     line-height: 92%;
 }
 
+/* Laid out the way the hero name is: the words are flex items with a gap
+   standing in for the space, which is what lets each one be lifted and
+   unblurred on its own. Wrapping is left on, so a line that outgrows the
+   measure on a phone still breaks inside itself. */
+.message_line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 0.24em;
+}
+
 .section_contact {
     width: 100%;
     font-family: "Instrument Serif", serif;

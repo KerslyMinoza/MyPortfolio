@@ -138,6 +138,16 @@
   transform-origin: left; /* wipes in from the left on the way in */
 }
 
+/* The home page renders this for the hamburger alone: its own row of links
+   lives in the hero, so above the fold-away width this would be the same links
+   a second time. Below it, the hero row is hidden instead and this takes over —
+   see hero.css. */
+@media only screen and (min-width: 761px) {
+  .site_nav--mobile-only {
+    display: none;
+  }
+}
+
 /* --- narrow screens ------------------------------------------------------ */
 
 /* Six links will not sit in a row on a phone, so the row folds behind the
@@ -159,11 +169,26 @@
     padding: clamp(18px, 3vh, 28px) clamp(20px, 6vw, 44px) clamp(22px, 3.4vh, 34px);
   }
 
+  /* The two ends of the bar: row-reverse makes the toggle the first item and
+     space-between then throws it to the right edge and the page's name to the
+     left. The hamburger owns the top right on every page now, which is why the
+     back button no longer crosses the page to get out of its way — see
+     ui_components.css. */
   .site_nav_bar {
     display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     align-items: center;
     gap: clamp(12px, 3.4vw, 22px);
     width: 100%;
+  }
+
+  /* Except on a project or journal page, where the back button is pinned to
+     that same left corner — there the name starts to the right of it, so the
+     two read as a pair rather than sitting on top of each other. The button is
+     16px in and 44px across at this width, so this clears about 60px. */
+  .site_nav--with-back .site_nav_current {
+    padding-left: clamp(46px, 12vw, 62px);
   }
 
   .site_nav_current {
@@ -184,32 +209,85 @@
     box-sizing: content-box;
   }
 
+  /* The two icons cross over in place rather than one replacing the other, so
+     both are laid on top of each other in a box the size of one. Without this
+     the arriving icon would sit below the leaving one for the length of the
+     swap and the button would jump to twice its height. */
+  .site_nav_toggle_icon {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
   .site_nav_toggle img {
+    position: absolute;
+    inset: 0;
     display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
 
-  .site_nav_links {
-    display: none;
-  }
+  /* Mounted only while the drawer is open — SiteNav.jsx puts it up and takes it
+     down, which is what gives it something to animate in and out of, so there
+     is nothing to switch on here any more.
 
-  .site_nav--open .site_nav_links {
-    display: flex;
+     overflow keeps the links inside the panel while it is still growing. The
+     spacing top and bottom is carried by the first and last rows rather than by
+     padding here: padding would still be holding the panel open at the end of
+     the collapse, and it would finish on a step instead of on nothing. */
+  /* Taken out of the flow and hung under the bar, so it overlays the page
+     instead of being part of the nav's height. In the flow it was growing the
+     sticky nav frame by frame, and everything below — the hero, a project's
+     title — was being shoved down the screen with it. That reflow was the
+     glitch; as an overlay the animation touches nothing but itself.
+
+     Its own white, since the bar no longer turns into a panel. The horizontal
+     padding matches the nav's, so the links stay on the same left edge they
+     have when the row is open on a wider screen. */
+  .site_nav_links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 2;
     flex-direction: column;
     align-items: flex-start;
     gap: clamp(18px, 3vh, 30px);
-    width: 100%;
-    padding: clamp(26px, 4vh, 40px) 0 clamp(10px, 2vh, 20px);
+    padding: 0 clamp(20px, 6vw, 44px);
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 0 18px 40px rgba(20, 20, 24, 0.1);
+    overflow: hidden;
   }
 
-  /* opened, it stops being a fade over the page and becomes a panel — the
-     links have to stay legible over whatever is scrolled behind them */
-  .site_nav--open::before {
-    background-image: none;
-    background-color: #FFFFFF;
-    -webkit-mask-image: none;
-    mask-image: none;
+  .site_nav_link_row:first-child {
+    margin-top: clamp(26px, 4vh, 40px);
   }
+
+  .site_nav_link_row:last-child {
+    margin-bottom: clamp(10px, 2vh, 20px);
+  }
+
+  /* The blur is pinned to the bar's own height rather than filling the nav.
+
+     It used to be inset: 0, which meant the drawer growing underneath resized
+     the backdrop-filter region on every frame of the animation — a full
+     re-blur of a taller and taller strip, which is most of why opening the
+     menu stuttered. Held to a fixed height it is computed once and left alone.
+
+     The height is the bar exactly: the nav's own padding above and below, with
+     the 34px toggle between them. */
+  .site_nav::before {
+    bottom: auto;
+    height: calc(clamp(18px, 3vh, 28px) + 34px + clamp(22px, 3.4vh, 34px));
+  }
+
+  /* The drawer no longer turns the bar into a white panel — it brings its own,
+     which grows with it. What was here before switched the bar from a masked
+     blur to flat white the instant the class landed, with nothing to ease it:
+     the pop you saw before the drawer had even started moving. Neither
+     background-image nor mask-image can be transitioned between a gradient and
+     none, so the switch was never going to smooth out where it stood. */
 }

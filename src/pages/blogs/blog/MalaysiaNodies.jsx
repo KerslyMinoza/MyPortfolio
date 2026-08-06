@@ -1,6 +1,7 @@
 
 import '../blogs.css';
-import Nav from '../../../components/layout/Nav/Nav.jsx';
+import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
+import Backbutton from '../../../components/common/Backbutton.jsx';
 
 import Pic1 from "../../../assets/images/blog/malaysia/pic1.jpg";
 import Pic2 from "../../../assets/images/blog/malaysia/pic2.jpg";
@@ -47,8 +48,6 @@ import Pic45 from "../../../assets/images/blog/malaysia/pic45.png";
 
 
 
-import Footer from '../../../components/layout/footer/Footer';
-
 import NextPreviousBlog from '../../../components/common/NextPreviousBlog';
 import { useLocation } from 'react-router-dom';
 import { BLOG } from '../../../data/blogs.js';
@@ -59,7 +58,7 @@ import { XMarkIcon } from '@heroicons/react/24/outline';
 function MalaysiaNodies(){
 
     const location = useLocation();
-    const blogId = location.state?.blogId || BLOG.find(b => b.path === '/malaysia_nodies')?.id;
+    const blogId = location.state?.blogId || BLOG.find(b => b.path === '/journal/malaysia-nodies')?.id;
 
     const [selectedImage, setSelectedImage] = useState(null);
 
@@ -77,10 +76,9 @@ function MalaysiaNodies(){
 
     return (
         <>
-            <Nav/>
+            <SiteNav/>
+            <Backbutton page="journal"/>
             <div className="blog" id="pokfund">
-                <div className="margin-s"></div>
-
                 <div className="content">
                     <div className="blog_name"> Exploring Malaysia with Nodies Team 2025! </div>
                     <div className="section_title">Team Gathering in Malaysia ✈️</div>
@@ -184,11 +182,14 @@ function MalaysiaNodies(){
                 <div className="image_holder">
                     <img src={Pic45} onClick={() => openModal(Pic45)}></img>
                 </div>
-             <NextPreviousBlog blog_id={blogId}/>
             </div>
 
 
         </div>
+
+            <div className="blog" >
+                <NextPreviousBlog blog_id={blogId}/>
+            </div>
 
       {/* Modal */}
       <AnimatePresence>
@@ -221,8 +222,6 @@ function MalaysiaNodies(){
               </motion.div>
           )}
       </AnimatePresence>
-
-      <Footer/>
 
     </>
 

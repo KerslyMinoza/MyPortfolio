@@ -3,7 +3,8 @@ import '../SiteNav/sitenav.css'; // the links themselves are shared with the top
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { SITE_LINKS } from '../../../data/siteLinks.js';
+import { SITE_LINKS, IDLE_REEL } from '../../../data/siteLinks.js';
+import { introItem, introTransition, INTRO_STAGGER } from '../../utils/animation.js';
 import useMediaQuery from '../../utils/useMediaQuery.js';
 
 /* ---------------------------------------------------------------------------
@@ -29,17 +30,10 @@ const NAME_WORDS = ['Kersly', 'Miñoza'];
    so this row and the one along the top of every other page cannot drift. */
 const LINKS = SITE_LINKS.filter((link) => link.to !== '/');
 
-const introItem = {
-  hidden: { y: 40, opacity: 0, filter: 'blur(10px)' },
-  visible: { y: 0, opacity: 1, filter: 'blur(0px)' },
-};
-
-const introTransition = { type: 'spring', stiffness: 60, damping: 14, mass: 0.8 };
-
 /* the stretch that runs when nothing in the row is hovered — forwards, then
-   back to the start, over and over */
-const IDLE_FROM = 0;
-const IDLE_UNTIL = 1.02;
+   back to the start, over and over. Kept with the per-link stretches in
+   siteLinks.js, so every second of the clip that is spoken for is in one place */
+const { from: IDLE_FROM, until: IDLE_UNTIL } = IDLE_REEL;
 
 function Hero() {
   const reelRef = useRef(null);
@@ -77,8 +71,9 @@ function Hero() {
      fresh always runs forwards whichever link you land on. */
   const fromIndexRef = useRef(null);
 
-  /* Hovering a link runs the stretch belonging to the direction you crossed
-     the row in: `out` going right, `back` going left. */
+  /* Hovering a link runs the stretch that belongs to it. Which way it runs is
+     the direction you crossed the row in: forwards going right, and the same
+     seconds in reverse going left. */
   const playSegment = (index) => {
     if (!canHover) return;
 
@@ -89,7 +84,11 @@ function Hero() {
     const backwards = fromIndexRef.current !== null && index < fromIndexRef.current;
     fromIndexRef.current = index;
 
-    const { from, until } = backwards ? link.reel.back : link.reel.out;
+    /* a backwards run starts at the stretch's end and works down to its start,
+       which is what the scrub below expects */
+    const { from, until } = backwards
+      ? { from: link.reel.until, until: link.reel.from }
+      : link.reel;
 
     if (!backwards) {
       reel.currentTime = from;
@@ -186,7 +185,7 @@ function Hero() {
         className="hero_layout"
         initial="hidden"
         animate="visible"
-        transition={{ staggerChildren: 0.12 }}>
+        transition={{ staggerChildren: INTRO_STAGGER }}>
         {/* the masthead shrinks to the width of the name, which is what gives
             the two taglines their left and right edges to hang off */}
         <div className="hero_masthead">
@@ -209,7 +208,7 @@ function Hero() {
               <video
                 ref={reelRef}
                 className="hero_reel_clip"
-                src="/vid.mp4"
+                src="/vid3.mp4"
                 autoPlay
                 muted
                 loop
@@ -231,7 +230,25 @@ function Hero() {
             variants={introItem}
             transition={introTransition}>
             <p className="hero_tagline">UI/UX Designer for 8 years.</p>
-            <p className="hero_tagline">I design, create prototype and vibe code.</p>
+            {/* the break only lands on a phone — see hero.css. Across the foot
+                of a wide screen the line has room to stay whole */}
+            <p className="hero_tagline">
+              I design, create prototype
+              <br className="hero_tagline_break" /> and vibe code.
+            </p>
+          </motion.div>
+
+          {/* Only on a phone. There the row below is folded away behind the
+              hamburger, so the page offers nothing to act on until you open
+              it; on a wide screen the same link is already sitting under the
+              name and this would be Projects twice. */}
+          <motion.div
+            className="hero_cta"
+            variants={introItem}
+            transition={introTransition}>
+            <Link className="hero_cta_button" to="/projects">
+              See my projects
+            </Link>
           </motion.div>
         </div>
 

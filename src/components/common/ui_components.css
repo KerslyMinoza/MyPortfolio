@@ -35,13 +35,9 @@
     transform: translateY(0);
 }
 
-/* the hamburger owns the top-left on a phone, so this crosses to the far side */
-@media only screen and (max-width: 760px) {
-    .backbutton {
-        left: auto;
-        right: clamp(16px, 4vw, 32px);
-    }
-}
+/* No side-swap on a phone any more: the hamburger has moved to the top right,
+   so this keeps the left that the rule above gives it. The two used to collide
+   in the top-left corner, which is what sent this across. */
 
 
 .backbutton img {

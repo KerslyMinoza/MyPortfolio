@@ -89,12 +89,14 @@
   transform: rotate(7deg);
 }
 
+/* No plate and no shadow: the gif is transparent around the photo, and both
+   were being painted across that transparency and out to the file's square
+   edges — a border around the picture rather than behind it. The photo carries
+   its own white edge and its own tilt, so it sits on the page as it is. */
 .about_polaroid img {
   display: block;
   width: 100%;
   height: auto;
-  background-color: #F1F1F1;
-  box-shadow: 0 22px 48px rgba(20, 20, 24, 0.16);
 }
 
 /* --- the moodboard ------------------------------------------------------- */

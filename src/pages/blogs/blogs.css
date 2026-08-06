@@ -48,26 +48,32 @@
     height: auto;
 }
 
+/* set exactly like a project's title — the same family, weight, tracking and
+   line-height, and the same fluid size, so a journal entry and a project read
+   as the same kind of page */
 .blog_name {
-    font-family: "Instrument Serif", serif;
-    font-style: italic;
+    font-family: var(--font-primary);
     margin-top: 30px;
-    font-size: 80px;
-    font-weight: 500;
+    font-size: clamp(38px, 6.4vw, 120px);
+    font-weight: var(--weight-semibold);
+    line-height: 96%;
+    letter-spacing: -0.03em;
     color: var(--basic6);
-    line-height:80px;
     width: 100%;
     text-align: left;
 }
 
+/* 48px semibold from about 1430px wide up, scaling down below — the same rule
+   the project pages carry */
 .blog .section_title {
     margin-top: 50px;
     border-bottom: 0.4px solid var(--basic2);
-    font-size: 32px;
-    font-weight: 500;
+    font-size: clamp(24px, 3.36vw, 48px);
+    font-weight: var(--weight-semibold);
+    line-height: 108%;
     color: #313131;
     text-align: left;
-    letter-spacing: -1px;
+    letter-spacing: -0.025em;
 
 }
 
@@ -84,16 +90,36 @@
 }
 
 
-.blog_content {
-    padding-top: 6px;
+/* 16px, and held there for anything nested inside as well — same as a project's
+   body copy. line-height stays in px so it is 1.5 against that size. */
+.blog_content,
+.blog_content p,
+.blog_content li,
+.blog_content span,
+.blog_content div {
     font-size: 16px;
+}
+
+.blog_content {
+    padding-top: 10px;
     color: var(--basic5);
     font-weight: 300;
-    letter-spacing: -1%;
+    letter-spacing: -0.01em; /* was -1%, which is not a length and was ignored */
     line-height: 24px;
     animation: appear fade-in;
     animation-timeline: view();
     animation-duration: 500ms;
+}
+
+.blog_content a {
+    color: #0095c9;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.blog_content a:hover {
+    color: #00b5c9;
 }
 
 
@@ -266,17 +292,23 @@ li {
 /* Mobile and Tablet */
 @media only screen and (max-width: 1023px) {
 
+    /* border-box, for the same reason the project pages need it: the 20px
+       padding on .blog is otherwise added outside the 90%, taking the page to
+       90% + 40px and leaving no gutter at all on a phone. There is no
+       box-sizing reset in this project, so it has to be said here. */
     .blog {
         width: 90%;
+        box-sizing: border-box;
     }
 
     .blog_title {
         font-size: 32px;
     }
 
+    /* no font-size on either: the clamps above already come down at this width,
+       and a fixed one would break step with the project pages */
     .blog .section_title {
         margin-top: 50px;
-        font-size: 26px;
     }
 
     .masonry_images {
@@ -290,8 +322,6 @@ li {
     .blog_name {
         margin-top: 35px;
         margin-bottom: -30px !important;
-        font-size: 60px;
-        line-height: 60px;
     }
 
     #high_fidelity img {

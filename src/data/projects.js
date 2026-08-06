@@ -22,7 +22,7 @@ export const PROJECT = [
     image: nodies_preview,
     description:
       'A platform for building Web3 apps with fast APIs, real-time tracking, and powerful analytics. Designed to simplify and accelerate blockchain development.',
-    path: '/nodies',
+    path: '/projects/nodies',
     type: ['Web App Design','Branding']
   },
 
@@ -32,7 +32,7 @@ export const PROJECT = [
     image: function_preview,
     description:
       'An AI chat app powered by distributed inference for lightning-fast responses.',
-    path: '/functionchat',
+    path: '/projects/functionchat',
     type: ['Web App Design','Mobile App Design','Branding']
   },
 
@@ -43,7 +43,7 @@ export const PROJECT = [
     image: ironwit_preview,
     description:
       'Strength-focused fitness app for advanced gym users, combining workout and diet tracking to deliver more accurate, personalized results.',
-    path: '/ironwit',
+    path: '/projects/ironwit',
     type: ['Mobile App Design','Branding']
   },
   {
@@ -52,7 +52,7 @@ export const PROJECT = [
     image: waggle_preview,
     description:
       'All-in-one pet care app that lets you track vaccinations, locate your pet, discover nearby clinics and grooming services, and connect with fellow pet owners.',
-    path: '/waggle',
+    path: '/projects/waggle',
     type: ['Mobile App Design', 'Branding']
   },
 
@@ -61,7 +61,7 @@ export const PROJECT = [
     title: 'ORCAA',
     image: orcaa_preview,
     description: 'A streamlined app for personalized care management, fostering community engagement and tailored support.',
-    path: '/orcaa',
+    path: '/projects/orcaa',
     type: ['Mobile App Design','Branding']
    
   },
@@ -72,7 +72,7 @@ export const PROJECT = [
     image: mednotes_preview,
     description:
       'AI transcription app for doctors that records consultations and instantly generates patient notes or letters.',
-    path: '/mednotes',
+    path: '/projects/mednotes',
     type: ['Web App Design']
   },
   {
@@ -81,7 +81,7 @@ export const PROJECT = [
     image: valhalla_preview,
     description:
       'Landing page design for a company connecting with top software engineers and IT professionals, featuring a clean, simple, branded look.',
-    path: '/valhalla',
+    path: '/projects/valhalla',
     type: ['Landing Page Design']
   },
 
@@ -91,7 +91,7 @@ export const PROJECT = [
     image: trux_preview,
     description:
       'A trading and logistics company specializing in container delivery seeks an in-house system for real-time truck tracking and easy access to transportation history.',
-    path: '/trux',
+    path: '/projects/trux',
     type: ['Web App Design']
   },
 
@@ -102,7 +102,7 @@ export const PROJECT = [
     image: poktfundwallet_preview,
     description:
       'A community-driven mobile wallet for seamless, user-friendly access to your POKT and on-chain data—POKT in your pocket, anytime.',
-    path: '/poktfund',
+    path: '/projects/poktfund',
     type: ['Mobile App Design']
   },
 
@@ -112,7 +112,7 @@ export const PROJECT = [
     image: avatar_preview,
     description:
       'A randomly generated NFT avatar for the POKT wallet.',
-    path: '/avatar',
+    path: '/projects/avatar',
     type: ['Illustration']
   },
 
@@ -122,7 +122,7 @@ export const PROJECT = [
     image: rikka_preview,
     description:
       'A sales funnel landing page designed to inspire trust and drive enrollments for the Quantum Breakthrough course.',
-    path: '/rikka',
+    path: '/projects/rikka',
     type: ['Landing Page Design']
   },
 
@@ -132,7 +132,7 @@ export const PROJECT = [
     image: hippomathics_preview,
     description:
       'A fun Unity 3D project I created for kids, featuring simple and customizable math operations.',
-    path: '/hippomathics',
+    path: '/projects/hippomathics',
     type: ['Mobile App Development']
   },
 
@@ -142,7 +142,7 @@ export const PROJECT = [
     image: zipcode_preview,
     description:
       'Illustration project for a hover effect on the team section of Zipcode Creative Website.',
-    path: '/zipcode',
+    path: '/projects/zipcode',
     type: ['Illustration']
   },
 
@@ -152,7 +152,7 @@ export const PROJECT = [
     image: axis_preview,
     description:
       'A school management system to track student progress, customize ranks across different martial arts, and manage records with ease.',
-    path: '/axis',
+    path: '/projects/axis',
     type: ['Web App Design']
   },
 
@@ -162,7 +162,7 @@ export const PROJECT = [
     image: boldmade_preview,
     description:
       'A card game celebrating women achievers worldwide, reimagined from the classic Old Maid into something bold and empowering.',
-    path: '/boldmade',
+    path: '/projects/boldmade',
     type: ['Illustration', 'Branding']
   },
 ]

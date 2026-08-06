@@ -189,9 +189,14 @@ iframe {
 /* Mobile and Tablet */
 @media only screen and (max-width: 1023px) {
 
+    /* border-box, or the 20px padding is added outside the 90% and the page
+       comes to 90% + 40px — over a phone's whole width, so the gutters the 90%
+       is asking for never appear and the copy runs edge to edge. There is no
+       box-sizing reset in this project, so it has to be said here. */
     .project {
         width: 90%;
         padding: 20px;
+        box-sizing: border-box;
     }
 
     .content {
