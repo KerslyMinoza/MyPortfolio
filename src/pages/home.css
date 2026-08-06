@@ -1,7 +1,13 @@
+/* svh, not vh: on a phone vh counts the browser's own chrome in, so 100vh is
+   taller than the screen actually shows and the foot of the hero — the button —
+   ends up under the address bar. svh is the screen with the chrome showing,
+   which is the height that is always really there. The vh line is the fallback
+   for browsers without it. */
 .home {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-height: 100svh;
 }
 
 /* the deck responds to the wheel directly, so the page must not move under it */

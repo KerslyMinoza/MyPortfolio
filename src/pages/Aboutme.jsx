@@ -13,41 +13,43 @@ import PhotoshopMark from '../assets/images/tools/photoshop.svg';
 
 /* Oldest first, so the rail fills the way the years run. The dates are written
    with en dashes rather than hyphens, which is what the rest of the site's
-   display type uses.
-
-   EVERY `note` BELOW IS PLACEHOLDER COPY — written to show the shape and
-   length the line wants, not from anything you told me. Replace before this
-   page goes anywhere near a reader. */
+   display type uses. */
 const EXPERIENCE = [
   {
     years: '2017–2018',
     role: 'Software Engineer at IdeaRobin',
-    note: 'Built and maintained client web apps alongside a small in-house team.',
+    note:
+      'Worked as a Front-End Developer using React and Redux to build a professional social networking platform. Contributed to the development of core features and designed several of the application’s early user interface screens.',
   },
   {
     years: '2018–2021',
     role: 'Graphic Designer/Illustrator at Goodhangups',
-    note: 'Illustration, packaging and campaign artwork for a consumer brand.',
+    note:
+      'Served as a Product Designer for the Bold Made and Taco vs. Burrito card game packaging. Designed product packaging, created marketing materials, and assisted in building the client’s Shopify storefront.',
   },
   {
     years: '2021–2022',
     role: 'UI UX Designer at AXIS Martial Arts',
-    note: 'Designed the booking and membership flows for a training studio.',
+    note:
+      'Designed the end-to-end user experience for a flexible martial arts school management platform, covering enrollment, attendance tracking, student grading, belt ranking, and class management. Also designed a self-service mobile kiosk that allows students to view their progress and current status.',
   },
   {
     years: '2024–2025 (Part time)',
     role: 'UI/UX Designer at ORCAA',
-    note: 'Part-time design support across marketing pages and product screens.',
+    note:
+      'Designed a healthcare staffing platform that matches patients with healthcare professionals through an experience similar to ride-hailing apps. The platform also includes features for tracking and managing the ongoing relationship between patients and care providers.',
   },
   {
     years: '2022–2026',
     role: 'UI/UX Designer at Nodies',
-    note: 'Product and marketing design for an RPC infrastructure company.',
+    note:
+      'Providing lightning-fast APIs, live tracking capabilities, and robust analytics, streamlining your development process for Web3 Applications.',
   },
   {
     years: '2026–Present',
     role: 'UI/UX Designer at /Send',
-    note: 'Designing the product end to end, from research to shipped interface.',
+    note:
+      'Helped design a fintech application that enables users to treat stablecoins as everyday cash. The platform supports seamless local and international money transfers, providing a faster and more convenient alternative to traditional banking delays.',
   },
 ];
 

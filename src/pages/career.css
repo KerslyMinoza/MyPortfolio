@@ -136,11 +136,17 @@
   color: var(--basic6);
 }
 
+/* The measure and the line-height are both here for the same reason .career_line
+   carries a max-width: these are a few sentences now rather than the single
+   line they were, and the column they sit in is the full width of the page.
+   Left alone they ran the whole of it, at the default line spacing. */
 .career_note {
   margin: clamp(6px, 1vh, 14px) 0 0 0;
+  max-width: 64ch;
   font-family: var(--font-primary);
   font-size: clamp(11px, 0.8vw, 15px);
   font-weight: var(--weight-light);
+  line-height: 158%;
   color: var(--basic4);
 }
 
