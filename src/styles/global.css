@@ -17,11 +17,22 @@ body,
     --basic10: #060606;
     --button-radius: 0.5rem;
 
-    /* The top bar's height on a phone: the nav's own padding above and below,
-       with the 34px toggle between them. Two things are measured off it — the
-       blur strip is cut to it, and the back button is parked just under it — so
-       it is stated once here rather than copied into both files. */
-    --site-nav-h: calc(clamp(18px, 3vh, 28px) + 34px + clamp(22px, 3.4vh, 34px));
+    /* The top bar on a phone, in the pieces the rest of the site measures
+       against rather than as one number. .site_nav sets its padding from
+       these, the blur strip is cut to the total, and the back button centres
+       itself on the toggle using the top inset and the toggle's height — so
+       the three sit on one line without any of them restating the others. */
+    --site-nav-pad-top: clamp(18px, 3vh, 28px);
+    --site-nav-pad-x: clamp(20px, 6vw, 44px);
+    --site-nav-pad-bottom: clamp(22px, 3.4vh, 34px);
+    --site-nav-toggle: 34px;
+    --site-nav-h: calc(
+        var(--site-nav-pad-top) + var(--site-nav-toggle) + var(--site-nav-pad-bottom)
+    );
+
+    /* the circle a project or journal page carries back to its index. Stated
+       here because the bar has to know its width to leave room for it. */
+    --backbutton-size: clamp(44px, 3.4vw, 52px);
 
     /* past this the page stops growing and centres on wide monitors. Wide
        enough that an iMac can carry the 300px hero name, the deck and the gap

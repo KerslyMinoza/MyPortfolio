@@ -1,0 +1,82 @@
+/* ---------------------------------------------------------------------------
+   The slim site footer: a rule edge to edge, the year on one side and the two
+   contact links on the other.
+
+   Full width by design. The rule runs the whole way across rather than stopping
+   at the page's measure, which is what makes it read as the floor under the
+   content instead of one more block sitting in the column. The text inside is
+   inset on the navigation's own horizontal padding, so the year lines up under
+   the leftmost thing in the bar above.
+
+   Sized off the viewport rather than switched at breakpoints, the way the about
+   and career pages are.
+--------------------------------------------------------------------------- */
+
+.site_footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px 32px;
+  width: 100%;
+  margin-top: clamp(72px, 11vh, 150px);
+  padding: clamp(24px, 3.4vh, 40px) clamp(24px, 4vw, 90px);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  font-family: var(--font-primary);
+  font-size: clamp(13px, 1vw, 15px);
+  font-weight: var(--weight-light);
+  color: var(--basic4);
+}
+
+.site_footer_copy {
+  letter-spacing: -0.1px;
+}
+
+.site_footer_links {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 2.5vw, 36px);
+}
+
+/* The nudge to the right on hover is the whole of the hover state — no
+   underline, no colour flash beyond the text settling to black. It reads as the
+   link stepping forward, which is as much as a footer link should be doing. */
+.site_footer_link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: var(--weight-regular);
+  color: var(--basic5);
+  transition: color 0.3s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site_footer_link:hover {
+  color: var(--basic10);
+  transform: translateX(3px);
+}
+
+/* Both icons are drawn 58x44, so the height is left to follow the width —
+   pinning both would flatten them. They are outlines at a 2px stroke, which
+   comes down to a hairline at this size; the opacity is the little it takes
+   off, not enough to lose them. */
+.site_footer_link img {
+  width: 17px;
+  height: auto;
+  opacity: 0.7;
+}
+
+/* On a phone the row has no width left to hold both ends apart, so the year
+   drops under the links rather than the two being crushed together. Order is
+   swapped with it: the links are the useful half and should come first. */
+@media only screen and (max-width: 560px) {
+  .site_footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .site_footer_copy {
+    order: 2;
+  }
+}

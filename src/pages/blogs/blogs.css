@@ -319,8 +319,11 @@ li {
         width: 98%;
     }
 
+    /* set off the back button, exactly as .project_name is — the two pages
+       carry the same button in the same place and have to clear it by the
+       same amount */
     .blog_name {
-        margin-top: 35px;
+        margin-top: calc(var(--backbutton-size) + 20px);
         margin-bottom: -30px !important;
     }
 

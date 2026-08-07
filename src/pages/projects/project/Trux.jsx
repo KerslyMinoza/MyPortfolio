@@ -1,5 +1,6 @@
 import './project.css';
 import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
+import SiteFooter from '../../../components/layout/SiteFooter/SiteFooter.jsx';
 import Backbutton from '../../../components/common/Backbutton.jsx';
 
 import Design from "../../../assets/images/trux/trux.png";
@@ -90,6 +91,8 @@ Despite all the chaos and stress, I actually enjoyed the design process itself. 
                     </div>
             <NextPrevious project_id={projectId}/>
             </div>
+
+            <SiteFooter/>
 
         </div>
 

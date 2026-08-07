@@ -1,5 +1,6 @@
 import './project.css';
 import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
+import SiteFooter from '../../../components/layout/SiteFooter/SiteFooter.jsx';
 import Backbutton from '../../../components/common/Backbutton.jsx';
 import Design from "../../../assets/images/mednotes/mednotes.png";
 
@@ -92,6 +93,8 @@ const projectId = location.state?.projectId;
             <div className="project" >
                 <NextPrevious project_id={projectId}/>
             </div>
+
+            <SiteFooter/>
 
       {/* Modal */}
       <AnimatePresence>

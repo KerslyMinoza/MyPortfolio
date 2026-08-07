@@ -166,7 +166,7 @@
   .site_nav {
     flex-direction: column;
     align-items: flex-start;
-    padding: clamp(18px, 3vh, 28px) clamp(20px, 6vw, 44px) clamp(22px, 3.4vh, 34px);
+    padding: var(--site-nav-pad-top) var(--site-nav-pad-x) var(--site-nav-pad-bottom);
   }
 
   /* The two ends of the bar: row-reverse makes the toggle the first item and
@@ -186,8 +186,8 @@
     z-index: 3;
   }
 
-  /* The name needs no allowance for the back button any more: it has come out
-     of that corner and sits under the bar instead — see ui_components.css. */
+  /* The name needs no allowance for the back button: it has come out of that
+     corner and sits under the bar instead — see ui_components.css. */
 
   .site_nav_current {
     font-family: var(--font-primary);
@@ -199,8 +199,8 @@
 
   .site_nav_toggle {
     display: block;
-    width: 34px;
-    height: 34px;
+    width: var(--site-nav-toggle);
+    height: var(--site-nav-toggle);
     /* a thumb's worth of target around a small icon, without the box showing */
     margin: -8px;
     padding: 8px;

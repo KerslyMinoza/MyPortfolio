@@ -8,8 +8,8 @@
     top: clamp(18px, 3.4vh, 44px);
     left: clamp(16px, 3vw, 48px);
     z-index: 60;
-    width: clamp(44px, 3.4vw, 52px);
-    height: clamp(44px, 3.4vw, 52px);
+    width: var(--backbutton-size);
+    height: var(--backbutton-size);
     background-color: var(--basic1);
     box-shadow: 0 10px 26px rgba(20, 20, 24, 0.13);
     display: flex;
@@ -36,20 +36,24 @@
 }
 
 /* On a phone it drops out of the corner and sits in the band between the bar
-   and the title, which is where it reads as belonging to the page rather than
-   floating over it. Still fixed, so it stays put as the page moves under it.
+   and the title, above the words rather than beside them. Still fixed, so it
+   stays put as the page moves under it.
 
    Placed off --site-nav-h, so it follows the bar rather than being a number
-   that happens to clear it today. The left is the title's own edge: .project
-   and .blog sit at 90% with 20px of padding, which comes to about 39px on a
-   phone, so the button and the words below it start on the same line.
+   that happens to clear it today.
 
-   The band is about 55px deep and the button is 44px, so it sits inside it
-   without reaching the title. */
+   The left is the nav's own gutter — the margin the hamburger is held off the
+   opposite edge by — so the two sit on the same inset and the button reads as
+   part of the page's frame. It used to be the title's edge instead, about
+   39px in, which put it under the words rather than out at the margin.
+
+   The room underneath is the title's to keep — see .project_name and
+   .blog_name, which measure their top margin off --backbutton-size so the gap
+   holds whatever size the button is. */
 @media only screen and (max-width: 760px) {
     .backbutton {
         top: calc(var(--site-nav-h) + 4px);
-        left: clamp(20px, 10vw, 44px);
+        left: var(--site-nav-pad-x);
     }
 }
 
@@ -64,9 +68,11 @@
     justify-content: space-between;
     width: 100%;
     margin-top: 50px;
-    /* room underneath: with the contact footer gone from project pages, this
-       pair is the last thing on the page and was ending flush with it */
-    margin-bottom: clamp(60px, 12vh, 160px);
+    /* The room that used to be here is gone. It was there because this pair
+       was the last thing on a project or journal page and ended flush with it;
+       the slim footer follows it now and carries its own clearance above the
+       rule, so the two were stacking to something near 300px. */
+    margin-bottom: 0;
     border-top: 2px solid var(--basic5);
     padding-top: 20px;
 

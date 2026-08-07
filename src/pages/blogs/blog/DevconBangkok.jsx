@@ -1,5 +1,6 @@
 import '../blogs.css';
 import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
+import SiteFooter from '../../../components/layout/SiteFooter/SiteFooter.jsx';
 import Backbutton from '../../../components/common/Backbutton.jsx';
 
 import Devcon from "../../../assets/images/blog/devcon/devcon.jpg";
@@ -168,6 +169,8 @@ function DevconBangkok(){
             <div className="blog" >
                 <NextPreviousBlog blog_id={blogId}/>
             </div>
+
+            <SiteFooter/>
 
       {/* Modal */}
       <AnimatePresence>

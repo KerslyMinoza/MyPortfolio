@@ -3,6 +3,7 @@ import './career.css';
 import { useRef } from 'react';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import SiteNav from '../components/layout/SiteNav/SiteNav.jsx';
+import SiteFooter from '../components/layout/SiteFooter/SiteFooter.jsx';
 import Testimonials from '../components/features/Testimonials/Testimonials.jsx';
 import { CLIENTS } from '../data/clients.js';
 import FigmaMark from '../assets/images/tools/figma.svg';
@@ -207,6 +208,10 @@ function Aboutme() {
           </div>
         </section>
       </div>
+
+      {/* outside .career deliberately — the footer runs the full width, and
+          inside that container it would be held to the page's measure */}
+      <SiteFooter />
     </>
   );
 }

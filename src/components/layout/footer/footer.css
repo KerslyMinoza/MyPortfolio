@@ -206,18 +206,31 @@
   /*macbooks*/
   @media only screen and (min-width: 1024px) and (max-width: 1440px) {
   
+    /* Anchored left rather than centred, so the sign-off starts at the page's
+       edge — and widened from the 80% it inherits, which is what carries the
+       contact boxes further right. The right edge now lands at 90% of the
+       window, which is where a screen too wide for this block puts them
+       anyway: 80% centred is 10% of clear page either side.
+
+       The 3% padding is unaffected by the width — percentage padding resolves
+       against the parent, not the element — so the sign-off does not move. */
     .footer_wrapper {
         margin-left: 0;
-        
+        width: 90%;
     }
 
     .reduceMargin {
         margin-top: -200px;
     }
 
-    .contacts_wrapper {
-        justify-content: flex-start;
-    }
+    /* The two contact boxes sit to the right here, the same as at every other
+       width — the flex-start that used to be in this block was the one place
+       on the site they broke ranks and stacked under the sign-off's left edge.
+       Nothing is stated now: the rule at the top of the file already says
+       flex-end, and this was only overriding it.
+
+       The wrapper keeps its margin-left: 0 above, so "right" is the right edge
+       of that 80% block rather than of the window. */
 
     /* the 120px that used to sit here is gone — --display-size covers this
        range on its own, and it was keyed to the device's screen rather than

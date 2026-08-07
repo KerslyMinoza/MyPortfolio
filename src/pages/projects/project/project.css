@@ -204,9 +204,16 @@ iframe {
     }
 
     /* no font-size here: the clamp above already comes down to about 60px at
-       this width, and a fixed one would break step with the career page */
+       this width, and a fixed one would break step with the career page
+
+       The top margin is set off the back button rather than being a number of
+       its own. The button is fixed, so it takes no room in the flow and the
+       title has to be moved out from under it by hand: its foot sits 4px plus
+       its own height below the bar, .project's 20px of padding has already
+       covered part of that, and this clears the rest and opens a gap besides.
+       At 35px the two were all but touching. */
     .project_name {
-        margin-top: 35px;
+        margin-top: calc(var(--backbutton-size) + 20px);
         margin-bottom: -30px !important;
     }
 

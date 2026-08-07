@@ -1,5 +1,6 @@
 import './project.css';
 import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
+import SiteFooter from '../../../components/layout/SiteFooter/SiteFooter.jsx';
 import Backbutton from '../../../components/common/Backbutton.jsx';
 
 import Design1 from "../../../assets/images/poktfund/1.webp";
@@ -120,6 +121,8 @@ function Poktfund(){
                     <div className="image_holder"><img src={Design4} onClick={() => openModal(Design4)} style={{ width: '50%' }}></img></div>
             <NextPrevious project_id={projectId}/>
             </div>
+
+            <SiteFooter/>
 
         </div>
 

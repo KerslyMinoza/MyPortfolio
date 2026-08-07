@@ -1,6 +1,7 @@
 import './about.css';
 import { motion } from 'framer-motion';
 import SiteNav from '../components/layout/SiteNav/SiteNav.jsx';
+import SiteFooter from '../components/layout/SiteFooter/SiteFooter.jsx';
 import AboutmeGif from '../assets/images/aboutme/aboutme.gif';
 
 /* The moodboard lives in public/, so it is served straight off the root. The
@@ -203,6 +204,10 @@ function Moreworks() {
           </motion.a>
         </section>
       </div>
+
+      {/* outside .about deliberately — the footer runs the full width, and
+          inside that container it would be held to the page's 1240px measure */}
+      <SiteFooter />
     </>
   );
 }

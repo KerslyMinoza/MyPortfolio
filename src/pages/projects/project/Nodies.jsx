@@ -33,6 +33,7 @@ import Penguin from "../../../assets/images/nodies/wink.png";
 import Branding from "../../../assets/images/nodies/branding.png";
 
 import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
+import SiteFooter from '../../../components/layout/SiteFooter/SiteFooter.jsx';
 import Backbutton from '../../../components/common/Backbutton.jsx';
 
 import NextPrevious from '../../../components/common/NextPrevious';
@@ -207,6 +208,8 @@ Sometimes I skip wireframing and design directly, especially when I am already f
                     <div className="image_holder"><img src={Penguin} onClick={() => openModal(Penguin)} style={{ width: '300px' }}></img></div>
              <NextPrevious project_id={projectId}/>
             </div>
+
+            <SiteFooter/>
 
         </div>
 

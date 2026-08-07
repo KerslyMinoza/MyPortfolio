@@ -1,5 +1,6 @@
 import './project.css';
 import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
+import SiteFooter from '../../../components/layout/SiteFooter/SiteFooter.jsx';
 import Backbutton from '../../../components/common/Backbutton.jsx';
 import DesignProcess from "../../../assets/images/waggle/design_process.png";
 import Branding from "../../../assets/images/waggle/branding.png";
@@ -140,6 +141,8 @@ function Waggle(){
                     </div>
                 <NextPrevious project_id={projectId}/>
             </div>
+
+            <SiteFooter/>
 
         </div>
 

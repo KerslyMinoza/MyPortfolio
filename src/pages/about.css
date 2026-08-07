@@ -8,7 +8,8 @@
 .about {
   width: min(100% - clamp(48px, 8vw, 160px), 1240px);
   margin: 0 auto;
-  padding-bottom: clamp(80px, 14vh, 220px);
+  /* no padding underneath any more: the footer follows the page now and
+     carries the clearance above its own rule, so the two would stack */
   box-sizing: border-box;
 }
 

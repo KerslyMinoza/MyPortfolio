@@ -1,5 +1,6 @@
 
 import SiteNav from '../../components/layout/SiteNav/SiteNav.jsx';
+import SiteFooter from '../../components/layout/SiteFooter/SiteFooter.jsx';
 import ThumbnailBlog from './ThumbnailBlog.jsx';
 import { BLOG } from '../../data/blogs.js';
 
@@ -22,7 +23,9 @@ function Allblogs(){
                 </div>
             </div>
 
-            <div className="margin-m"></div>
+            {/* the spacer that used to close the page is gone — the footer
+                carries its own clearance above the rule */}
+            <SiteFooter/>
         </div>
     );
 }

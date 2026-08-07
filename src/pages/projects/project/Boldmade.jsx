@@ -1,6 +1,7 @@
 
 import './project.css';
 import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
+import SiteFooter from '../../../components/layout/SiteFooter/SiteFooter.jsx';
 import Backbutton from '../../../components/common/Backbutton.jsx';
 
 import box from "../../../assets/images/boldmade/box.png";
@@ -251,6 +252,8 @@ function Boldmade(){
   
             <NextPrevious project_id={projectId}/>
             </div>
+
+            <SiteFooter/>
 
         </div>
 

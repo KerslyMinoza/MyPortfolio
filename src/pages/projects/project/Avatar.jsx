@@ -1,5 +1,6 @@
 import './project.css';
 import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
+import SiteFooter from '../../../components/layout/SiteFooter/SiteFooter.jsx';
 import Backbutton from '../../../components/common/Backbutton.jsx';
 
 import Design1 from "../../../assets/images/avatar_thumbnail.gif";
@@ -46,6 +47,8 @@ function Avatar(){
                     <div className="image_holder"><img src={Design1} onClick={() => openModal(Design1)}></img></div>
             <NextPrevious project_id={projectId}/>
             </div>
+
+            <SiteFooter/>
 
         </div>
 
