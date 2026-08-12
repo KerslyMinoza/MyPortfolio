@@ -1,4 +1,5 @@
 import '../blogs.css';
+import Reveal from '../../../components/common/Reveal.jsx';
 import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
 import SiteFooter from '../../../components/layout/SiteFooter/SiteFooter.jsx';
 import Backbutton from '../../../components/common/Backbutton.jsx';
@@ -71,7 +72,7 @@ function DevconBangkok(){
             <SiteNav/>
             <Backbutton page="journal"/>
             <div className="blog" id="pokfund">
-                <div className="content">
+                <Reveal className="content">
                     <div className="blog_name"> Devcon + Team Building in Bangkok </div>
                     <div className="section_title">A Week to Remember. Sawadeeka! ✈️</div>
 
@@ -162,7 +163,7 @@ function DevconBangkok(){
                     <div className="image_holder">
                         <img src={Pic34} onClick={() => openModal(Pic34)}></img>
                     </div>
-            </div>
+            </Reveal>
 
         </div>
 

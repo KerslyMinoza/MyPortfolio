@@ -1,4 +1,5 @@
 import './project.css';
+import Reveal from '../../../components/common/Reveal.jsx';
 import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
 import SiteFooter from '../../../components/layout/SiteFooter/SiteFooter.jsx';
 import Backbutton from '../../../components/common/Backbutton.jsx';
@@ -54,7 +55,7 @@ function Orcaa(){
            <SiteNav/>
             <Backbutton page="projects"/>
             <div className="project" id="orcaa">
-                <div className="content">
+                <Reveal className="content">
                     <div className="project_name"> Orcaa </div>
                     <div className="section_title"> Project Overview</div>
 
@@ -148,11 +149,11 @@ function Orcaa(){
                     The app is still in development, and while version 1 is already quite ambitious, we're hopeful that it will exceed expectations and succeed. I'm proud to be working with such talented developers who are able to bring everything together in just a few months. The development process has been unusual as well, as I don't have direct communication with the foreign development team. Still, we're optimistic and looking forward to a successful beta launch soon.
                     </div> 
             <NextPrevious project_id={projectId}/>
-            </div>
-
-            <SiteFooter/>
+            </Reveal>
 
         </div>
+
+            <SiteFooter/>
 
       {/* Modal */}
       <AnimatePresence>

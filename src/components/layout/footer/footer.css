@@ -219,9 +219,9 @@
         width: 90%;
     }
 
-    .reduceMargin {
-        margin-top: -200px;
-    }
+    /* the -200px that used to sit here is gone with it: the global rule now
+       carries the same -240px at every desktop width, so this was only
+       restating it */
 
     /* The two contact boxes sit to the right here, the same as at every other
        width — the flex-start that used to be in this block was the one place

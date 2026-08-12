@@ -1,4 +1,5 @@
 import './project.css';
+import Reveal from '../../../components/common/Reveal.jsx';
 
 import Design from "../../../assets/images/rikka/rikka.png";
 import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
@@ -35,7 +36,7 @@ function Rikka(){
             <SiteNav/>
             <Backbutton page="projects"/>
             <div className="project" id="orcaa">
-                <div className="content">
+                <Reveal className="content">
                     <div className="project_name"> Quantum Breakthrough</div>
                     <div className="section_title"> Project Overview</div>
 
@@ -87,11 +88,11 @@ function Rikka(){
                     My goal was to create a cleaner, more straightforward design so users could immediately understand what the website and company are all about. I genuinely enjoyed working on this project. If there’s one thing I’d change next time, it would be to minimize the use of boxes for the services section and maybe use color instead to make it feel lighter. But overall, I’m happy with how everything turned out.
                     </div>    
                 <NextPrevious project_id={projectId}/>
-            </div>
-
-            <SiteFooter/>
+            </Reveal>
 
         </div>
+
+            <SiteFooter/>
 
       {/* Modal */}
       <AnimatePresence>

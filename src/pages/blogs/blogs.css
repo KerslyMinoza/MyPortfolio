@@ -16,14 +16,39 @@
 /* the navigation above carries its own bottom padding, so this only has to
    part the two — the same spacing the projects grid uses */
 .blog_wrapper {
-    padding-top: 24px;
+    /* the 24px this used to be plus the 30px each card carried above itself —
+       that margin is the grid's row gap now, as on the projects page */
+    padding-top: 54px;
 }
 
+/* Three across and left-aligned, set exactly as the projects grid is — same
+   column counts, same gaps, same gutters, so the two pages are one layout. See
+   projectgrid.css for why the count is stated rather than derived. */
 .blog_works {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: clamp(24px, 2.2vw, 40px);
+    row-gap: clamp(40px, 3.4vw, 64px);
+    box-sizing: border-box;
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 90px);
+}
+
+/* iPad — two across */
+@media only screen and (max-width: 1199px) {
+
+    .blog_works {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Phones — one */
+@media only screen and (max-width: 767px) {
+
+    .blog_works {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }
 
 .blog_title {
@@ -177,10 +202,10 @@ li {
 
 
 
+/* fills its column — the count is .blog_works' business, above */
 .thumbnailblog{
- 
-    margin-top: 30px;
-    width: 578px;
+
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -196,13 +221,17 @@ li {
     overflow: hidden;
     border-radius: 18px;
     background-color: #F3F3F3;
+    /* the journal thumbnails' own ratio — they are square (1130×1130) — stated
+       so every card in a row is the same height whatever arrives later */
+    aspect-ratio: 1 / 1;
 }
 
 .thumbnailblog img{
     border: none;
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -248,15 +277,6 @@ li {
    
 }
 
-@media only screen and (max-width: 1001px)  {
-    
-    .thumbnailblog {
-        width: 90%;
-    }
-  }
-  
-
-
 #hippomathics img {
     margin-right: 10px;
     margin-left: 10px;
@@ -271,12 +291,9 @@ li {
 
 
 
-/* Laptops and Medium Screens */
+/* Laptops and Medium Screens — the card widths that used to sit in this block
+   and the one below are gone; the cards are grid columns now */
 @media only screen and (min-width: 1024px) and (max-width: 1600px) {
-
-    .thumbnailblog {
-        width: 30%;
-    }
 
     .blog {
         width: 60%;

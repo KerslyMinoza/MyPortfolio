@@ -191,9 +191,12 @@ body {
 }
 
 /* pulls the footer up on pages where it is the content rather than a sign-off,
-   against the 200px of clearance it carries by default */
+   against the 200px of clearance it carries by default. Past the whole of that
+   200px now — the sign-off is the first thing on the contact page, so it starts
+   just under the navigation rather than a screen's worth below it. The footer's
+   own 3% padding is what keeps it off the bar. */
 .reduceMargin {
-  margin-top: -150px;
+  margin-top: -240px;
 }
 
 .section_title {

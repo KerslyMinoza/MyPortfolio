@@ -1,4 +1,5 @@
 import './project.css';
+import Reveal from '../../../components/common/Reveal.jsx';
 import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
 import SiteFooter from '../../../components/layout/SiteFooter/SiteFooter.jsx';
 import Backbutton from '../../../components/common/Backbutton.jsx';
@@ -49,7 +50,7 @@ const projectId = location.state?.projectId;
             <SiteNav/>
             <Backbutton page="projects"/>
             <div className="project" id="orcaa">
-                <div className="content">
+                <Reveal className="content">
                     <div className="project_name"> AXIS </div>
                     <div className="section_title"> Project Overview</div>
 
@@ -122,7 +123,7 @@ const projectId = location.state?.projectId;
                     Throughout the process, I have come to realize that design is an ongoing and iterative process. Nothing is set in stone. As a designer, if you feel the need to make design changes that enhance the system, I encourage you to push for those changes. In my two years of working with AXIS, I have learned the importance of being open-minded to comments and feedback while prioritizing the user experience. In a large company, there are often numerous comments and suggestions, but it is essential to trust your judgment and follow what you believe is right. You are the designer.
                     </div>             
                
-            </div>
+            </Reveal>
 
 
         </div>

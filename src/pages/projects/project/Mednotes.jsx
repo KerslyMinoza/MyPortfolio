@@ -1,4 +1,5 @@
 import './project.css';
+import Reveal from '../../../components/common/Reveal.jsx';
 import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
 import SiteFooter from '../../../components/layout/SiteFooter/SiteFooter.jsx';
 import Backbutton from '../../../components/common/Backbutton.jsx';
@@ -37,7 +38,7 @@ const projectId = location.state?.projectId;
            <SiteNav/>
             <Backbutton page="projects"/>
             <div className="project" id="orcaa">
-                <div className="content">
+                <Reveal className="content">
                     <div className="project_name"> Mednotes </div>
                     <div className="section_title"> Project Overview</div>
 
@@ -75,7 +76,7 @@ const projectId = location.state?.projectId;
                     Feel free to try out the prototype i made.
                     </div>
                
-            </div>
+            </Reveal>
 
 
         </div>

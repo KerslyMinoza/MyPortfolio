@@ -1,4 +1,5 @@
 import './project.css';
+import Reveal from '../../../components/common/Reveal.jsx';
 import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
 import SiteFooter from '../../../components/layout/SiteFooter/SiteFooter.jsx';
 import Backbutton from '../../../components/common/Backbutton.jsx';
@@ -35,7 +36,7 @@ function Avatar(){
             <SiteNav/>
             <Backbutton page="projects"/>
             <div className="project" id="pokfund">
-                <div className="content">
+                <Reveal className="content">
                     <div className="project_name"> Poktfund Avatar </div>
                     <div className="section_title"> Project Overview</div>
 
@@ -46,11 +47,11 @@ function Avatar(){
 
                     <div className="image_holder"><img src={Design1} onClick={() => openModal(Design1)}></img></div>
             <NextPrevious project_id={projectId}/>
-            </div>
-
-            <SiteFooter/>
+            </Reveal>
 
         </div>
+
+            <SiteFooter/>
 
       {/* Modal */}
       <AnimatePresence>

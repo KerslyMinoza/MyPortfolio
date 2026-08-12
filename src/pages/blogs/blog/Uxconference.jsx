@@ -1,4 +1,5 @@
 import '../blogs.css';
+import Reveal from '../../../components/common/Reveal.jsx';
 import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
 import SiteFooter from '../../../components/layout/SiteFooter/SiteFooter.jsx';
 import Backbutton from '../../../components/common/Backbutton.jsx';
@@ -51,7 +52,7 @@ function Uxconference(){
             <SiteNav/>
             <Backbutton page="journal"/>
             <div className="blog" id="pokfund">
-                <div className="content">
+                <Reveal className="content">
                     <div className="blog_name"> UX+ Conference 2024 Manila </div>
                     <div className="section_title">From Cebu to Manila! ✈️</div>
 
@@ -121,7 +122,7 @@ function Uxconference(){
                     <div className="blog_content">
                     Even though the conference wasn't as technical as I originally expected, it sparked something in me. It reignited my passion for UX and reminded me why I chose this path. I'm leaving this experience inspired to build a stronger portfolio, one that truly reflects my journey and growth as a designer.
                     </div>
-            </div>
+            </Reveal>
 
         </div>
 

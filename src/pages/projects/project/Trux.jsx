@@ -1,4 +1,5 @@
 import './project.css';
+import Reveal from '../../../components/common/Reveal.jsx';
 import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
 import SiteFooter from '../../../components/layout/SiteFooter/SiteFooter.jsx';
 import Backbutton from '../../../components/common/Backbutton.jsx';
@@ -35,7 +36,7 @@ function Trux(){
             <SiteNav/>
             <Backbutton page="projects"/>
             <div className="project" id="orcaa">
-                <div className="content">
+                <Reveal className="content">
                     <div className="project_name"> Trux </div>
                     <div className="section_title"> Project Overview</div>
 
@@ -90,11 +91,11 @@ On top of that, there was clear tension between the CEO and the company I was de
 Despite all the chaos and stress, I actually enjoyed the design process itself. It was a fast-paced project with lots of pressure, but creatively, it was fulfilling. I just wish the experience had been smoother on the collaboration side.
                     </div>
             <NextPrevious project_id={projectId}/>
-            </div>
-
-            <SiteFooter/>
+            </Reveal>
 
         </div>
+
+            <SiteFooter/>
 
       {/* Modal */}
       <AnimatePresence>

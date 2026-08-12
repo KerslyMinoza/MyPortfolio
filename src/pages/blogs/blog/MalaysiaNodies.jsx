@@ -1,5 +1,6 @@
 
 import '../blogs.css';
+import Reveal from '../../../components/common/Reveal.jsx';
 import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
 import SiteFooter from '../../../components/layout/SiteFooter/SiteFooter.jsx';
 import Backbutton from '../../../components/common/Backbutton.jsx';
@@ -80,7 +81,7 @@ function MalaysiaNodies(){
             <SiteNav/>
             <Backbutton page="journal"/>
             <div className="blog" id="pokfund">
-                <div className="content">
+                <Reveal className="content">
                     <div className="blog_name"> Exploring Malaysia with Nodies Team 2025! </div>
                     <div className="section_title">Team Gathering in Malaysia ✈️</div>
 
@@ -183,7 +184,7 @@ function MalaysiaNodies(){
                 <div className="image_holder">
                     <img src={Pic45} onClick={() => openModal(Pic45)}></img>
                 </div>
-            </div>
+            </Reveal>
 
 
         </div>

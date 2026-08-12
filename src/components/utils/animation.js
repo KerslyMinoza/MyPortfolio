@@ -52,6 +52,34 @@ export const arriveIn = (delay = 0) => ({
     },
   });
 
+/* arriveIn's quieter cousin, for the length of a case study or a journal entry.
+   The same gesture — up from below, into place on a spring — but a sixth of the
+   travel and no blur: a page of twenty of these has to be felt rather than
+   watched, and the blur that suits three cards arriving together reads as a
+   page struggling to load when every heading and image does it in turn.
+
+   It fires on any part of the element showing, not a fraction of it, because
+   the tallest things on these pages — a strip of nine screens — are taller than
+   the window, and a fraction of those would never be met. The negative bottom
+   margin is what keeps that from happening right on the edge of the screen:
+   the element has to come a tenth of the window up before it is let go. */
+export const settleIn = (delay = 0) => ({
+    variants: {
+      hidden: { y: 16, opacity: 0 },
+      visible: { y: 0, opacity: 1 },
+    },
+    initial: "hidden",
+    whileInView: "visible",
+    viewport: { once: true, amount: "some", margin: "0px 0px -10% 0px" },
+    transition: {
+      type: "spring",
+      delay,
+      stiffness: 90,
+      damping: 20,
+      mass: 0.7
+    },
+  });
+
 export const riseIn = (delay = 0) => ({
     variants: {
       hidden: { y: 80, opacity: 0, scale: 0.92, filter: "blur(8px)" },

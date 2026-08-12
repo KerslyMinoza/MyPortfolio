@@ -1,4 +1,5 @@
 import './project.css';
+import Reveal from '../../../components/common/Reveal.jsx';
 
 import Design1 from "../../../assets/images/nodies/dashboard.png";
 import Design2 from "../../../assets/images/nodies/stat.png";
@@ -66,7 +67,7 @@ function Nodies(){
             <SiteNav/>
             <Backbutton page="projects"/>
             <div className="project" id="orcaa">
-                <div className="content">
+                <Reveal className="content">
                     <div className="project_name"> Nodies </div>
                     <div className="section_title"> Project Overview</div>
 
@@ -207,11 +208,11 @@ Sometimes I skip wireframing and design directly, especially when I am already f
 
                     <div className="image_holder"><img src={Penguin} onClick={() => openModal(Penguin)} style={{ width: '300px' }}></img></div>
              <NextPrevious project_id={projectId}/>
-            </div>
-
-            <SiteFooter/>
+            </Reveal>
 
         </div>
+
+            <SiteFooter/>
 
       {/* Modal */}
       <AnimatePresence>

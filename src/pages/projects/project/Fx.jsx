@@ -1,4 +1,5 @@
 import './project.css';
+import Reveal from '../../../components/common/Reveal.jsx';
 
 import Design1 from "../../../assets/images/functionchat/default_screen.png";
 import Design2 from "../../../assets/images/functionchat/stop.png";
@@ -60,7 +61,7 @@ function Fx(){
             <SiteNav/>
             <Backbutton page="projects"/>
             <div className="project" id="orcaa">
-                <div className="content">
+                <Reveal className="content">
                     <div className="project_name"> Function Chat </div>
                     <div className="section_title"> Project Overview</div>
 
@@ -176,11 +177,11 @@ function Fx(){
                     
 
              <NextPrevious project_id={projectId}/>
-            </div>
-
-            <SiteFooter/>
+            </Reveal>
 
         </div>
+
+            <SiteFooter/>
 
       {/* Modal */}
       <AnimatePresence>

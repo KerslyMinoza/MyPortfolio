@@ -1,4 +1,5 @@
 import './project.css';
+import Reveal from '../../../components/common/Reveal.jsx';
 import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
 import SiteFooter from '../../../components/layout/SiteFooter/SiteFooter.jsx';
 import Backbutton from '../../../components/common/Backbutton.jsx';
@@ -37,7 +38,7 @@ function Ironwit(){
             <SiteNav/>
             <Backbutton page="projects"/>
             <div className="project" id="orcaa">
-                <div className="content">
+                <Reveal className="content">
                     <div className="project_name"> Ironwit </div>
                     <div className="section_title"> Project Overview</div>
 
@@ -135,10 +136,11 @@ function Ironwit(){
                     
                     
             <NextPrevious project_id={projectId}/>
-            </div>
+            </Reveal>
+
+        </div>
 
             <SiteFooter/>
-        </div>
 
       {/* Modal */}
       <AnimatePresence>

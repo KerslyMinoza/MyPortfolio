@@ -1,8 +1,9 @@
 
+/* The card fills its column — how many there are is the grid's business, in
+   projectgrid.css, so nothing here has to know the width of the page */
 .thumbnail{
- 
-    margin-top: 30px;
-    width: 578px;
+
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -12,18 +13,25 @@
 
 
 /* the frame the zoom is clipped to — the radius lives here now, so the image
-   inside can grow past its own edges without corners appearing */
+   inside can grow past its own edges without corners appearing.
+
+   The ratio is the thumbnails' own (1092×868), so nothing is cropped at the
+   size they are drawn today; it is stated rather than left to the file so that
+   every card in a row is the same height, and an image that arrives at some
+   other ratio later is covered into the frame instead of setting it. */
 .thumbnail_media {
     overflow: hidden;
     border-radius: 18px;
     background-color: #F3F3F3;
+    aspect-ratio: 5 / 4;
 }
 
 .thumbnail img{
     border: none;
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -70,18 +78,6 @@
    
 }
 
-@media only screen and (max-width: 999px)  {
-    
-    .thumbnail {
-        width: 90%;
-    }
-  }
-  
-  /* Macbooks */
-@media only screen and (min-width: 1000px) and (max-width: 1600px) {
-
-    .thumbnail {
-        width:30%;
-    }
-
-}
+/* The width rules that used to sit here — 90% on a phone, 30% on a laptop, the
+   fixed 578px above — are gone. The card is one column of the grid at every
+   size, and the column count is set in projectgrid.css. */

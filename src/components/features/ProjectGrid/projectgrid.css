@@ -2,7 +2,10 @@
    part the two rather than clear the whole gap on its own */
 .projects_wrapper {
     scroll-margin-top: 40px;
-    padding-top: 24px;
+    /* the 24px this used to be, plus the 30px the cards each carried above
+       themselves — that margin is now the grid's row gap, so the clearance
+       under the navigation has to be said here instead */
+    padding-top: 54px;
 }
 
 .projects_heading {
@@ -28,22 +31,40 @@
     line-height: 145%;
 }
 
+/* Three across, and it stays three. The cards are columns of a grid now rather
+   than flex items sized in percent, so the count is stated at each width
+   instead of falling out of whatever a card's width happens to divide into —
+   which is what broke: past 1600px the card went back to a fixed 578px, and a
+   13" MacBook on a scaled resolution (about 1680px wide) has no room for three
+   of those, so it dropped to two.
+
+   Left-aligned as well: a short last row now starts at the same edge as the
+   rows above it, where space-evenly used to spread it across the page. */
 .projects_grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: clamp(24px, 2.2vw, 40px);
+    row-gap: clamp(40px, 3.4vw, 64px);
+    box-sizing: border-box;
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 90px);
 }
 
-/* Macbooks */
-@media only screen and (min-width: 1001px) and (max-width: 1600px) {
-
-    .projects_title {
-        font-size: 60px;
-    }
+/* iPad — two across. The line is drawn at 1200 rather than 1024 so an 11" in
+   landscape (1194px) is still a tablet here; a laptop starts at 1280. */
+@media only screen and (max-width: 1199px) {
 
     .projects_grid {
-        gap: 10px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Phones — one */
+@media only screen and (max-width: 767px) {
+
+    .projects_grid {
+        grid-template-columns: minmax(0, 1fr);
     }
 }
 

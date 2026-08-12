@@ -1,4 +1,5 @@
 import './project.css';
+import Reveal from '../../../components/common/Reveal.jsx';
 import SiteNav from '../../../components/layout/SiteNav/SiteNav.jsx';
 import SiteFooter from '../../../components/layout/SiteFooter/SiteFooter.jsx';
 import Backbutton from '../../../components/common/Backbutton.jsx';
@@ -47,7 +48,7 @@ function Waggle(){
             <SiteNav/>
             <Backbutton page="projects"/>
             <div className="project" id="orcaa">
-                <div className="content">
+                <Reveal className="content">
                     <div className="project_name"> Waggle </div>
                     <div className="section_title"> Project Overview</div>
 
@@ -140,11 +141,11 @@ function Waggle(){
                         This has been a fun project for me, and I’ve really enjoyed the process. While it’s still just a prototype focusing on a single feature and not fully complete yet, I’m planning to expand it further. As I continue to develop my skills, I hope to fully build and implement the app myself in the future.
                     </div>
                 <NextPrevious project_id={projectId}/>
-            </div>
-
-            <SiteFooter/>
+            </Reveal>
 
         </div>
+
+            <SiteFooter/>
 
       {/* Modal */}
       <AnimatePresence>
